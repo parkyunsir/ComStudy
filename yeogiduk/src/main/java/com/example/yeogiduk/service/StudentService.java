@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 
@@ -35,11 +36,12 @@ public class StudentService implements UserDetailsService{
         Student student = studentRepository.findBysEmail(dto.getSEmail())
                 .orElse(null);
         if(student != null && bCryptPasswordEncoder.matches(dto.getPassword(), student.getPassword())) {
-            return Student.builder()
+            final String token = tokenProvider.generateToken(student, Duration.ofDays(14));
+            StudentDto studentDto = StudentDto.builder()
                     .sEmail(student.getSEmail())
-                    .password(dto.getPassword())
-                    .likes(dto.getLikes())
+                    .token(token)
                     .build();
+            return studentDto.toEntity();
         }
         return null;
     }
