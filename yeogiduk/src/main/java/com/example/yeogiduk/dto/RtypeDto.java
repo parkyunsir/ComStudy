@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RtypeDto {
     private String rType;
-//    private int rType;
+    //rtype 어떻게 할가...
+    //    private int rType;
 
     //한식 0
     //중식 1
