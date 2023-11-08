@@ -59,7 +59,7 @@ public class StudentApiController {
 
     // 식당 찜하기
     @PatchMapping("/student/likes/{sEmail}/{restaurantId}")
-    public ResponseEntity<Student> addLike(@PathVariable String sEmail, @PathVariable int restaurantId) {
+    public ResponseEntity<Student> addLike(@PathVariable String sEmail, @PathVariable Long restaurantId) {
         Student student = studentService.addLike(sEmail, restaurantId);
         return (student != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(student) :

@@ -26,7 +26,7 @@ public class Student implements UserDetails {
     private String password;
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name="restaurant_id")
-    private List<Restaurant> likes = new ArrayList<Restaurant>();
+    private List<Long> likes = new ArrayList<Long>();
 
     public void setPassword(String password) {
         this.password = password;

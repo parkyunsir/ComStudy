@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -72,7 +73,7 @@ public class StudentService implements UserDetailsService{
         return student;
     }
 
-    public Student addLike(String sEmail, int restaurantId) {
+    public Student addLike(String sEmail, Long restaurantId) {
         Student student = studentRepository.findBysEmail(sEmail)
                 .orElse(null);
         if(student == null) {
@@ -83,14 +84,14 @@ public class StudentService implements UserDetailsService{
         if(restaurant == null) {
             return null;
         }
-        List<Restaurant> list = student.getLikes();
-        for(Restaurant r : list) {
-            if(restaurant == r) {
-                list.remove(restaurant);
+        List<Long> list = student.getLikes();
+        for(Long i : list) {
+            if(restaurant.getId() == i) {
+                list.remove(i);
                 return student;
             }
         }
-        list.add(restaurant);*/
+        list.add(restaurant.getId());*/
         return student;
     }
 
@@ -100,7 +101,11 @@ public class StudentService implements UserDetailsService{
         if(student == null) {
             return null;
         }
-        return student.getLikes();
+        List<Restaurant> list = new ArrayList<Restaurant>();/*
+        for(Long i : student.getLikes()) {
+            list.add(restaurantRepository.findById(i));
+        }*/
+        return list;
     }
 
     @Override
