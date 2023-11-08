@@ -55,13 +55,21 @@ public class TokenProvider {
 
     // 토큰 기반으로 유저 ID 가져오는 메소드
     public String getUserSEmail(String token) {
-        Claims claims = getCliams(token);
+        Claims claims = getClaims(token);
         return claims.get("sEmail", String.class);
+    }
+
+    public String validateAndGetUserSEmail(String token) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(jwtProperties.getSecretKey())
+                .parseClaimsJws(token)
+                .getBody();
+        return claims.getSubject();
     }
 
     // 토큰 기반으로 인증 정보 가져오는 메소드
     public Authentication getAuthenticate(String token) {
-        Claims claims = getCliams(token);
+        Claims claims = getClaims(token);
         Set<SimpleGrantedAuthority> authorities =
                 Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"));
 
@@ -69,7 +77,8 @@ public class TokenProvider {
                 new org.springframework.security.core.userdetails.User
                         (claims.getSubject(), "", authorities), token, authorities);
     }
-    private Claims getCliams(String token) {
+
+    private Claims getClaims(String token) {
         return Jwts.parser()
                 .setSigningKey(jwtProperties.getSecretKey())
                 .parseClaimsJws(token)
