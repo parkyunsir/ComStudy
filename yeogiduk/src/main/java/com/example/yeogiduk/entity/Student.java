@@ -15,6 +15,7 @@ import java.util.List;
 @Builder
 @Getter
 @ToString
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "student")
 public class Student implements UserDetails {
@@ -26,13 +27,6 @@ public class Student implements UserDetails {
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name="restaurant_id")
     private List<Restaurant> likes = new ArrayList<Restaurant>();
-
-    @Builder
-    public Student(String sEmail, String password, List<Restaurant> likes) {
-        this.sEmail = sEmail;
-        this.password = password;
-        this.likes = likes;
-    }
 
     public void setPassword(String password) {
         this.password = password;

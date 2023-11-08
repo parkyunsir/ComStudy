@@ -1,5 +1,6 @@
 package com.example.yeogiduk.config;
 
+import com.example.yeogiduk.security.JwtAuthenticationFilter;
 import com.example.yeogiduk.service.StudentService;
 import jakarta.servlet.DispatcherType;
 import lombok.RequiredArgsConstructor;
@@ -19,12 +20,15 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.filter.CorsFilter;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @RequiredArgsConstructor
 @Configuration
 public class SecurityConfig {
+    @Autowired
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -46,6 +50,10 @@ public class SecurityConfig {
                         .logoutSuccessUrl("/")
                         .invalidateHttpSession(true)
                 );
+        http.addFilterAfter(
+                jwtAuthenticationFilter,
+                CorsFilter.class
+        );
 
         return http.build();
     }
