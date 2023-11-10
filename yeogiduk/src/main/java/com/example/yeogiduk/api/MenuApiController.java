@@ -20,9 +20,9 @@ public class MenuApiController {
     @PostMapping("/menu/upload")
     public ResponseEntity<Menu> mupload(@RequestParam Long rstId, @RequestBody MenuDto menuDto) {
         menuDto.setRstid(rstId);
-        ResponseEntity<Menu> menu = menuService.mupload(menuDto);
-        return (menu.getBody() != null) ?
-                ResponseEntity.status(menu.getStatusCode()).body(menu.getBody()) :
+        Menu menu = menuService.mupload(menuDto);
+        return (menu != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(menu) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
     }

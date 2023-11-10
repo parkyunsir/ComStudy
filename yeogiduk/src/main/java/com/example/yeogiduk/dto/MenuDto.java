@@ -6,8 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 
-@Getter
 @Data
+@Getter
 public class MenuDto {
     private Long rstId;
     private String menu;
