@@ -7,11 +7,12 @@ import lombok.*;
 import java.sql.Time;
 
 @Getter
-@Builder
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class RestaurantDto {
-    private Long RstId;
+    private Long rstId;
     private Integer typeId;
     private String rName;
     private String loc;
@@ -20,8 +21,6 @@ public class RestaurantDto {
     private String intro;
 
     public Restaurant toEntity() {
-        return new Restaurant(RstId, rName, null, loc, startTime, endTime, intro);
+        return new Restaurant(rstId, typeId, rName, loc, startTime, endTime, intro);
     }
 }
-
-
