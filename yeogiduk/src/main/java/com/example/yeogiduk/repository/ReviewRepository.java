@@ -13,10 +13,10 @@ public interface ReviewRepository extends JpaRepository<Review, Long>{ // CRUD �
 
 
     // 특정 게시글의 모든 댓글 조회
-    @Query(value = "SELECT * FROM review WHERE RstId = :RstId", nativeQuery = true)
-    List<Review> findByRstId(Long RstId);
+    @Query(value = "SELECT * FROM review WHERE rstId = :rstId", nativeQuery = true)
+    List<Review> findByRstId(Long rstId);
 
     // 특정 닉네임의 모든 댓글 조회
-    List<Review> findByEmail(String Email); // 네이티브 쿼리로 작성
+    List<Review> findByEmail(String email); // 네이티브 쿼리로 작성
 
 }

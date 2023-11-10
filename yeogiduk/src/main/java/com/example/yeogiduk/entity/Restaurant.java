@@ -23,7 +23,7 @@ public class Restaurant {
     private String rName;
 
     @Column(nullable = false)
-    private Integer typeId;
+    private Long typeId;
 
     @Column(length = 100, nullable = false)
     private String loc;
