@@ -9,7 +9,6 @@ import lombok.Getter;
 @Getter
 @Data
 public class MenuDto {
-
     private Long rstId;
     private String menu;
     private Integer price;
