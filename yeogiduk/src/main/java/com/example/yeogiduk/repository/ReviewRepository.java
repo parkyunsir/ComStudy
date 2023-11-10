@@ -17,6 +17,6 @@ public interface ReviewRepository extends JpaRepository<Review, Long>{ // CRUD �
     List<Review> findByRstId(Long RstId);
 
     // 특정 닉네임의 모든 댓글 조회
-    List<Review> findBysEmail(String sEmail); // 네이티브 쿼리로 작성
+    List<Review> findByEmail(String Email); // 네이티브 쿼리로 작성
 
 }
