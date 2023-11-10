@@ -53,6 +53,7 @@ public class StudentApiController {
     }*/
 
     // 비밀번호 변경
+
     @PatchMapping("/student/pwupdate/{email}")
     public ResponseEntity<Student> pwUpdate(@PathVariable String email, @RequestBody StudentDto dto) {
         Student updated = studentService.pwUpdate(email, dto);
