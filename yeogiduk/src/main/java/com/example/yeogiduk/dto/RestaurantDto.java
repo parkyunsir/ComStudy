@@ -11,14 +11,8 @@ import java.sql.Time;
 @NoArgsConstructor
 @Builder
 public class RestaurantDto {
-<<<<<<< HEAD
     private Long rstId;
     private Long typeId;
-=======
-
-    private Long rstId;
-    private Integer typeId;
->>>>>>> 47d642359da8bb445616d5af445baeb61b8bc969
     private String rName;
     private String loc;
     private Time startTime;

@@ -16,10 +16,6 @@ import java.sql.Time;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-<<<<<<< HEAD
-=======
-
->>>>>>> 47d642359da8bb445616d5af445baeb61b8bc969
     @Column(name = "rstId", unique = true, nullable = false)
     private Long rstId;
 
