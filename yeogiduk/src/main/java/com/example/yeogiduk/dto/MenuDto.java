@@ -17,11 +17,11 @@ public class MenuDto {
         return new Menu(rstId, menu, price);
     }
 
-    public Long getRstId(){
+    public Long getRstid(){
         return rstId;
     }
 
-    public void setRstId(Long rstId){
+    public void setRstid(Long rstId){
         this.rstId=rstId;
     }
 }

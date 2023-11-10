@@ -16,7 +16,7 @@ public class MenuService {
 
     public ResponseEntity<Menu> mupload(MenuDto menuDto){
         try {
-            List<Menu> menuList = menuRepository.findByRstId(menuDto.getRstId());
+            List<Menu> menuList = menuRepository.findByRstId(menuDto.getRstid());
 
             if (!menuList.isEmpty()){
                 Menu menu = menuList.get(0);
