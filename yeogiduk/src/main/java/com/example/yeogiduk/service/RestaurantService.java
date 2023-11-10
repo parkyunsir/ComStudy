@@ -33,11 +33,7 @@ public class RestaurantService {
                 .collect(Collectors.toList());
     }
 
-<<<<<<< HEAD
-    // Rtype으로 검색해야하는데 어떻게 해야하는지 모르겠음
-=======
     // 여기 어떻게 처리해야할지 잘 모르겠어...
->>>>>>> 0e9361502b27172d4a68dc789773ebcefb241cf3
     public List<RestaurantDto> getRestaurantListByType(Long typeId) {
         List<Restaurant> restaurantList = restaurantRepository.findByTypeTypeId(typeId);
         return restaurantList.stream()
@@ -55,11 +51,7 @@ public class RestaurantService {
     private Restaurant convertDtoToEntity(RestaurantDto restaurantDto) {
         return Restaurant.builder()
                 .rName(restaurantDto.getRName())
-<<<<<<< HEAD
-                //.rtype(restaurantDto.getRtype().getTypeId())
-=======
                 .rtype(rtypeRepository.getById(restaurantDto.getTypeId()))
->>>>>>> 0e9361502b27172d4a68dc789773ebcefb241cf3
                 .loc(restaurantDto.getLoc())
                 .startTime(restaurantDto.getStartTime())
                 .endTime(restaurantDto.getEndTime())
