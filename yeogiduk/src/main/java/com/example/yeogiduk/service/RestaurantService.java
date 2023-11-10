@@ -33,6 +33,7 @@ public class RestaurantService {
                 .collect(Collectors.toList());
     }
 
+    // 여기 어떻게 처리해야할지 잘 모르겠어...
     public List<RestaurantDto> getRestaurantListByType(Long typeId) {
         List<Restaurant> restaurantList = restaurantRepository.findByTypeTypeId(typeId);
         return restaurantList.stream()
