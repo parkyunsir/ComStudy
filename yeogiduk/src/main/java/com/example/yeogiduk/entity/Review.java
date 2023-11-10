@@ -24,7 +24,7 @@ public class Review {
     @JoinColumn(name="RstId") // Restaurant의 id를 외래키로 생성하여 조인시킴
     private Restaurant restaurant; // 리뷰의 상세 페이지 = article
     @Column
-    private String Email; // 리뷰를 단 학생의 이메일
+    private String email; // 리뷰를 단 학생의 이메일
     @Column
     private String content; // 리뷰의 본문 내용
     @Column

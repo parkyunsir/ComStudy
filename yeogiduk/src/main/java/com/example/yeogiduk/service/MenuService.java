@@ -14,18 +14,9 @@ public class MenuService {
     @Autowired
     private MenuRepository menuRepository;
 
-    public ResponseEntity<Menu> mupload(MenuDto menuDto){
-        try {
-            List<Menu> menuList = menuRepository.findByRstId(menuDto.getRstid());
-
-            if (!menuList.isEmpty()){
-                Menu menu = menuList.get(0);
-                return new ResponseEntity<>(menu, HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND); //비었음
-            }
-        } catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
+    public Menu mupload(MenuDto menuDto){
+        Menu menu = Menu.createMenu(menuDto);
+        menuRepository.save(menu);
+        return menu;
     }
 }
