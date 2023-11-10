@@ -42,14 +42,14 @@ public class SecurityConfig {
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
                         .requestMatchers("/", "/student/login", "/student/join").permitAll()
                         .anyRequest().authenticated()
-                ).formLogin(login -> login
+                )/*.formLogin(login -> login
                         .loginPage("/student/login")
                         .defaultSuccessUrl("/", true)
                         .permitAll()
                 ).logout(logout -> logout
                         .logoutSuccessUrl("/")
                         .invalidateHttpSession(true)
-                );
+                )*/;
         http.addFilterAfter(
                 jwtAuthenticationFilter,
                 CorsFilter.class
@@ -57,7 +57,7 @@ public class SecurityConfig {
 
         return http.build();
     }
-
+/*
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http, BCryptPasswordEncoder bCryptPasswordEncoder, StudentService studentService) throws Exception {
         AuthenticationManagerBuilder auth =
@@ -69,5 +69,5 @@ public class SecurityConfig {
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
-    }
+    }*/
 }

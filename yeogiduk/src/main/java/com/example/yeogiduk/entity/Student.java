@@ -17,21 +17,20 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "student")
-public class Student implements UserDetails {
+@Table(name = "Student")
+public class Student /*implements UserDetails*/ {
     @Id
-    @Column(name="sEmail", nullable = false, unique = true, updatable = false)
-    private String sEmail;
+    @Column(name="email", nullable = false, unique = true, updatable = false)
+    private String email;
     @Column(name="password", nullable = false)
     private String password;
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name="restaurant_id")
-    private List<Long> likes = new ArrayList<Long>();
+    @Column(name="likes")
+    private List<Long> likes = new ArrayList<>();
 
     public void setPassword(String password) {
         this.password = password;
     }
-
+/*
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("student"));
@@ -39,7 +38,7 @@ public class Student implements UserDetails {
 
     @Override
     public String getUsername() {
-        return sEmail;
+        return email;
     }
 
     @Override
@@ -60,5 +59,5 @@ public class Student implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
+    }*/
 }

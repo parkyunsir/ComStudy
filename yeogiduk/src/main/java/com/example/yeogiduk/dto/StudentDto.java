@@ -4,6 +4,7 @@ import com.example.yeogiduk.entity.Restaurant;
 import com.example.yeogiduk.entity.Student;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -12,10 +13,10 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class StudentDto {
-    private String sEmail;
+    private String email;
     private String password;
     private List<Long> likes;
     private String token;
 
-    public Student toEntity() { return new Student(sEmail, password, likes); }
+    public Student toEntity() { return new Student(email, password, likes); }
 }

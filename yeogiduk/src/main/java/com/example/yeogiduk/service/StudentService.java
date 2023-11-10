@@ -16,30 +16,33 @@ import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Slf4j
 @Service
-public class StudentService implements UserDetailsService{
+public class StudentService /*implements UserDetailsService*/{
     @Autowired
     private StudentRepository studentRepository;
 
-    @Autowired
-    private RestaurantRepository restaurantRepository;
+    //@Autowired
+    //private RestaurantRepository restaurantRepository;
 
     @Autowired
     private TokenProvider tokenProvider;
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     public Student login(StudentDto dto) {
-        Student student = studentRepository.findBysEmail(dto.getSEmail())
+        log.info("어라라");
+        Student student = studentRepository.findByEmail(dto.getEmail())
                 .orElse(null);
+        log.info("짜잔");
         if(student != null && bCryptPasswordEncoder.matches(dto.getPassword(), student.getPassword())) {
-            final String token = tokenProvider.generateToken(student, Duration.ofDays(14));
+            log.info("좋아요");
+            final String token = tokenProvider.generateToken(student, Duration.ofDays(2));
             StudentDto studentDto = StudentDto.builder()
-                    .sEmail(student.getSEmail())
+                    .email(student.getEmail())
+                    .password(student.getPassword())
                     .token(token)
                     .build();
             return studentDto.toEntity();
@@ -48,23 +51,23 @@ public class StudentService implements UserDetailsService{
     }
 
     public Student join(StudentDto dto) {
-        if(!dto.getSEmail().endsWith("@duksung.ac.kr")) {
+        if(!dto.getEmail().endsWith("@duksung.ac.kr")) {
             return null;
         }
-        Student student = studentRepository.findBysEmail(dto.getSEmail())
+        Student student = studentRepository.findByEmail(dto.getEmail())
                 .orElse(null);
         if(student != null) {
             return null;
         }
         Student joined = Student.builder()
-                .sEmail(dto.getSEmail())
+                .email(dto.getEmail())
                 .password(bCryptPasswordEncoder.encode(dto.getPassword()))
                 .build();
         return studentRepository.save(joined);
     }
 
-    public Student pwUpdate(String sEmail, StudentDto dto) {
-        Student student = studentRepository.findBysEmail(sEmail)
+    public Student pwUpdate(String email, StudentDto dto) {
+        Student student = studentRepository.findByEmail(email)
                 .orElse(null);
         if(student == null) {
             return null;
@@ -73,13 +76,13 @@ public class StudentService implements UserDetailsService{
         return student;
     }
 
-    public Student addLike(String sEmail, Long restaurantId) {
-        Student student = studentRepository.findBysEmail(sEmail)
+    public Student addLike(String email, StudentDto dto) {
+        Student student = studentRepository.findByEmail(email)
                 .orElse(null);
         if(student == null) {
             return null;
         }/*
-        Restaurant restaurant = restaurantRepository.findById(restaurantId)
+        Restaurant restaurant = restaurantRepository.findById(dto.getLikes())
                 .orElse(null);
         if(restaurant == null) {
             return null;
@@ -95,8 +98,8 @@ public class StudentService implements UserDetailsService{
         return student;
     }
 
-    public List<Restaurant> getLikes(String sEmail) {
-        Student student = studentRepository.findBysEmail(sEmail)
+    public List<Restaurant> getLikes(String email) {
+        Student student = studentRepository.findByEmail(email)
                 .orElse(null);
         if(student == null) {
             return null;
@@ -107,10 +110,15 @@ public class StudentService implements UserDetailsService{
         }*/
         return list;
     }
-
+/*
     @Override
-    public UserDetails loadUserByUsername(String sEmail) throws UsernameNotFoundException {
-        return studentRepository.findBysEmail(sEmail)
-                .orElseThrow(() -> new IllegalArgumentException(sEmail));
-    }
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Student student;
+        student = studentRepository.findByEmail("1234@duksung.ac.kr")
+                .orElse(null);
+        if(student == null) {
+            throw new UsernameNotFoundException(username);
+        }
+        return student;
+    }*/
 }
