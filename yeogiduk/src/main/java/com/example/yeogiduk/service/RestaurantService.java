@@ -62,7 +62,7 @@ public class RestaurantService {
 
     private RestaurantDto convertEntityToDto(Restaurant restaurant) {
         return RestaurantDto.builder()
-                .RstId(restaurant.getRstId())
+                .rstId(restaurant.getRstId())
                 //.typeId(restaurant.getRtype().getTypeId())
                 .rName(restaurant.getRName())
                 .loc(restaurant.getLoc())
