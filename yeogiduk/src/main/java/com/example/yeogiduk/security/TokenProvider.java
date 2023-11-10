@@ -30,8 +30,8 @@ public class TokenProvider {
                 .setIssuer(jwtProperties.getIssuer())
                 .setIssuedAt(now)
                 .setExpiration(expiry)
-                .setSubject(student.getSEmail())
-                .claim("sEmail", student.getSEmail())
+                .setSubject(student.getEmail())
+                .claim("email", student.getEmail())
                 .signWith(SignatureAlgorithm.HS256, jwtProperties.getSecretKey())
                 .compact();
     }
@@ -54,12 +54,12 @@ public class TokenProvider {
     }
 
     // 토큰 기반으로 유저 ID 가져오는 메소드
-    public String getUserSEmail(String token) {
+    public String getUserEmail(String token) {
         Claims claims = getClaims(token);
-        return claims.get("sEmail", String.class);
+        return claims.get("email", String.class);
     }
 
-    public String validateAndGetUserSEmail(String token) {
+    public String validateAndGetUserEmail(String token) {
         Claims claims = Jwts.parser()
                 .setSigningKey(jwtProperties.getSecretKey())
                 .parseClaimsJws(token)
