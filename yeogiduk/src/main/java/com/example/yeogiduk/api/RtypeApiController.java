@@ -16,9 +16,9 @@ public class RtypeApiController {
     //rtype 등록하기
     @PostMapping("rtype/upload")
     public ResponseEntity<Rtype> rupload(@RequestBody RtypeDto rtypeDto) {
-        Rtype rType = rtypeService.rupload(rtypeDto);
-        return (rType != null) ?
-                ResponseEntity.status(HttpStatus.OK).body(rType) :
+        Rtype rtype = rtypeService.rupload(rtypeDto);
+        return (rtype != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(rtype) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
     }
