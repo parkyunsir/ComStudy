@@ -24,8 +24,8 @@ public class StudentService /*implements UserDetailsService*/{
     @Autowired
     private StudentRepository studentRepository;
 
-    //@Autowired
-    //private RestaurantRepository restaurantRepository;
+    @Autowired
+    private RestaurantRepository restaurantRepository;
 
     @Autowired
     private TokenProvider tokenProvider;
@@ -33,16 +33,14 @@ public class StudentService /*implements UserDetailsService*/{
     private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     public Student login(StudentDto dto) {
-        log.info("어라라");
         Student student = studentRepository.findByEmail(dto.getEmail())
                 .orElse(null);
-        log.info("짜잔");
         if(student != null && bCryptPasswordEncoder.matches(dto.getPassword(), student.getPassword())) {
-            log.info("좋아요");
             final String token = tokenProvider.generateToken(student, Duration.ofDays(2));
             StudentDto studentDto = StudentDto.builder()
                     .email(student.getEmail())
                     .password(student.getPassword())
+                    .likes(student.getLikes())
                     .token(token)
                     .build();
             return studentDto.toEntity();
@@ -81,20 +79,20 @@ public class StudentService /*implements UserDetailsService*/{
                 .orElse(null);
         if(student == null) {
             return null;
-        }/*
-        Restaurant restaurant = restaurantRepository.findById(dto.getLikes())
+        }
+        Restaurant restaurant = restaurantRepository.findById(dto.getLikes().get(0))
                 .orElse(null);
         if(restaurant == null) {
             return null;
         }
         List<Long> list = student.getLikes();
         for(Long i : list) {
-            if(restaurant.getId() == i) {
+            if(restaurant.getRstId() == i) {
                 list.remove(i);
                 return student;
             }
         }
-        list.add(restaurant.getId());*/
+        list.add(restaurant.getRstId());
         return student;
     }
 
@@ -104,10 +102,10 @@ public class StudentService /*implements UserDetailsService*/{
         if(student == null) {
             return null;
         }
-        List<Restaurant> list = new ArrayList<Restaurant>();/*
+        List<Restaurant> list = new ArrayList<Restaurant>();
         for(Long i : student.getLikes()) {
-            list.add(restaurantRepository.findById(i));
-        }*/
+            list.add(restaurantRepository.findById(i).orElse(null));
+        }
         return list;
     }
 /*

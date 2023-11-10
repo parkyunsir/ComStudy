@@ -35,9 +35,9 @@ public class RestaurantApiController {
         return new ResponseEntity<>(restaurantDtoList, HttpStatus.OK);
     }
 
-    @GetMapping("/detail/{RstId}")
-    public ResponseEntity<RestaurantDto> getRestaurantDetail(@PathVariable Long RstId) {
-        RestaurantDto restaurantDto = restaurantService.getRestaurantDetail(RstId);
+    @GetMapping("/detail/{rstId}")
+    public ResponseEntity<RestaurantDto> getRestaurantDetail(@PathVariable Long rstId) {
+        RestaurantDto restaurantDto = restaurantService.getRestaurantDetail(rstId);
 
         if (restaurantDto != null) {
             return new ResponseEntity<>(restaurantDto, HttpStatus.OK);

@@ -1,8 +1,10 @@
 import {createAction, handleActions} from 'redux-actions';
+import {produce} from 'immer';
 import {takeLatest} from 'redux-saga/effects';
 import createRequestSaga, { createRequestActionTypes } from '../lib/createRequestSaga';
 import * as studentAPI from '../lib/api/student';
 
+const CHANGE_FIELD = 'auth/CHANGE_FIELD';
 const INITIALIZE_FORM = 'student/INITIALIZE_FORM';
 
 const [JOIN, JOIN_SUCCESS, JOIN_FAILURE] = createRequestActionTypes(
@@ -13,6 +15,14 @@ const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createRequestActionTypes(
   'student/LOGIN',
 );
 
+export const changeField = createAction(
+  CHANGE_FIELD,
+  ({form, key, value}) => ({
+    form, // register, login
+    key, // username, password, passwordConfirm
+    value, // 실제 바꾸려는 값
+  }),
+);
 export const initializeForm = createAction(INITIALIZE_FORM, form => form); // register / login
 export const join = createAction(JOIN, ({email, password}) => ({
   email,
@@ -47,6 +57,10 @@ const initialState = {
 
 const student = handleActions(
   {
+    [CHANGE_FIELD]: (state, {payload: {form, key, value}}) => 
+      produce(state, draft => {
+        draft[form][key] = value; // 예: state.join.email을 바꾼다.
+      }),
     [INITIALIZE_FORM]: (state, {payload: form}) => ({
       ...state,
       [form]: initialState[form],

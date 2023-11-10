@@ -10,7 +10,7 @@ import java.sql.Time;
 @NoArgsConstructor
 @Builder
 public class RestaurantDto {
-    private Long RstId;
+    private Long rstId;
     private Long typeId;
     private String rName;
     private String loc;
@@ -21,8 +21,8 @@ public class RestaurantDto {
     public static RestaurantDtoBuilder builder() {
         return new RestaurantDtoBuilder();
     }
-    public RestaurantDto(Long RstId, Long typeId, String rName, String loc, Time startTime, Time endTime, String intro) {
-        this.RstId = RstId;
+    public RestaurantDto(Long rstId, Long typeId, String rName, String loc, Time startTime, Time endTime, String intro) {
+        this.rstId = rstId;
         this.typeId = typeId;
         this.rName = rName;
         this.loc = loc;
@@ -31,6 +31,6 @@ public class RestaurantDto {
         this.intro = intro;
     }
     public RestaurantDto build() {
-        return new RestaurantDto(RstId, typeId, rName, loc, startTime, endTime, intro);
+        return new RestaurantDto(rstId, typeId, rName, loc, startTime, endTime, intro);
     }
 }

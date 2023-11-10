@@ -16,8 +16,8 @@ import java.sql.Time;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "RstId", unique = true, nullable = false)
-    private Long RstId;
+    @Column(name = "rstId", unique = true, nullable = false)
+    private Long rstId;
 
     @Column(length = 50, nullable = false)
     private String rName;
