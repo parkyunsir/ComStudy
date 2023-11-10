@@ -37,8 +37,15 @@ public class ReviewService {
     public ReviewDto create(Long rstId, ReviewDto dto) {
         // 1. 게시글 조회 및 예외 발생
 
-        Restaurant restaurant = restaurantRepository.findByRstId(rstId) // 머지 후 에러 안날듯
-                .orElseThrow(() -> new IllegalArgumentException("댓글 생성 실패! 대상 게시글이 없습니다."));
+        List<Restaurant> restaurants = restaurantRepository.findByRstId(rstId);
+
+        if (restaurants.isEmpty()) {
+            throw new IllegalArgumentException("댓글 생성 실패! 대상 게시글이 없습니다.");
+        }
+
+        // Assuming you want the first restaurant in the list
+        Restaurant restaurant = restaurants.get(0);
+
         // 2. 댓글 엔티티 생성
         Review review = Review.createReview(dto, restaurant);
         // 3. 댓글 엔티티를 DB에 저장
