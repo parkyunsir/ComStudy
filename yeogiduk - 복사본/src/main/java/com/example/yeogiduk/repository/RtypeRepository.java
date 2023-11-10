@@ -7,5 +7,4 @@ import java.util.Optional;
 
 public interface RtypeRepository extends JpaRepository<Rtype, String>{
     Rtype findBytype(String title);
-
 }

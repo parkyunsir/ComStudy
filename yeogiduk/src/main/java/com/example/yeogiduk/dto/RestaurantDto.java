@@ -11,6 +11,7 @@ import java.sql.Time;
 @NoArgsConstructor
 @Builder
 public class RestaurantDto {
+
     private Long rstId;
     private Integer typeId;
     private String rName;
@@ -18,8 +19,8 @@ public class RestaurantDto {
     private Time startTime;
     private Time endTime;
     private String intro;
-
     public Restaurant toEntity() {
         return new Restaurant(rstId, typeId, rName, loc, startTime, endTime, intro);
+
     }
 }
