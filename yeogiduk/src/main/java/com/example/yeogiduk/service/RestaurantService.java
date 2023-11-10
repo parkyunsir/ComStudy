@@ -27,8 +27,9 @@ public class RestaurantService {
                 .collect(Collectors.toList());
     }
 
-    public List<RestaurantDto> getRestaurantListByType(Long typeId) {
-        List<Restaurant> restaurantList = restaurantRepository.findByTypeTypeId(typeId);
+    // Rtype으로 검색해야하는데 어떻게 해야하는지 모르겠음
+    public List<RestaurantDto> getRestaurantListByType(Long RstId) {
+        //List<Restaurant> restaurantList = restaurantRepository.findById(RstId);
         return restaurantList.stream()
                 .map(this::convertEntityToDto)
                 .collect(Collectors.toList());
@@ -47,7 +48,7 @@ public class RestaurantService {
     private Restaurant convertDtoToEntity(RestaurantDto restaurantDto) {
         return Restaurant.builder()
                 .rName(restaurantDto.getRName())
-                //.rtype(restaurantDto.getRtype().getTypeId())
+                .rtype(restaurantDto.getRtype().getTypeId())
                 .loc(restaurantDto.getLoc())
                 .startTime(restaurantDto.getStartTime())
                 .endTime(restaurantDto.getEndTime())
@@ -58,7 +59,7 @@ public class RestaurantService {
     private RestaurantDto convertEntityToDto(Restaurant restaurant) {
         return RestaurantDto.builder()
                 .RstId(restaurant.getRstId())
-                //.typeId(restaurant.getRtype().getTypeId())
+                .typeId(restaurant.getRtype().getTypeId())
                 .rName(restaurant.getRName())
                 .loc(restaurant.getLoc())
                 .startTime(restaurant.getStartTime())
