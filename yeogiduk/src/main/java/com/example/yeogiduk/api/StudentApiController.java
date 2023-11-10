@@ -49,7 +49,7 @@ public class StudentApiController {
     }
 
     // 비밀번호 변경
-    @PatchMapping("/student/pwupdate/{sEmail}")
+    @PatchMapping("/student/pwupdate/{Email}")
     public ResponseEntity<Student> pwUpdate(@PathVariable String sEmail, @RequestBody StudentDto dto) {
         Student updated = studentService.pwUpdate(sEmail, dto);
         return (updated != null) ?
@@ -58,17 +58,17 @@ public class StudentApiController {
     }
 
     // 식당 찜하기
-    @PatchMapping("/student/likes/{sEmail}/{restaurantId}")
-    public ResponseEntity<Student> addLike(@PathVariable String sEmail, @PathVariable Long restaurantId) {
-        Student student = studentService.addLike(sEmail, restaurantId);
+    @PatchMapping("/student/likes/{Email}/{rstId}")
+    public ResponseEntity<Student> addLike(@PathVariable String Email, @PathVariable Long rstId) {
+        Student student = studentService.addLike(Email, rstId);
         return (student != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(student) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     // 내가 찜한 리스트
-    @GetMapping("/student/likes/{sEmail}")
-    public List<Restaurant> getLikes(@PathVariable String sEmail) {
+    @GetMapping("/student/likes/{Email}")
+    public List<Restaurant> getLikes(@PathVariable String Email) {
         return studentService.getLikes(sEmail);
     }
 }

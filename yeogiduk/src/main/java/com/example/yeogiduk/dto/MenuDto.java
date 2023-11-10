@@ -5,18 +5,18 @@ import com.example.yeogiduk.entity.Rtype;
 import lombok.Builder;
 
 public class MenuDto {
-    private Integer Rstid;
+    private long rstId;
     private String menu;
     private Integer price;
 
     @Builder
-    public MenuDto(Integer Rstid, String menu, Integer price){
-        this.Rstid=Rstid;
+    public MenuDto(long rstId, String menu, Integer price){
+        this.rstId=rstId;
         this.menu=menu;
         this.price=price;
     }
 
     public Menu toEntity() {
-        return new Menu(Rstid, menu, price);
+        return new Menu(rstId, menu, price);
     }
 }

@@ -4,5 +4,5 @@ import com.example.yeogiduk.dto.MenuDto;
 import com.example.yeogiduk.entity.Menu;
 
 public interface MenuRepository {
-    Menu findByRstid(Integer Rstid);
+    Menu findByRstId(Integer Rstid);
 }

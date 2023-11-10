@@ -17,7 +17,7 @@ public class ReviewDto {
     private Date DATE;
     private String content;
     private String rName;
-    private Long RstId;
+    private int RstId;
     private int star;
     private String Email;
     //private LongBlob image;

@@ -1,6 +1,5 @@
 package com.example.yeogiduk.dto;
 
-import com.example.yeogiduk.entity.Menu;
 import com.example.yeogiduk.entity.Restaurant;
 import lombok.*;
 
@@ -12,14 +11,17 @@ import java.sql.Time;
 @Builder
 public class RestaurantDto {
     private Long RstId;
-    private int typeId;
+    private Long typeId;
     private String rName;
     private String loc;
     private Time startTime;
     private Time endTime;
     private String intro;
 
-    public RestaurantDto(Long RstId, int typeId, String rName, String loc, Time startTime, Time endTime, String intro) {
+    public static RestaurantDtoBuilder builder() {
+        return new RestaurantDtoBuilder();
+    }
+    public RestaurantDto(Long RstId, Long typeId, String rName, String loc, Time startTime, Time endTime, String intro) {
         this.RstId = RstId;
         this.typeId = typeId;
         this.rName = rName;
@@ -29,7 +31,7 @@ public class RestaurantDto {
         this.intro = intro;
     }
 
-    public Restaurant toEntity() {
-        return new Restaurant(RstId, typeId, rName, loc, startTime, endTime, intro);
+    public RestaurantDto build() {
+        return new RestaurantDto(RstId, typeId, rName, loc, startTime, endTime, intro);
     }
 }
