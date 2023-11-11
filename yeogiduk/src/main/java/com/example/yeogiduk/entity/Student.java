@@ -24,8 +24,6 @@ public class Student /*implements UserDetails*/ {
     private String email;
     @Column(name="password", nullable = false)
     private String password;
-    @Column(name="likes")
-    private List<Long> likes = new ArrayList<>();
 
     public void setPassword(String password) {
         this.password = password;

@@ -1,8 +1,11 @@
 package com.example.yeogiduk.service;
 
+import com.example.yeogiduk.dto.LikesDto;
 import com.example.yeogiduk.dto.StudentDto;
+import com.example.yeogiduk.entity.Likes;
 import com.example.yeogiduk.entity.Restaurant;
 import com.example.yeogiduk.entity.Student;
+import com.example.yeogiduk.repository.LikesRepository;
 import com.example.yeogiduk.repository.RestaurantRepository;
 import com.example.yeogiduk.repository.StudentRepository;
 import com.example.yeogiduk.security.TokenProvider;
@@ -13,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -28,6 +32,9 @@ public class StudentService /*implements UserDetailsService*/{
     private RestaurantRepository restaurantRepository;
 
     @Autowired
+    private LikesRepository likesRepository;
+
+    @Autowired
     private TokenProvider tokenProvider;
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -40,7 +47,6 @@ public class StudentService /*implements UserDetailsService*/{
             StudentDto studentDto = StudentDto.builder()
                     .email(student.getEmail())
                     .password(student.getPassword())
-                    .likes(student.getLikes())
                     .token(token)
                     .build();
             return studentDto.toEntity();
@@ -73,27 +79,27 @@ public class StudentService /*implements UserDetailsService*/{
         student.setPassword(bCryptPasswordEncoder.encode(dto.getPassword()));
         return student;
     }
-
-    public Student addLike(String email, StudentDto dto) {
-        Student student = studentRepository.findByEmail(email)
+    @Transactional
+    public String addLike(LikesDto dto) {
+        Student student = studentRepository.findByEmail(dto.getEmail())
                 .orElse(null);
         if(student == null) {
             return null;
         }
-        Restaurant restaurant = restaurantRepository.findById(dto.getLikes().get(0))
+        Restaurant restaurant = restaurantRepository.findById(dto.getRstId())
                 .orElse(null);
         if(restaurant == null) {
             return null;
         }
-        List<Long> list = student.getLikes();
-        for(Long i : list) {
-            if(restaurant.getRstId() == i) {
-                list.remove(i);
-                return student;
+        List<Likes> list = likesRepository.findByEmail(dto.getEmail());
+        for(Likes like : list) {
+            if(like.getRstId() == dto.getRstId()) {
+                likesRepository.delete(like);
+                return "찜 삭제";
             }
         }
-        list.add(restaurant.getRstId());
-        return student;
+        likesRepository.save(Likes.createLikes(dto));
+        return "찜 추가";
     }
 
     public List<Restaurant> getLikes(String email) {
@@ -102,17 +108,18 @@ public class StudentService /*implements UserDetailsService*/{
         if(student == null) {
             return null;
         }
-        List<Restaurant> list = new ArrayList<Restaurant>();
-        for(Long i : student.getLikes()) {
-            list.add(restaurantRepository.findById(i).orElse(null));
+        List<Likes> list = likesRepository.findByEmail(email);
+        List<Restaurant> restaurants = new ArrayList<>();
+        for(Likes like : list) {
+            Restaurant restaurant = restaurantRepository.findByRstId(like.getRstId());
+            restaurants.add(restaurant);
         }
-        return list;
+        return restaurants;
     }
 /*
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Student student;
-        student = studentRepository.findByEmail("1234@duksung.ac.kr")
+        Student student = studentRepository.findByEmail("1234@duksung.ac.kr")
                 .orElse(null);
         if(student == null) {
             throw new UsernameNotFoundException(username);

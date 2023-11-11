@@ -11,15 +11,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/menu")
 public class MenuApiController {
     @Autowired
     private MenuService menuService;
 
     //메뉴 올리기
     @PostMapping("/menu/upload")
-    public ResponseEntity<Menu> mupload(@RequestParam Long rstId, @RequestBody MenuDto menuDto) {
-        menuDto.setRstid(rstId);
+    public ResponseEntity<Menu> mupload(@RequestBody MenuDto menuDto) {
         Menu menu = menuService.mupload(menuDto);
         return (menu != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(menu) :

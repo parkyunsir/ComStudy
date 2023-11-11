@@ -19,9 +19,8 @@ public class Review {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY) // DB에서 자동으로 pk 1씩 증가
     private int viewId; //pk
-
     @ManyToOne // Comment 엔티티와 Article 엔티티를 다대일 관계로 설정
-    @JoinColumn(name="RstId") // Restaurant의 id를 외래키로 생성하여 조인시킴
+    @JoinColumn(name="rst_id") // Restaurant의 id를 외래키로 생성하여 조인시킴
     private Restaurant restaurant; // 리뷰의 상세 페이지 = article
     @Column
     private String email; // 리뷰를 단 학생의 이메일
@@ -29,8 +28,6 @@ public class Review {
     private String content; // 리뷰의 본문 내용
     @Column
     private Date DATE;
-    @Column
-    private String rName;
     @Column
     private int star;
 
@@ -48,7 +45,6 @@ public class Review {
                 dto.getEmail(),
                 dto.getContent(),
                 dto.getDATE(),
-                dto.getRName(),
                 dto.getStar()
         );
 

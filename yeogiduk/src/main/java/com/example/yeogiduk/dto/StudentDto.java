@@ -15,8 +15,7 @@ import java.util.List;
 public class StudentDto {
     private String email;
     private String password;
-    private List<Long> likes;
     private String token;
 
-    public Student toEntity() { return new Student(email, password, likes); }
+    public Student toEntity() { return new Student(email, password); }
 }

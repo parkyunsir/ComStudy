@@ -9,19 +9,16 @@ import lombok.Getter;
 @Data
 @Getter
 public class MenuDto {
-    private Long rstId;
+    private Long menuId;
     private String menu;
-    private Integer price;
+    private Long price;
+    private Long rstId;
 
     public Menu toEntity() {
-        return new Menu(rstId, menu, price);
+        return new Menu(menuId, menu, price, rstId);
     }
 
-    public Long getRstid(){
-        return rstId;
-    }
-
-    public void setRstid(Long rstId){
+    public void setRstId(Long rstId){
         this.rstId=rstId;
     }
 }
