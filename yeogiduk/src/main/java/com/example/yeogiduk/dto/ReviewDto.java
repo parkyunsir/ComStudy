@@ -16,8 +16,7 @@ public class ReviewDto {
     private int viewId;
     private Date DATE;
     private String content;
-    private String rName;
-    private int RstId;
+    private long rstId;
     private int star;
     private String Email;
     //private LongBlob image;
@@ -26,7 +25,6 @@ public class ReviewDto {
                 review.getViewId(),
                 review.getDATE(),
                 review.getContent(),
-                review.getRName(),
                 review.getRestaurant().getRstId(), // 머지 후 에러 안날듯!
                 review.getStar(),
                 review.getEmail()

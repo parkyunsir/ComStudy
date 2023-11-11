@@ -36,7 +36,7 @@ public class RestaurantService {
     // 여기 어떻게 처리해야할지 잘 모르겠어...
 
     public List<RestaurantDto> getRestaurantListByType(Long typeId) {
-        List<Restaurant> restaurantList = restaurantRepository.findByTypeTypeId(typeId);
+        List<Restaurant> restaurantList = restaurantRepository.findByTypeId(typeId);
         return restaurantList.stream()
                 .map(this::convertEntityToDto)
                 .collect(Collectors.toList());
@@ -51,8 +51,8 @@ public class RestaurantService {
 
     private Restaurant convertDtoToEntity(RestaurantDto restaurantDto) {
         return Restaurant.builder()
-                .rName(restaurantDto.getRName())
-                .rtype(rtypeRepository.getById(restaurantDto.getTypeId()))
+                .name(restaurantDto.getName())
+                .typeId(restaurantDto.getTypeId())
                 .loc(restaurantDto.getLoc())
                 .startTime(restaurantDto.getStartTime())
                 .endTime(restaurantDto.getEndTime())
@@ -62,9 +62,9 @@ public class RestaurantService {
 
     private RestaurantDto convertEntityToDto(Restaurant restaurant) {
         return RestaurantDto.builder()
-                .RstId(restaurant.getRstId())
-                //.typeId(restaurant.getRtype().getTypeId())
-                .rName(restaurant.getRName())
+                .rstId(restaurant.getRstId())
+                .typeId(restaurant.getTypeId())
+                .name(restaurant.getName())
                 .loc(restaurant.getLoc())
                 .startTime(restaurant.getStartTime())
                 .endTime(restaurant.getEndTime())

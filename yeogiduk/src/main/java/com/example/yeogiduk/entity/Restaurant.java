@@ -16,15 +16,14 @@ import java.sql.Time;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "rstId", unique = true, nullable = false)
     private Long rstId;
 
     @Column(length = 50, nullable = false)
-    private String rName;
+    private String name;
 
     @Column(nullable = false)
-    private Integer typeId;
+    private Long typeId;
 
     @Column(length = 100, nullable = false)
     private String loc;

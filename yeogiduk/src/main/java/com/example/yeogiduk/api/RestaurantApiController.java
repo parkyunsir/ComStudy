@@ -38,12 +38,12 @@ public class RestaurantApiController {
     }
 
     @GetMapping("/list/{typeId}")
-    public ResponseEntity<List<RestaurantDto>> getRestaurantListByType(@PathVariable int typeId) {
-        List<RestaurantDto> restaurantDtoList = rtypeRepository.findBytype(typeId);
+    public ResponseEntity<List<RestaurantDto>> getRestaurantListByType(@PathVariable Long typeId) {
+        List<RestaurantDto> restaurantDtoList = restaurantService.getRestaurantListByType(typeId);
         return new ResponseEntity<>(restaurantDtoList, HttpStatus.OK);
     }
 
-    @GetMapping("/detail/{RstId}")
+    @GetMapping("/detail/{rstId}")
     public ResponseEntity<RestaurantDto> getRestaurantDetail(@PathVariable Long rstId) {
         RestaurantDto restaurantDto = restaurantService.getRestaurantDetail(rstId);
         return (restaurantDto != null) ?
