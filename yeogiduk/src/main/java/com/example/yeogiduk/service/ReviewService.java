@@ -36,15 +36,15 @@ public class ReviewService {
     @Transactional
     public ReviewDto create(Long rstId, ReviewDto dto) {
         // 1. 게시글 조회 및 예외 발생
-
+        if(rstId != dto.getRstId()) {
+            return null;
+        }
         Restaurant restaurant = restaurantRepository.findByRstId(rstId);
-
         if (restaurant == null) {
             throw new IllegalArgumentException("댓글 생성 실패! 대상 게시글이 없습니다.");
         }
-
         // 2. 댓글 엔티티 생성
-        Review review = Review.createReview(dto, restaurant);
+        Review review = Review.createReview(dto, rstId);
         // 3. 댓글 엔티티를 DB에 저장
         Review reviewed = reviewRepository.save(review);
         // 4. DTO로 변환해 반환
