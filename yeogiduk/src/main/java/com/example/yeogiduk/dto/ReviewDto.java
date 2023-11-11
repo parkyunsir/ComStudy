@@ -14,20 +14,20 @@ import java.util.Date;
 @ToString
 public class ReviewDto {
     private int viewId;
-    private Date DATE;
+    private Long rstId;
+    private String email;
     private String content;
-    private long rstId;
+    private Date DATE;
     private int star;
-    private String Email;
     //private LongBlob image;
     public static ReviewDto createReviewDto(Review review) {
         return new ReviewDto(
                 review.getViewId(),
+                review.getRstId(),
+                review.getEmail(),
+                review.getContent(), // 머지 후 에러 안날듯!
                 review.getDATE(),
-                review.getContent(),
-                review.getRestaurant().getRstId(), // 머지 후 에러 안날듯!
-                review.getStar(),
-                review.getEmail()
+                review.getStar()
         );
     }
 }

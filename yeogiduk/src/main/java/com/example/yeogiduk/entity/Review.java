@@ -19,9 +19,8 @@ public class Review {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY) // DB에서 자동으로 pk 1씩 증가
     private int viewId; //pk
-    @ManyToOne // Comment 엔티티와 Article 엔티티를 다대일 관계로 설정
-    @JoinColumn(name="rst_id") // Restaurant의 id를 외래키로 생성하여 조인시킴
-    private Restaurant restaurant; // 리뷰의 상세 페이지 = article
+    @Column
+    private Long rstId; // 리뷰의 상세 페이지 = article
     @Column
     private String email; // 리뷰를 단 학생의 이메일
     @Column
@@ -31,17 +30,17 @@ public class Review {
     @Column
     private int star;
 
-    public static Review createReview(ReviewDto dto, Restaurant restaurant) {
-        // 예외 발생
-        /* getId()오류남... , getRstId() 머지 후 에러 삭제
-        if (dto.getId() != null)
+    public static Review createReview(ReviewDto dto, Long rstId) {
+        if (dto.getViewId() != 0)
             throw new IllegalArgumentException("댓글 생성 실패! 댓글의 id가 없어야 합니다.");
-        if (dto.getRstId() != restaurant.getRstId())
-            throw new IllegalArgumentException("댓글 생성 실패! 게시글의 id가 잘못됐습니다.");*/
+        if (dto.getRstId() != rstId)
+            throw new IllegalArgumentException("댓글 생성 실패! 게시글의 id가 잘못됐습니다.");
+        //if (dto.getDATE() != null)
+        //    throw new IllegalArgumentException("댓글 생성 실패! 날짜는 현재 날짜이므로 date는 없어야 합니다.");
         // 엔티티 생성 및 반환
         return new Review(
                 dto.getViewId(),
-                restaurant,
+                dto.getRstId(),
                 dto.getEmail(),
                 dto.getContent(),
                 dto.getDATE(),
