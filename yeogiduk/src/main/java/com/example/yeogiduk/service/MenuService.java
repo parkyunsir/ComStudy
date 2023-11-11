@@ -21,4 +21,8 @@ public class MenuService {
         menuRepository.save(menu);
         return menu;
     }
+
+    public List<Menu> show(Long rstId) {
+        return menuRepository.findByRstId(rstId);
+    }
 }
