@@ -10,10 +10,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class MenuApiController {
     @Autowired
     private MenuService menuService;
+
+    @GetMapping("/menu/{rstId}")
+    public ResponseEntity<List<Menu>> show(@PathVariable Long rstId) {
+        List<Menu> menus = menuService.show(rstId);
+        return (menus != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(menus) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
 
     //메뉴 올리기
     @PostMapping("/menu/upload")
