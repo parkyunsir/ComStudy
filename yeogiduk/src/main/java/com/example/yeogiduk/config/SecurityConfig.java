@@ -40,8 +40,7 @@ public class SecurityConfig {
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> request
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
-                        .requestMatchers("/", "/student/login", "/student/join").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )/*.formLogin(login -> login
                         .loginPage("/student/login")
                         .defaultSuccessUrl("/", true)

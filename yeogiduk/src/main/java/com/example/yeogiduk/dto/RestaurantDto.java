@@ -12,13 +12,13 @@ import java.sql.Time;
 @Builder
 public class RestaurantDto {
     private Long rstId;
-    private String rName;
+    private String name;
     private Long typeId;
     private String loc;
     private Time startTime;
     private Time endTime;
     private String intro;
     public Restaurant toEntity() {
-        return new Restaurant(rstId, rName, typeId, loc, startTime, endTime, intro);
+        return new Restaurant(rstId, name, typeId, loc, startTime, endTime, intro);
     }
 }

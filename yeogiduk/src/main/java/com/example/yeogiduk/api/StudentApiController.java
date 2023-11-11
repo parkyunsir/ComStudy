@@ -1,6 +1,8 @@
 package com.example.yeogiduk.api;
 
+import com.example.yeogiduk.dto.LikesDto;
 import com.example.yeogiduk.dto.StudentDto;
+import com.example.yeogiduk.entity.Likes;
 import com.example.yeogiduk.entity.Restaurant;
 import com.example.yeogiduk.entity.Student;
 import com.example.yeogiduk.repository.StudentRepository;
@@ -63,12 +65,9 @@ public class StudentApiController {
     }
 
     // 식당 찜하기
-    @PatchMapping("/student/likes/{email}")
-    public ResponseEntity<Student> addLike(@PathVariable String email, @PathVariable StudentDto dto) {
-        Student student = studentService.addLike(email, dto);
-        return (student != null) ?
-                ResponseEntity.status(HttpStatus.OK).body(student) :
-                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    @PostMapping("/student/likes")
+    public String addLike(@RequestBody LikesDto dto) {
+        return studentService.addLike(dto);
     }
 
     // 내가 찜한 리스트
