@@ -5,9 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+import static java.time.LocalTime.now;
+
+@Slf4j
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -17,7 +25,7 @@ public class ReviewDto {
     private Long rstId;
     private String email;
     private String content;
-    private Date DATE;
+    private Date date;
     private int star;
     //private LongBlob image;
     public static ReviewDto createReviewDto(Review review) {
@@ -26,8 +34,13 @@ public class ReviewDto {
                 review.getRstId(),
                 review.getEmail(),
                 review.getContent(), // 머지 후 에러 안날듯!
-                review.getDATE(),
+                review.getDate(),
                 review.getStar()
         );
+    }
+
+    public Date setNow() {
+        Date now = new Date();
+        return now;
     }
 }
