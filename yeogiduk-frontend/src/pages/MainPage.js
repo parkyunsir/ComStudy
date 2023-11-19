@@ -1,7 +1,13 @@
 import React from 'react';
+import HeaderContainer from '../containers/common/HeaderContainer';
 
 const MainPage = () => {
-  return <div>메인페이지</div>;
+  return (
+    <>
+      <HeaderContainer />
+      <div>메인페이지</div>
+    </>
+  );
 };
 
-export default MainPage.js
+export default MainPage;
