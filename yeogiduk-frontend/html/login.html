@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="/YeoGiDuk/yeogiduk-frontend/css/login.css">
+</head>
+
+<body>
+	<div id="login">
+		<div id="loginbox">
+			<svg class="loginbox_shadow">
+				<rect id="loginbox_shadow" rx="24" ry="24" x="0" y="0" width="640" height="522">
+				</rect>
+			</svg>
+			<div id="logo">
+				<img src="/YeoGiDuk/yeogiduk-frontend/image/logo.svg" alt="yeogiduk logo"/>
+			</div>
+			<div id="loginbox_header">
+				<span>로그인이 필요합니다!</span>
+			</div>
+			<div id="loginbox_text">
+				<span>본 서비스는 덕성여자대학교 학생들만 이용할 수 있습니다</span>
+			</div>
+			<div id="loginbox_id">
+				<svg class="loginbox_id_design">
+					<rect id="loginbox_id_design" rx="8" ry="8" x="0" y="0" width="540" height="60">
+					</rect>
+				</svg>
+				<div id="loginbox_id_text">
+					<span>덕성여자대학교 이메일</span>
+				</div>
+			</div>
+			<div onclick="application.goToTargetView(event)" id="findpassword_text">
+				<span>비밀번호를 잊으셨나요?</span>
+			</div>
+			<div id="loginbox_pw">
+				<svg class="loginbox_pw_design">
+					<rect id="loginbox_pw_design" rx="8" ry="8" x="0" y="0" width="540" height="60">
+					</rect>
+				</svg>
+				<div id="loginbox_pw_text">
+					<span>비밀번호</span>
+				</div>
+				<div id="loginbox_pw_appear">
+					<span>표시</span>
+				</div>
+			</div>
+			<div onclick="application.goToTargetView(event)" id="login_button">
+				<svg class="login_button_design">
+					<rect id="login_button_design" rx="28" ry="28" x="0" y="0" width="540" height="60">
+					</rect>
+				</svg>
+				<div id="login_button_text">
+					<span>로그인</span>
+				</div>
+			</div>
+			<div id="signup_intro_text">
+				<span>여기덕이 처음이신가요?</span>
+			</div>
+			<div onclick="application.goToTargetView(event)" id="signup_text">
+				<span>회원 가입</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
