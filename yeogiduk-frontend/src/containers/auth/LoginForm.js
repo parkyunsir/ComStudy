@@ -3,17 +3,17 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {changeField, initializeForm, login} from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
-import {check} from '../../modules/user';
+//import {check} from '../../modules/student';
 
 const LoginForm = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {form, auth, authError, user} = useSelector(({auth, user}) => ({
+  const {form, auth, authError, student} = useSelector(({auth, student}) => ({
     form: auth.login,
     auth: auth.auth,
     authError: auth.authError,
-    user: user.user
+    student: student.student
   }));
   
   // 인풋 변경 이벤트 핸들러
@@ -31,8 +31,8 @@ const LoginForm = () => {
   // 폼 등록 이벤트 핸들러
   const onSubmit = e => {
     e.preventDefault();
-    const {username, password} = form;
-    dispatch(login({username, password}));
+    const {email, password} = form;
+    dispatch(login({email, password}));
   };
 
   // 컴포넌트가 처음 렌더링될 때 form을 초기화함
@@ -49,20 +49,20 @@ const LoginForm = () => {
     }
     if(auth) {
       console.log('로그인 성공');
-      dispatch(check());
+      //dispatch(check());
     }
   }, [auth, authError, dispatch]);
 
   useEffect(() => {
-    if(user) {
+    if(student) {
       navigate('/');
       try {
-        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('student', JSON.stringify(student));
       } catch (e) {
         console.log('localStorage is not working');
       }
     }
-  }, [navigate, user]);
+  }, [navigate, student]);
 
   return (
     <AuthForm

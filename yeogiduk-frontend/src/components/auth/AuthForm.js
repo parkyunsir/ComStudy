@@ -12,7 +12,7 @@ const AuthFormBlock = styled.div`
 
 const StyledInput = styled.input`
   margin-top: 2rem;
-  width: 540px;
+  width: 530px;
   height: 60px;
   overflow: visible;
   fill: rgba(255,255,255,1);
@@ -29,9 +29,12 @@ const Button = styled.button`
   background: rgba(207,80,111,1);
   border-radius: 50px;
   margin-bottom: 1rem;
-  font-size: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 100%;
+  font-size: 1.125rem;
   font-weight: bold;
-  padding: 0.25rem 1rem;
+  //padding: 0.25rem 1rem;
   color: white;
   outline: none;
   cursor: pointer;
@@ -39,11 +42,6 @@ const Button = styled.button`
     background: rgba(207,45,111,1);
   }
 `;
-
-const textMap = {
-  login: '로그인',
-  register: '회원가입',
-};
 
 // 에러를 보여줌
 const ErrorMessage = styled.div`
@@ -88,19 +86,28 @@ const FindPassword = styled(Link)`
   color: rgba(207, 80, 111, 1);
 `;
 
+const textMap = {
+  login: '로그인',
+  join: '회원가입',
+};
+
 const StudentForm = ({type, form, onChange, onSubmit, error}) => {
   const text = textMap[type];
   return (
     <AuthFormBlock>
-      <LoginBoxHeader>로그인이 필요합니다!</LoginBoxHeader>
+      {type === 'login' ? (
+          <LoginBoxHeader>로그인이 필요합니다!</LoginBoxHeader>
+        ) : (
+          <LoginBoxHeader>회원가입</LoginBoxHeader>
+        )}
       <LoginBoxText>본 서비스는 덕성여자대학교 학생들만 이용할 수 있습니다</LoginBoxText>
       <form onSubmit={onSubmit}>
         <StyledInput 
-          autoComplete="username" 
-          name="username" 
+          autoComplete="email" 
+          name="email" 
           placeholder="덕성여자대학교 이메일"
           onChange={onChange}
-          value={form.username} 
+          value={form.email} 
         />
         <StyledInput
           autoComplete="new-password"
@@ -110,7 +117,7 @@ const StudentForm = ({type, form, onChange, onSubmit, error}) => {
           onChange={onChange}
           value={form.password}
         />
-        {type === 'register' && (
+        {type === 'join' && (
           <StyledInput
             autoComplete="new-password"
             name="passwordConfirm"
