@@ -16,7 +16,7 @@ public class ReviewApiController {
     private ReviewService reviewService;
 
     // 1. 댓글 조회
-    @GetMapping("/api/restaurants/{rstId}/reviews")
+    @GetMapping("/restaurant/{rstId}/reviews")
     public ResponseEntity<List<ReviewDto>> reviews(@PathVariable Long rstId){
 
         // 서비스에 위임
@@ -27,7 +27,7 @@ public class ReviewApiController {
     }
 
     // 2. 댓글 생성
-    @PostMapping("/api/restaurant/{rstId}/reviews")
+    @PostMapping("/restaurant/{rstId}/reviews")
     public ResponseEntity<ReviewDto> create(@PathVariable Long rstId,
                                              @RequestBody ReviewDto dto) {
         // 서비스에 위임
