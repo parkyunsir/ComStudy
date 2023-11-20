@@ -9,7 +9,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer, {rootSaga} from './modules';
-import {tempSetStudent} from './modules/student';
+import {tempSetStudent} from './modules/auth';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
@@ -19,11 +19,17 @@ const store = createStore(
 
 function loadStudent() {
   try {
-    const student = localStorage.getItem('student');
-    if(!student) return; // 로그인 상태가 아니라면 아무것도 않마
-
+    const studentStr = localStorage.getItem('student');
+    if(!studentStr) return; // 로그인 상태가 아니라면 아무것도 안함
+    
+    const studentInfo = studentStr.split('","password":"');
+    const email = studentInfo[0].substring(10);
+    const password = studentInfo[1].substring(0, studentInfo[1].length-3);
+    const student = {
+      email: email,
+      password: password
+    }
     store.dispatch(tempSetStudent(student));
-    //store.dispatch(check());
   } catch(e) {
     console.log('localStorage is not working');
   }

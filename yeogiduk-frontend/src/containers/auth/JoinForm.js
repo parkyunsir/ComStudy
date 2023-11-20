@@ -2,18 +2,17 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {changeField, initializeForm, join} from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
-//import {check} from '../../modules/student';
 import {useNavigate} from 'react-router-dom';
 
 const JoinForm = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {form, auth, authError, student} = useSelector(({auth, student}) => ({
+  const {form, auth, authError, student} = useSelector(({auth}) => ({
     form: auth.join,
     auth: auth.auth,
     authError: auth.authError,
-    student: student.student
+    student: auth.student
   }));
   
   // 인풋 변경 이벤트 핸들러
@@ -35,6 +34,10 @@ const JoinForm = () => {
     // 하나라도 비어 있다면
     if([email, password, passwordConfirm].includes('')) {
       setError('빈 칸을 모두 입력하세요.');
+      return;
+    }
+    if(!(email.endsWith("@duksung.ac.kr"))) {
+      setError('학교 이메일로 가입해야 합니다.');
       return;
     }
     // 비밀번호가 일치하지 않는다면
@@ -66,22 +69,17 @@ const JoinForm = () => {
     }
     if(auth) {
       console.log('회원가입 성공');
-      console.log(auth);
-      //dispatch(check());
-    }
-  }, [auth, authError, dispatch]);
-
-  // user 값이 잘 설정되었는지 확인
-  useEffect(() => {
-    if(student) {
-      navigate('/'); // 홈 화면으로 이동
-      try {
-        localStorage.setItem('student', JSON.stringify(student));
-      } catch (e) {
-        console.log('localStorage is not working');
+      if(student) {
+        navigate('/');
+        try {
+          localStorage.setItem('student', JSON.stringify(student));
+          dispatch(initializeForm('login'));
+        } catch (e) {
+          console.log('localStorage is not working');
+        }
       }
     }
-  }, [navigate, student]);
+  }, [auth, authError, dispatch, navigate, student]);
 
   return (
     <AuthForm
