@@ -3,17 +3,16 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {changeField, initializeForm, login} from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
-//import {check} from '../../modules/student';
 
 const LoginForm = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {form, auth, authError, student} = useSelector(({auth, student}) => ({
+  const {form, auth, authError, student} = useSelector(({auth}) => ({
     form: auth.login,
     auth: auth.auth,
     authError: auth.authError,
-    student: student.student
+    student: auth.student
   }));
   
   // 인풋 변경 이벤트 핸들러
@@ -45,24 +44,21 @@ const LoginForm = () => {
       console.log('오류 발생');
       console.log(authError);
       setError('로그인 실패');
-      return;
+      dispatch(initializeForm('login'));
     }
     if(auth) {
       console.log('로그인 성공');
-      //dispatch(check());
-    }
-  }, [auth, authError, dispatch]);
-
-  useEffect(() => {
-    if(student) {
-      navigate('/');
-      try {
-        localStorage.setItem('student', JSON.stringify(student));
-      } catch (e) {
-        console.log('localStorage is not working');
+      if(student) {
+        navigate('/');
+        try {
+          localStorage.setItem('student', JSON.stringify(student));
+          dispatch(initializeForm('login'));
+        } catch (e) {
+          console.log('localStorage is not working');
+        }
       }
     }
-  }, [navigate, student]);
+  }, [auth, authError, dispatch, navigate, student]);
 
   return (
     <AuthForm

@@ -41,14 +41,14 @@ public class SecurityConfig {
                 .authorizeHttpRequests(request -> request
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
                         .anyRequest().permitAll()
-                )/*.formLogin(login -> login
-                        .loginPage("/student/login")
+                ).formLogin(login -> login
+                        .loginPage("/login")
                         .defaultSuccessUrl("/", true)
                         .permitAll()
                 ).logout(logout -> logout
                         .logoutSuccessUrl("/")
                         .invalidateHttpSession(true)
-                )*/;
+                );
         http.addFilterAfter(
                 jwtAuthenticationFilter,
                 CorsFilter.class
