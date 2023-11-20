@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import Header from '../../components/common/Header';
-import {logout} from '../../modules/student';
+import {logout} from '../../modules/auth';
 
 const HeaderContainer = () => {
-  const {student} = useSelector(({student}) => ({student: student.student}));
+  const {student} = useSelector(({auth}) => ({student: auth.student}));
   const dispatch = useDispatch();
   const onLogout = () => {
     dispatch(logout());
   }
+  useEffect(() => {
+    if(student) {
+      console.log(student.email);
+    }
+  });
+
   return <Header student={student} onLogout={onLogout} />;
 };
 

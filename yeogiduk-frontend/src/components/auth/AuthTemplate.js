@@ -7,7 +7,7 @@ import LogoImage from '../../lib/image/logo.svg';
 const AuthTemplateBlock = styled.div`
   position: absolute;
   left: 0;
-  top: 4rem;
+  top: 5rem;
   bottom: 0;
   right: 0;
   background: #f1f3f5;
