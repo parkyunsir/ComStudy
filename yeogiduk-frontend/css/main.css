@@ -83,7 +83,7 @@
 	top: 20px;
 	--web-animation: fadein 0.30000001192092896s ease-out;
 	--web-action-type: page;
-	--web-action-target: main_Rlist.html;
+	--web-action-target: main_Rlist_.html;
 	cursor: pointer;
 }
 #mypage_icon {
@@ -142,7 +142,7 @@
 	top: 29.272px;
 	overflow: visible;
 }
-#logo_bq {
+#logo_bs {
 	position: absolute;
 	width: 162.283px;
 	height: 41.455px;
@@ -354,7 +354,7 @@
 #main_list {
 	position: absolute;
 	width: 1272px;
-	height: 1291.5px;
+	height: 1391.5px;
 	left: 339px;
 	top: 601.5px;
 	overflow: visible;
@@ -545,10 +545,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_cr {
+#heart_icon_ct {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_cr {
+.heart_icon_ct {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -579,10 +579,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_cu {
+#review_icon_cw {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_cu {
+.review_icon_cw {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -603,7 +603,7 @@
 	left: 0px;
 	top: 0.441px;
 }
-#list_post_restaurant_cw {
+#list_post_restaurant_cy {
 	position: absolute;
 	width: 300px;
 	height: 350px;
@@ -611,7 +611,7 @@
 	top: 25px;
 	overflow: visible;
 }
-#restuarant_image_cx {
+#restuarant_image_cz {
 	position: absolute;
 	width: 300px;
 	height: 240px;
@@ -620,10 +620,10 @@
 	overflow: visible;
 	padding: 0px;
 }
-#restaurant_image_area_cy {
+#restaurant_image_area_c {
 	fill: rgba(197,197,197,1);
 }
-.restaurant_image_area_cy {
+.restaurant_image_area_c {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -631,7 +631,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restaurant_content_cz {
+#restaurant_content_c {
 	position: absolute;
 	width: 300px;
 	height: 110px;
@@ -731,7 +731,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_c {
+#heart_icon_da {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -739,11 +739,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_c {
+#heart_area_db {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_c {
+.heart_area_db {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -751,10 +751,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_da {
+#heart_icon_dc {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_da {
+.heart_icon_dc {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -763,7 +763,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_db {
+#comment_num_dd {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -777,7 +777,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_dc {
+#review_icon_de {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -785,10 +785,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_dd {
+#review_icon_df {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_dd {
+.review_icon_df {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -797,11 +797,11 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#review_area_de {
+#review_area_dg {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.review_area_de {
+.review_area_dg {
 	position: absolute;
 	overflow: visible;
 	width: 12.784px;
@@ -809,7 +809,7 @@
 	left: 0px;
 	top: 0.441px;
 }
-#list_post_restaurant_df {
+#list_post_restaurant_dh {
 	position: absolute;
 	width: 300px;
 	height: 350px;
@@ -817,7 +817,7 @@
 	top: 25px;
 	overflow: visible;
 }
-#restuarant_image_dg {
+#restuarant_image_di {
 	position: absolute;
 	width: 300px;
 	height: 240px;
@@ -826,10 +826,10 @@
 	overflow: visible;
 	padding: 0px;
 }
-#restaurant_image_area_dh {
+#restaurant_image_area_dj {
 	fill: rgba(197,197,197,1);
 }
-.restaurant_image_area_dh {
+.restaurant_image_area_dj {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -837,7 +837,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restaurant_content_di {
+#restaurant_content_dk {
 	position: absolute;
 	width: 300px;
 	height: 110px;
@@ -845,11 +845,11 @@
 	top: 240px;
 	overflow: visible;
 }
-#list_post_restaurant_area_dj {
+#list_post_restaurant_area_dl {
 	opacity: 0;
 	fill: rgba(255,255,255,1);
 }
-.list_post_restaurant_area_dj {
+.list_post_restaurant_area_dl {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -857,7 +857,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restautant_name_dk {
+#restautant_name_dm {
 	position: absolute;
 	width: 86px;
 	height: 30px;
@@ -865,7 +865,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rname_dl {
+#Rname_dn {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -879,7 +879,7 @@
 	font-size: 25px;
 	color: rgba(54,54,54,1);
 }
-#restaurant_rate_dm {
+#restaurant_rate_do {
 	position: absolute;
 	width: 39px;
 	height: 30px;
@@ -887,7 +887,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rrate_dn {
+#Rrate_dp {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -901,7 +901,7 @@
 	font-size: 25px;
 	color: rgba(207,80,111,1);
 }
-#restaurant_type_do {
+#restaurant_type_dq {
 	position: absolute;
 	width: 31px;
 	height: 21px;
@@ -909,7 +909,7 @@
 	top: 52px;
 	overflow: visible;
 }
-#Rtype_dp {
+#Rtype_dr {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -923,7 +923,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_dq {
+#heart_num_ds {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -937,7 +937,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_dr {
+#heart_icon_dt {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -945,11 +945,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_ds {
+#heart_area_du {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_ds {
+.heart_area_du {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -957,10 +957,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_dt {
+#heart_icon_dv {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_dt {
+.heart_icon_dv {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -969,7 +969,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_du {
+#comment_num_dw {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -983,7 +983,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_dv {
+#review_icon_dx {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -991,10 +991,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_dw {
+#review_icon_dy {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_dw {
+.review_icon_dy {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -1003,11 +1003,11 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#review_area_dx {
+#review_area_dz {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.review_area_dx {
+.review_area_dz {
 	position: absolute;
 	overflow: visible;
 	width: 12.784px;
@@ -1015,7 +1015,7 @@
 	left: 0px;
 	top: 0.441px;
 }
-#list_post_restaurant_dy {
+#list_post_restaurant_d {
 	position: absolute;
 	width: 300px;
 	height: 350px;
@@ -1023,7 +1023,7 @@
 	top: 25px;
 	overflow: visible;
 }
-#restuarant_image_dz {
+#restuarant_image_d {
 	position: absolute;
 	width: 300px;
 	height: 240px;
@@ -1115,7 +1115,7 @@
 	top: 52px;
 	overflow: visible;
 }
-#Rtype_d {
+#Rtype_ea {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -1129,7 +1129,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_d {
+#heart_num_eb {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -1143,7 +1143,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_ea {
+#heart_icon_ec {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -1151,11 +1151,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_eb {
+#heart_area_ed {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_eb {
+.heart_area_ed {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -1163,10 +1163,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_ec {
+#heart_icon_ee {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_ec {
+.heart_icon_ee {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -1175,7 +1175,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_ed {
+#comment_num_ef {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -1189,7 +1189,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_ee {
+#review_icon_eg {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -1197,10 +1197,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_ef {
+#review_icon_eh {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_ef {
+.review_icon_eh {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -1209,11 +1209,11 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#review_area_eg {
+#review_area_ei {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.review_area_eg {
+.review_area_ei {
 	position: absolute;
 	overflow: visible;
 	width: 12.784px;
@@ -1371,15 +1371,15 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#main_list_post_et {
+#main_list_post_ev {
 	position: absolute;
 	width: 1272px;
 	height: 430.5px;
 	left: 0px;
-	top: 430.5px;
+	top: 480.5px;
 	overflow: visible;
 }
-#list_post_eu {
+#list_post_ew {
 	mix-blend-mode: normal;
 	position: absolute;
 	width: 1150px;
@@ -1388,7 +1388,7 @@
 	top: 30.5px;
 	overflow: hidden;
 }
-#list_post_inner_ev {
+#list_post_inner_ex {
 	position: absolute;
 	width: 1290px;
 	height: 400px;
@@ -1396,11 +1396,11 @@
 	top: 0px;
 	overflow: visible;
 }
-#list_post_content_area_ew {
+#list_post_content_area_ey {
 	opacity: 0;
 	fill: rgba(229,229,229,1);
 }
-.list_post_content_area_ew {
+.list_post_content_area_ey {
 	overflow: visible;
 	position: absolute;
 	width: 1180px;
@@ -1409,7 +1409,7 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#list_post_restaurant_ex {
+#list_post_restaurant_ez {
 	position: absolute;
 	width: 300px;
 	height: 350px;
@@ -1417,7 +1417,7 @@
 	top: 25px;
 	overflow: visible;
 }
-#restuarant_image_ey {
+#restuarant_image_e {
 	position: absolute;
 	width: 300px;
 	height: 240px;
@@ -1426,10 +1426,10 @@
 	overflow: visible;
 	padding: 0px;
 }
-#restaurant_image_area_ez {
+#restaurant_image_area_e {
 	fill: rgba(197,197,197,1);
 }
-.restaurant_image_area_ez {
+.restaurant_image_area_e {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -1523,7 +1523,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_e {
+#heart_num_fa {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -1537,7 +1537,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_e {
+#heart_icon_fb {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -1545,11 +1545,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_fa {
+#heart_area_fc {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_fa {
+.heart_area_fc {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -1557,10 +1557,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_fb {
+#heart_icon_fd {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_fb {
+.heart_icon_fd {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -1569,7 +1569,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_fc {
+#comment_num_fe {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -1583,7 +1583,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_fd {
+#review_icon_ff {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -1591,10 +1591,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_fe {
+#review_icon_fg {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_fe {
+.review_icon_fg {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -1603,11 +1603,11 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#review_area_ff {
+#review_area_fh {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.review_area_ff {
+.review_area_fh {
 	position: absolute;
 	overflow: visible;
 	width: 12.784px;
@@ -1615,7 +1615,7 @@
 	left: 0px;
 	top: 0.441px;
 }
-#list_post_restaurant_fg {
+#list_post_restaurant_fi {
 	position: absolute;
 	width: 300px;
 	height: 350px;
@@ -1623,7 +1623,7 @@
 	top: 25px;
 	overflow: visible;
 }
-#restuarant_image_fh {
+#restuarant_image_fj {
 	position: absolute;
 	width: 300px;
 	height: 240px;
@@ -1632,10 +1632,10 @@
 	overflow: visible;
 	padding: 0px;
 }
-#restaurant_image_area_fi {
+#restaurant_image_area_fk {
 	fill: rgba(197,197,197,1);
 }
-.restaurant_image_area_fi {
+.restaurant_image_area_fk {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -1643,7 +1643,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restaurant_content_fj {
+#restaurant_content_fl {
 	position: absolute;
 	width: 300px;
 	height: 110px;
@@ -1651,11 +1651,11 @@
 	top: 240px;
 	overflow: visible;
 }
-#list_post_restaurant_area_fk {
+#list_post_restaurant_area_fm {
 	opacity: 0;
 	fill: rgba(255,255,255,1);
 }
-.list_post_restaurant_area_fk {
+.list_post_restaurant_area_fm {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -1663,7 +1663,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restautant_name_fl {
+#restautant_name_fn {
 	position: absolute;
 	width: 86px;
 	height: 30px;
@@ -1671,7 +1671,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rname_fm {
+#Rname_fo {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -1685,7 +1685,7 @@
 	font-size: 25px;
 	color: rgba(54,54,54,1);
 }
-#restaurant_rate_fn {
+#restaurant_rate_fp {
 	position: absolute;
 	width: 39px;
 	height: 30px;
@@ -1693,7 +1693,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rrate_fo {
+#Rrate_fq {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -1707,7 +1707,7 @@
 	font-size: 25px;
 	color: rgba(207,80,111,1);
 }
-#restaurant_type_fp {
+#restaurant_type_fr {
 	position: absolute;
 	width: 31px;
 	height: 21px;
@@ -1715,7 +1715,7 @@
 	top: 52px;
 	overflow: visible;
 }
-#Rtype_fq {
+#Rtype_fs {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -1729,7 +1729,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_fr {
+#heart_num_ft {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -1743,7 +1743,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_fs {
+#heart_icon_fu {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -1751,11 +1751,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_ft {
+#heart_area_fv {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_ft {
+.heart_area_fv {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -1763,10 +1763,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_fu {
+#heart_icon_fw {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_fu {
+.heart_icon_fw {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -1775,7 +1775,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_fv {
+#comment_num_fx {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -1789,7 +1789,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_fw {
+#review_icon_fy {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -1797,10 +1797,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_fx {
+#review_icon_fz {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_fx {
+.review_icon_fz {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -1809,11 +1809,11 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#review_area_fy {
+#review_area_f {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.review_area_fy {
+.review_area_f {
 	position: absolute;
 	overflow: visible;
 	width: 12.784px;
@@ -1821,7 +1821,7 @@
 	left: 0px;
 	top: 0.441px;
 }
-#list_post_restaurant_fz {
+#list_post_restaurant_f {
 	position: absolute;
 	width: 300px;
 	height: 350px;
@@ -1913,7 +1913,7 @@
 	font-size: 25px;
 	color: rgba(207,80,111,1);
 }
-#restaurant_type_f {
+#restaurant_type_ga {
 	position: absolute;
 	width: 31px;
 	height: 21px;
@@ -1921,7 +1921,7 @@
 	top: 52px;
 	overflow: visible;
 }
-#Rtype_f {
+#Rtype_gb {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -1935,7 +1935,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_ga {
+#heart_num_gc {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -1949,7 +1949,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_gb {
+#heart_icon_gd {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -1957,11 +1957,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_gc {
+#heart_area_ge {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_gc {
+.heart_area_ge {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -1969,10 +1969,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_gd {
+#heart_icon_gf {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_gd {
+.heart_icon_gf {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -1981,7 +1981,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_ge {
+#comment_num_gg {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -1995,7 +1995,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_gf {
+#review_icon_gh {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -2003,10 +2003,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_gg {
+#review_icon_gi {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_gg {
+.review_icon_gi {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -2015,11 +2015,11 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#review_area_gh {
+#review_area_gj {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.review_area_gh {
+.review_area_gj {
 	position: absolute;
 	overflow: visible;
 	width: 12.784px;
@@ -2027,7 +2027,7 @@
 	left: 0px;
 	top: 0.441px;
 }
-#list_post_restaurant_gi {
+#list_post_restaurant_gk {
 	position: absolute;
 	width: 300px;
 	height: 350px;
@@ -2035,7 +2035,7 @@
 	top: 25px;
 	overflow: visible;
 }
-#restuarant_image_gj {
+#restuarant_image_gl {
 	position: absolute;
 	width: 300px;
 	height: 240px;
@@ -2044,10 +2044,10 @@
 	overflow: visible;
 	padding: 0px;
 }
-#restaurant_image_area_gk {
+#restaurant_image_area_gm {
 	fill: rgba(197,197,197,1);
 }
-.restaurant_image_area_gk {
+.restaurant_image_area_gm {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -2055,7 +2055,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restaurant_content_gl {
+#restaurant_content_gn {
 	position: absolute;
 	width: 300px;
 	height: 110px;
@@ -2063,11 +2063,11 @@
 	top: 240px;
 	overflow: visible;
 }
-#list_post_restaurant_area_gm {
+#list_post_restaurant_area_go {
 	opacity: 0;
 	fill: rgba(255,255,255,1);
 }
-.list_post_restaurant_area_gm {
+.list_post_restaurant_area_go {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -2075,7 +2075,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restautant_name_gn {
+#restautant_name_gp {
 	position: absolute;
 	width: 86px;
 	height: 30px;
@@ -2083,7 +2083,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rname_go {
+#Rname_gq {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2097,7 +2097,7 @@
 	font-size: 25px;
 	color: rgba(54,54,54,1);
 }
-#restaurant_rate_gp {
+#restaurant_rate_gr {
 	position: absolute;
 	width: 39px;
 	height: 30px;
@@ -2105,7 +2105,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rrate_gq {
+#Rrate_gs {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2119,7 +2119,7 @@
 	font-size: 25px;
 	color: rgba(207,80,111,1);
 }
-#restaurant_type_gr {
+#restaurant_type_gt {
 	position: absolute;
 	width: 31px;
 	height: 21px;
@@ -2127,7 +2127,7 @@
 	top: 52px;
 	overflow: visible;
 }
-#Rtype_gs {
+#Rtype_gu {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2141,7 +2141,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_gt {
+#heart_num_gv {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -2155,7 +2155,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_gu {
+#heart_icon_gw {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -2163,11 +2163,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_gv {
+#heart_area_gx {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_gv {
+.heart_area_gx {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -2175,10 +2175,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_gw {
+#heart_icon_gy {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_gw {
+.heart_icon_gy {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -2187,7 +2187,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_gx {
+#comment_num_gz {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -2201,7 +2201,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_gy {
+#review_icon_g {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -2209,10 +2209,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_gz {
+#review_icon_ha {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_gz {
+.review_icon_ha {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -2315,11 +2315,11 @@
 	top: 199.5px;
 	overflow: visible;
 }
-#right_icon_area_g {
+#right_icon_area_ha {
 	opacity: 0;
 	fill: rgba(252,252,252,1);
 }
-.right_icon_area_g {
+.right_icon_area_ha {
 	position: absolute;
 	overflow: visible;
 	width: 31px;
@@ -2327,7 +2327,7 @@
 	left: 0px;
 	top: 0px;
 }
-#right_icon_g {
+#right_icon_hb {
 	fill: rgba(0,0,0,0);
 	stroke: rgba(155,155,155,1);
 	stroke-width: 2px;
@@ -2336,7 +2336,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.right_icon_g {
+.right_icon_hb {
 	overflow: visible;
 	position: absolute;
 	width: 17.737px;
@@ -2345,7 +2345,7 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#list_left_icon_ha {
+#list_left_icon_hc {
 	position: absolute;
 	width: 31px;
 	height: 31px;
@@ -2353,11 +2353,11 @@
 	top: 199.5px;
 	overflow: visible;
 }
-#left_icon_area_hb {
+#left_icon_area_hd {
 	opacity: 0;
 	fill: rgba(252,252,252,1);
 }
-.left_icon_area_hb {
+.left_icon_area_hd {
 	position: absolute;
 	overflow: visible;
 	width: 31px;
@@ -2365,7 +2365,7 @@
 	left: 0px;
 	top: 0px;
 }
-#left_icon_hc {
+#left_icon_he {
 	fill: rgba(0,0,0,0);
 	stroke: rgba(155,155,155,1);
 	stroke-width: 2px;
@@ -2374,7 +2374,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.left_icon_hc {
+.left_icon_he {
 	overflow: visible;
 	position: absolute;
 	width: 17.737px;
@@ -2383,15 +2383,15 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#main_list_post_hd {
+#main_list_post_hf {
 	position: absolute;
 	width: 1272px;
 	height: 430.5px;
 	left: 0px;
-	top: 861px;
+	top: 961px;
 	overflow: visible;
 }
-#list_post_he {
+#list_post_hg {
 	mix-blend-mode: normal;
 	position: absolute;
 	width: 1150px;
@@ -2400,7 +2400,7 @@
 	top: 30.5px;
 	overflow: hidden;
 }
-#list_post_inner_hf {
+#list_post_inner_hh {
 	position: absolute;
 	width: 1290px;
 	height: 400px;
@@ -2408,11 +2408,11 @@
 	top: 0px;
 	overflow: visible;
 }
-#list_post_content_area_hg {
+#list_post_content_area_hi {
 	opacity: 0;
 	fill: rgba(229,229,229,1);
 }
-.list_post_content_area_hg {
+.list_post_content_area_hi {
 	overflow: visible;
 	position: absolute;
 	width: 1180px;
@@ -2421,7 +2421,7 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#list_post_restaurant_hh {
+#list_post_restaurant_hj {
 	position: absolute;
 	width: 300px;
 	height: 350px;
@@ -2429,7 +2429,7 @@
 	top: 25px;
 	overflow: visible;
 }
-#restuarant_image_hi {
+#restuarant_image_hk {
 	position: absolute;
 	width: 300px;
 	height: 240px;
@@ -2438,10 +2438,10 @@
 	overflow: visible;
 	padding: 0px;
 }
-#restaurant_image_area_hj {
+#restaurant_image_area_hl {
 	fill: rgba(197,197,197,1);
 }
-.restaurant_image_area_hj {
+.restaurant_image_area_hl {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -2449,7 +2449,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restaurant_content_hk {
+#restaurant_content_hm {
 	position: absolute;
 	width: 300px;
 	height: 110px;
@@ -2457,11 +2457,11 @@
 	top: 240px;
 	overflow: visible;
 }
-#list_post_restaurant_area_hl {
+#list_post_restaurant_area_hn {
 	opacity: 0;
 	fill: rgba(255,255,255,1);
 }
-.list_post_restaurant_area_hl {
+.list_post_restaurant_area_hn {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -2469,7 +2469,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restautant_name_hm {
+#restautant_name_ho {
 	position: absolute;
 	width: 86px;
 	height: 30px;
@@ -2477,7 +2477,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rname_hn {
+#Rname_hp {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2491,7 +2491,7 @@
 	font-size: 25px;
 	color: rgba(54,54,54,1);
 }
-#restaurant_rate_ho {
+#restaurant_rate_hq {
 	position: absolute;
 	width: 39px;
 	height: 30px;
@@ -2499,7 +2499,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rrate_hp {
+#Rrate_hr {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2513,7 +2513,7 @@
 	font-size: 25px;
 	color: rgba(207,80,111,1);
 }
-#restaurant_type_hq {
+#restaurant_type_hs {
 	position: absolute;
 	width: 31px;
 	height: 21px;
@@ -2521,7 +2521,7 @@
 	top: 52px;
 	overflow: visible;
 }
-#Rtype_hr {
+#Rtype_ht {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2535,7 +2535,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_hs {
+#heart_num_hu {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -2549,7 +2549,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_ht {
+#heart_icon_hv {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -2557,11 +2557,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_hu {
+#heart_area_hw {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_hu {
+.heart_area_hw {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -2569,10 +2569,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_hv {
+#heart_icon_hx {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_hv {
+.heart_icon_hx {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -2581,7 +2581,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_hw {
+#comment_num_hy {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -2595,7 +2595,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_hx {
+#review_icon_hz {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -2603,10 +2603,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_hy {
+#review_icon_h {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_hy {
+.review_icon_h {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -2615,11 +2615,11 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#review_area_hz {
+#review_area_h {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.review_area_hz {
+.review_area_h {
 	position: absolute;
 	overflow: visible;
 	width: 12.784px;
@@ -2705,7 +2705,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rrate_h {
+#Rrate_ia {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2719,7 +2719,7 @@
 	font-size: 25px;
 	color: rgba(207,80,111,1);
 }
-#restaurant_type_h {
+#restaurant_type_ib {
 	position: absolute;
 	width: 31px;
 	height: 21px;
@@ -2727,7 +2727,7 @@
 	top: 52px;
 	overflow: visible;
 }
-#Rtype_ia {
+#Rtype_ic {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2741,7 +2741,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_ib {
+#heart_num_id {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -2755,7 +2755,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_ic {
+#heart_icon_ie {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -2763,11 +2763,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_id {
+#heart_area_if {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_id {
+.heart_area_if {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -2775,10 +2775,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_ie {
+#heart_icon_ig {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_ie {
+.heart_icon_ig {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -2787,7 +2787,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_if {
+#comment_num_ih {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -2801,7 +2801,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_ig {
+#review_icon_ii {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -2809,10 +2809,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_ih {
+#review_icon_ij {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_ih {
+.review_icon_ij {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -2821,11 +2821,11 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#review_area_ii {
+#review_area_ik {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.review_area_ii {
+.review_area_ik {
 	position: absolute;
 	overflow: visible;
 	width: 12.784px;
@@ -2833,7 +2833,7 @@
 	left: 0px;
 	top: 0.441px;
 }
-#list_post_restaurant_ij {
+#list_post_restaurant_il {
 	position: absolute;
 	width: 300px;
 	height: 350px;
@@ -2841,7 +2841,7 @@
 	top: 25px;
 	overflow: visible;
 }
-#restuarant_image_ik {
+#restuarant_image_im {
 	position: absolute;
 	width: 300px;
 	height: 240px;
@@ -2850,10 +2850,10 @@
 	overflow: visible;
 	padding: 0px;
 }
-#restaurant_image_area_il {
+#restaurant_image_area_in {
 	fill: rgba(197,197,197,1);
 }
-.restaurant_image_area_il {
+.restaurant_image_area_in {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -2861,7 +2861,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restaurant_content_im {
+#restaurant_content_io {
 	position: absolute;
 	width: 300px;
 	height: 110px;
@@ -2869,11 +2869,11 @@
 	top: 240px;
 	overflow: visible;
 }
-#list_post_restaurant_area_in {
+#list_post_restaurant_area_ip {
 	opacity: 0;
 	fill: rgba(255,255,255,1);
 }
-.list_post_restaurant_area_in {
+.list_post_restaurant_area_ip {
 	position: absolute;
 	overflow: visible;
 	width: 300px;
@@ -2881,7 +2881,7 @@
 	left: 0px;
 	top: 0px;
 }
-#restautant_name_io {
+#restautant_name_iq {
 	position: absolute;
 	width: 86px;
 	height: 30px;
@@ -2889,7 +2889,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rname_ip {
+#Rname_ir {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2903,7 +2903,7 @@
 	font-size: 25px;
 	color: rgba(54,54,54,1);
 }
-#restaurant_rate_iq {
+#restaurant_rate_is {
 	position: absolute;
 	width: 39px;
 	height: 30px;
@@ -2911,7 +2911,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rrate_ir {
+#Rrate_it {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2925,7 +2925,7 @@
 	font-size: 25px;
 	color: rgba(207,80,111,1);
 }
-#restaurant_type_is {
+#restaurant_type_iu {
 	position: absolute;
 	width: 31px;
 	height: 21px;
@@ -2933,7 +2933,7 @@
 	top: 52px;
 	overflow: visible;
 }
-#Rtype_it {
+#Rtype_iv {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -2947,7 +2947,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_iu {
+#heart_num_iw {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -2961,7 +2961,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_iv {
+#heart_icon_ix {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -2969,11 +2969,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_iw {
+#heart_area_iy {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_iw {
+.heart_area_iy {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -2981,10 +2981,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_ix {
+#heart_icon_iz {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_ix {
+.heart_icon_iz {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -2993,7 +2993,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_iy {
+#comment_num_i {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -3007,7 +3007,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_iz {
+#review_icon_i {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -3015,10 +3015,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_i {
+#review_icon_ja {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_i {
+.review_icon_ja {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -3095,7 +3095,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rname_i {
+#Rname_ja {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -3109,7 +3109,7 @@
 	font-size: 25px;
 	color: rgba(54,54,54,1);
 }
-#restaurant_rate_i {
+#restaurant_rate_jb {
 	position: absolute;
 	width: 39px;
 	height: 30px;
@@ -3117,7 +3117,7 @@
 	top: 15px;
 	overflow: visible;
 }
-#Rrate_ja {
+#Rrate_jc {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -3131,7 +3131,7 @@
 	font-size: 25px;
 	color: rgba(207,80,111,1);
 }
-#restaurant_type_jb {
+#restaurant_type_jd {
 	position: absolute;
 	width: 31px;
 	height: 21px;
@@ -3139,7 +3139,7 @@
 	top: 52px;
 	overflow: visible;
 }
-#Rtype_jc {
+#Rtype_je {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -3153,7 +3153,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#heart_num_jd {
+#heart_num_jf {
 	left: 23px;
 	top: 91px;
 	position: absolute;
@@ -3167,7 +3167,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#heart_icon_je {
+#heart_icon_jg {
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -3175,11 +3175,11 @@
 	top: 92px;
 	overflow: visible;
 }
-#heart_area_jf {
+#heart_area_jh {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.heart_area_jf {
+.heart_area_jh {
 	position: absolute;
 	overflow: visible;
 	width: 18px;
@@ -3187,10 +3187,10 @@
 	left: 0px;
 	top: 0px;
 }
-#heart_icon_jg {
+#heart_icon_ji {
 	fill: rgba(155,155,155,1);
 }
-.heart_icon_jg {
+.heart_icon_ji {
 	overflow: visible;
 	position: absolute;
 	width: 15.679px;
@@ -3199,7 +3199,7 @@
 	top: 2.698px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#comment_num_jh {
+#comment_num_jj {
 	left: 84.225px;
 	top: 91px;
 	position: absolute;
@@ -3213,7 +3213,7 @@
 	font-size: 16px;
 	color: rgba(155,155,155,1);
 }
-#review_icon_ji {
+#review_icon_jk {
 	position: absolute;
 	width: 13.225px;
 	height: 13.225px;
@@ -3221,10 +3221,10 @@
 	top: 93.888px;
 	overflow: visible;
 }
-#review_icon_jj {
+#review_icon_jl {
 	fill: rgba(155,155,155,1);
 }
-.review_icon_jj {
+.review_icon_jl {
 	overflow: visible;
 	position: absolute;
 	width: 13.225px;
@@ -3233,11 +3233,11 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#review_area_jk {
+#review_area_jm {
 	opacity: 0;
 	fill: rgba(155,155,155,1);
 }
-.review_area_jk {
+.review_area_jm {
 	position: absolute;
 	overflow: visible;
 	width: 12.784px;
@@ -3245,7 +3245,7 @@
 	left: 0px;
 	top: 0.441px;
 }
-#list_header_jl {
+#list_header_jn {
 	position: absolute;
 	width: 1180px;
 	height: 21px;
@@ -3253,7 +3253,7 @@
 	top: 0px;
 	overflow: visible;
 }
-#list_description_jm {
+#list_description_jo {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -3267,7 +3267,7 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#list_detail_jn {
+#list_detail_jp {
 	position: absolute;
 	width: 70px;
 	height: 21px;
@@ -3275,7 +3275,7 @@
 	top: 0px;
 	overflow: visible;
 }
-#detail_text_jo {
+#detail_text_jq {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -3289,11 +3289,11 @@
 	font-size: 18px;
 	color: rgba(54,54,54,1);
 }
-#detail_icon_area_jp {
+#detail_icon_area_jr {
 	opacity: 0;
 	fill: rgba(252,252,252,1);
 }
-.detail_icon_area_jp {
+.detail_icon_area_jr {
 	position: absolute;
 	overflow: visible;
 	width: 13.813px;
@@ -3301,7 +3301,7 @@
 	left: 56.188px;
 	top: 3.83px;
 }
-#detail_icon_jq {
+#detail_icon_js {
 	fill: rgba(0,0,0,0);
 	stroke: rgba(61,61,61,1);
 	stroke-width: 2px;
@@ -3310,7 +3310,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.detail_icon_jq {
+.detail_icon_js {
 	overflow: visible;
 	position: absolute;
 	width: 9.498px;
@@ -3319,7 +3319,7 @@
 	top: 3.474px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#list_right_icon_jr {
+#list_right_icon_jt {
 	position: absolute;
 	width: 31px;
 	height: 31px;
@@ -3327,11 +3327,11 @@
 	top: 199.5px;
 	overflow: visible;
 }
-#right_icon_area_js {
+#right_icon_area_ju {
 	opacity: 0;
 	fill: rgba(252,252,252,1);
 }
-.right_icon_area_js {
+.right_icon_area_ju {
 	position: absolute;
 	overflow: visible;
 	width: 31px;
@@ -3339,7 +3339,7 @@
 	left: 0px;
 	top: 0px;
 }
-#right_icon_jt {
+#right_icon_jv {
 	fill: rgba(0,0,0,0);
 	stroke: rgba(155,155,155,1);
 	stroke-width: 2px;
@@ -3348,7 +3348,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.right_icon_jt {
+.right_icon_jv {
 	overflow: visible;
 	position: absolute;
 	width: 17.737px;
@@ -3357,7 +3357,7 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#list_left_icon_ju {
+#list_left_icon_jw {
 	position: absolute;
 	width: 31px;
 	height: 31px;
@@ -3365,11 +3365,11 @@
 	top: 199.5px;
 	overflow: visible;
 }
-#left_icon_area_jv {
+#left_icon_area_jx {
 	opacity: 0;
 	fill: rgba(252,252,252,1);
 }
-.left_icon_area_jv {
+.left_icon_area_jx {
 	position: absolute;
 	overflow: visible;
 	width: 31px;
@@ -3377,7 +3377,7 @@
 	left: 0px;
 	top: 0px;
 }
-#left_icon_jw {
+#left_icon_jy {
 	fill: rgba(0,0,0,0);
 	stroke: rgba(155,155,155,1);
 	stroke-width: 2px;
@@ -3386,7 +3386,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.left_icon_jw {
+.left_icon_jy {
 	overflow: visible;
 	position: absolute;
 	width: 17.737px;
@@ -3419,7 +3419,7 @@
 	left: 0px;
 	top: 0px;
 }
-#left_icon_jz {
+#left_icon_j {
 	fill: rgba(0,0,0,0);
 	stroke: rgba(155,155,155,1);
 	stroke-width: 2px;
@@ -3428,7 +3428,7 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
-.left_icon_jz {
+.left_icon_j {
 	overflow: visible;
 	position: absolute;
 	width: 17.737px;
@@ -3522,7 +3522,7 @@
 	top: 2.006px;
 	overflow: visible;
 }
-#Text_j {
+#Text_ka {
 	left: 0px;
 	top: 0px;
 	position: absolute;
@@ -3544,10 +3544,10 @@
 	top: 0px;
 	overflow: visible;
 }
-#n_4_ka {
+#n_4_kc {
 	fill: rgba(155,155,155,1);
 }
-.n_4_ka {
+.n_4_kc {
 	overflow: visible;
 	position: absolute;
 	width: 13.713px;
@@ -3556,10 +3556,10 @@
 	top: 0px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#n_5_kb {
+#n_5_kd {
 	fill: rgba(155,155,155,1);
 }
-.n_5_kb {
+.n_5_kd {
 	overflow: visible;
 	position: absolute;
 	width: 22.746px;
@@ -3582,7 +3582,7 @@
 	font-size: 12px;
 	color: rgba(155,155,155,1);
 }
-#futter_text1_kd {
+#futter_text1_kf {
 	left: 0px;
 	top: 163px;
 	position: absolute;
@@ -3596,7 +3596,7 @@
 	font-size: 12px;
 	color: rgba(155,155,155,1);
 }
-#futter_text1_ke {
+#futter_text1_kg {
 	left: 0px;
 	top: 71px;
 	position: absolute;
@@ -3610,7 +3610,7 @@
 	font-size: 12px;
 	color: rgba(155,155,155,1);
 }
-#futter_text1_kf {
+#futter_text1_kh {
 	left: 0px;
 	top: 99px;
 	position: absolute;
@@ -3624,7 +3624,7 @@
 	font-size: 12px;
 	color: rgba(155,155,155,1);
 }
-#futter_text1_kg {
+#futter_text1_ki {
 	left: 0px;
 	top: 127px;
 	position: absolute;
@@ -3638,10 +3638,10 @@
 	font-size: 12px;
 	color: rgba(155,155,155,1);
 }
-#futter_line_kh {
+#futter_line_kj {
 	fill: rgba(229,229,229,1);
 }
-.futter_line_kh {
+.futter_line_kj {
 	position: absolute;
 	overflow: visible;
 	width: 1920px;
@@ -3649,3 +3649,5 @@
 	left: 0px;
 	top: 0px;
 }
+
+
