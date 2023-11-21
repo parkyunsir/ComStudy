@@ -1,5 +1,6 @@
 package com.example.yeogiduk.dto;
 
+import com.example.yeogiduk.entity.Image;
 import com.example.yeogiduk.entity.Review;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -43,4 +44,5 @@ public class ReviewDto {
         Date now = new Date();
         return now;
     }
+
 }

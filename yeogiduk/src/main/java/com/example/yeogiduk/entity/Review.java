@@ -2,11 +2,15 @@ package com.example.yeogiduk.entity;
 
 import com.example.yeogiduk.dto.ReviewDto;
 import jakarta.persistence.*;
+<<<<<<< HEAD
+import lombok.*;
+=======
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+>>>>>>> bd4c7834d133f3ec4133a1c01c77b0f698cccee4
 
 import java.time.DateTimeException;
 import java.time.LocalTime;
@@ -36,6 +40,7 @@ public class Review {
     @Column
     private int star;
 
+
     public static Review createReview(ReviewDto dto, Long rstId) {
         if (dto.getViewId() != 0)
             throw new IllegalArgumentException("댓글 생성 실패! 댓글의 id가 없어야 합니다.");
@@ -44,6 +49,7 @@ public class Review {
         if (dto.getDate() != null)
             throw new IllegalArgumentException("댓글 생성 실패! 날짜는 현재 날짜이므로 date는 없어야 합니다.");
         // 엔티티 생성 및 반환
+
         return new Review(
                 dto.getViewId(),
                 dto.getRstId(),
@@ -54,4 +60,16 @@ public class Review {
         );
 
     }
+
+    ///?????????????????????????????????????????
+
+    public String getOriginFileName() {
+        return "";
+    }
+
+    public String getFullPath() {
+        return "";
+    }
+
+    ///?????????????????????????????????????????
 }
