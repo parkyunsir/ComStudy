@@ -28,7 +28,7 @@ const BannerContainer = styled.div`
 `;
 
 const BannerImage = styled.img`
-  width: 100%;
+  width: auto;
   height: auto;
   display: ${props => (props.isVisible ? 'block' : 'none')};
 `;
@@ -53,12 +53,12 @@ const NextButton = styled.button`
   height: 3rem;
 `;
 
-const MainTemplate = () => {
+const MainBanner = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageHeight, setImageHeight] = useState(0);
   const [resetTimer, setResetTimer] = useState(false);
 
-  const images = ['banner1.png', 'banner2.png', 'banner3.png'];
+  const images = ['main_banner.png', 'gray_banner1.png', 'color_banner1.png'];
   const bannerContainerRef = useRef(null);
 
   // 함수: 다음 이미지로 이동
@@ -98,7 +98,7 @@ const MainTemplate = () => {
     const intervalId = setInterval(() => {
       showNextImage();
       setResetTimer(false);
-    }, 3000);
+    }, 4000);
 
     // 컴포넌트가 언마운트될 때 clearInterval로 인터벌 해제
     return () => clearInterval(intervalId);
@@ -111,9 +111,9 @@ const MainTemplate = () => {
           ref={bannerContainerRef}
           style={{
             transform: `translateX(-${
-              (currentImageIndex * 100) / images.length
+              (currentImageIndex)
             }%)`,
-            width: `${images.length * 100}%`,
+            width: `${images.length}%`,
           }}
         >
           {bannerImages}
@@ -125,4 +125,4 @@ const MainTemplate = () => {
   );
 };
 
-export default MainTemplate;
+export default MainBanner;
