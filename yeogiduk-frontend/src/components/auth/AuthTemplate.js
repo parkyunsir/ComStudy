@@ -7,7 +7,7 @@ import LogoImage from '../../lib/image/logo.svg';
 const AuthTemplateBlock = styled.div`
   position: absolute;
   left: 0;
-  top: 0;
+  top: 5rem;
   bottom: 0;
   right: 0;
   background: #f1f3f5;
@@ -29,7 +29,7 @@ const WhiteBox = styled.div`
   }
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
   padding: 2rem;
-  width: 640px;
+  width: 540px;
   background: white;
   border-radius: 20px;
 `;

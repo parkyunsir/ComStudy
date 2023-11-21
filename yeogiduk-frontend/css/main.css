@@ -1,0 +1,3653 @@
+@charset "UTF-8";
+
+.mediaViewInfo {
+	--web-view-name: main;
+	--web-view-id: main;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-center-vertically: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: main;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#main {
+	position: absolute;
+	width: 1920px;
+	height: 2253px;
+	background-color: rgba(251,251,251,1);
+	overflow: visible;
+	--web-view-name: main;
+	--web-view-id: main;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-center-vertically: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+#banner_size {
+	fill: rgba(255,255,255,1);
+}
+.banner_size {
+	overflow: visible;
+	position: absolute;
+	width: 1920px;
+	height: 400px;
+	left: 0px;
+	top: 142px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#header {
+	position: absolute;
+	width: 1920px;
+	height: 101px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#header_block {
+	fill: rgba(255,255,255,1);
+}
+.header_block {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 101px;
+	left: 0px;
+	top: 0px;
+}
+#header_searchbar {
+	fill: rgba(243,243,243,1);
+}
+.header_searchbar {
+	position: absolute;
+	overflow: visible;
+	width: 920px;
+	height: 60px;
+	left: 500px;
+	top: 20px;
+	--web-animation: fadein 0.30000001192092896s ease-out;
+	--web-action-type: page;
+	--web-action-target: main_Rlist_.html;
+	cursor: pointer;
+}
+#mypage_icon {
+	left: 1560px;
+	top: 40px;
+	position: absolute;
+	overflow: visible;
+	width: 79px;
+	white-space: nowrap;
+	--web-animation: fadein 0.30000001192092896s ease-out;
+	--web-action-type: page;
+	--web-action-target: main_mypage.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#myprofile_icon {
+	fill: rgba(54,54,54,1);
+}
+.myprofile_icon {
+	overflow: visible;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 1695px;
+	top: 30px;
+	transform: matrix(1,0,0,1,0,0);
+	--web-animation: fadein 0.30000001192092896s ease-out;
+	--web-action-type: page;
+	--web-action-target: main_mypage.html;
+	cursor: pointer;
+}
+#header_searchbar_text {
+	left: 530px;
+	top: 40px;
+	position: absolute;
+	overflow: visible;
+	width: 348px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(155,155,155,1);
+}
+#logo {
+	position: absolute;
+	width: 162.283px;
+	height: 41.455px;
+	left: 185px;
+	top: 29.272px;
+	overflow: visible;
+}
+#logo_bs {
+	position: absolute;
+	width: 162.283px;
+	height: 41.455px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#logo_text {
+	position: absolute;
+	width: 113px;
+	height: 34px;
+	left: 49.283px;
+	top: 3.486px;
+	overflow: visible;
+}
+#Text {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 114px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Jalnan;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 34px;
+	color: rgba(248,127,156,1);
+}
+#logo_icon {
+	position: absolute;
+	width: 44.307px;
+	height: 41.455px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#n_4 {
+	fill: rgba(207,80,111,1);
+}
+.n_4 {
+	overflow: visible;
+	position: absolute;
+	width: 23.836px;
+	height: 15.285px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#n_5 {
+	fill: rgba(207,80,111,1);
+}
+.n_5 {
+	overflow: visible;
+	position: absolute;
+	width: 39.538px;
+	height: 29.011px;
+	left: 4.769px;
+	top: 12.444px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#searchbar_icon {
+	position: absolute;
+	width: 22.062px;
+	height: 22.062px;
+	left: 1366px;
+	top: 37px;
+	overflow: visible;
+}
+#METADATA {
+	display: none;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 12px;
+	height: 11px;
+	text-align: left;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3px;
+}
+#Area {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.Area {
+	position: absolute;
+	overflow: visible;
+	width: 22px;
+	height: 22px;
+	left: 0px;
+	top: 0px;
+}
+#Icon {
+	position: absolute;
+	width: 22.062px;
+	height: 22.062px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#n_bdb2aeb-13ba-4cc4-82d3-9f4da {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(54,54,54,1);
+	stroke-width: 2.222222328186035px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.n_bdb2aeb-13ba-4cc4-82d3-9f4da {
+	position: absolute;
+	overflow: visible;
+	width: 21.833px;
+	height: 21.833px;
+	left: 0px;
+	top: 0px;
+}
+#n_d03dfce-9c82-4971-8d98-23079 {
+	fill: transparent;
+	stroke: rgba(54,54,54,1);
+	stroke-width: 2.222222328186035px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.n_d03dfce-9c82-4971-8d98-23079 {
+	overflow: visible;
+	position: absolute;
+	width: 8.474px;
+	height: 8.474px;
+	left: 16.73px;
+	top: 16.73px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#nav_bar {
+	position: absolute;
+	width: 1920px;
+	height: 42px;
+	left: 0px;
+	top: 100px;
+	overflow: visible;
+}
+#navbar_block {
+	fill: rgba(251,251,251,1);
+}
+.navbar_block {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 40px;
+	left: 0px;
+	top: 1px;
+}
+#futter_line {
+	fill: rgba(229,229,229,1);
+}
+.futter_line {
+	overflow: visible;
+	position: absolute;
+	width: 1920px;
+	height: 1px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#navbar_line {
+	fill: rgba(229,229,229,1);
+}
+.navbar_line {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 1px;
+	left: 0px;
+	top: 41px;
+}
+#navbar_recommend {
+	left: 1019px;
+	top: 10.5px;
+	position: absolute;
+	overflow: visible;
+	width: 83px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#navbar_map {
+	left: 826.5px;
+	top: 10.5px;
+	position: absolute;
+	overflow: visible;
+	width: 68px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#main_list {
+	position: absolute;
+	width: 1272px;
+	height: 1391.5px;
+	left: 339px;
+	top: 601.5px;
+	overflow: visible;
+}
+#main_list_post {
+	position: absolute;
+	width: 1272px;
+	height: 430.5px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#list_post {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 1150px;
+	height: 400px;
+	left: 61px;
+	top: 30.5px;
+	overflow: hidden;
+}
+#list_post_inner {
+	position: absolute;
+	width: 1290px;
+	height: 400px;
+	left: -30px;
+	top: 0px;
+	overflow: visible;
+}
+#list_post_content_area {
+	opacity: 0;
+	fill: rgba(229,229,229,1);
+}
+.list_post_content_area {
+	overflow: visible;
+	position: absolute;
+	width: 1180px;
+	height: 400px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#list_post_restaurant {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 30px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_ct {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_ct {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_cw {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_cw {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.784px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_post_restaurant_cy {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 350px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_cz {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_c {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_c {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_c {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_c {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_c {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_c {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_c {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_c {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_c {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_c {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_c {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_c {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_da {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_db {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_db {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_dc {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_dc {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_dd {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_de {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_df {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_df {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_dg {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_dg {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.784px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_post_restaurant_dh {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 670px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_di {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_dj {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_dj {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_dk {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_dl {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_dl {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_dm {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_dn {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_do {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_dp {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_dq {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_dr {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_ds {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_dt {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_du {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_du {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_dv {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_dv {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_dw {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_dx {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_dy {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_dy {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_dz {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_dz {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.784px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_post_restaurant_d {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 990px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_d {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_d {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_d {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_d {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_d {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_d {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_d {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_d {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_d {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_d {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_d {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_ea {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_eb {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_ec {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_ed {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_ed {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_ee {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_ee {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_ef {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_eg {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_eh {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_eh {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_ei {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_ei {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.784px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_header {
+	position: absolute;
+	width: 1180px;
+	height: 21px;
+	left: 31px;
+	top: 0px;
+	overflow: visible;
+}
+#list_description {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 256px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#list_detail {
+	position: absolute;
+	width: 70px;
+	height: 21px;
+	left: 1110px;
+	top: 0px;
+	overflow: visible;
+}
+#detail_text {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 48px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#detail_icon_area {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.detail_icon_area {
+	position: absolute;
+	overflow: visible;
+	width: 13.813px;
+	height: 13.812px;
+	left: 56.188px;
+	top: 3.83px;
+}
+#detail_icon {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(61,61,61,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.detail_icon {
+	overflow: visible;
+	position: absolute;
+	width: 9.498px;
+	height: 16.997px;
+	left: 59.73px;
+	top: 3.474px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#list_right_icon {
+	position: absolute;
+	width: 31px;
+	height: 31px;
+	left: 1241px;
+	top: 199.5px;
+	overflow: visible;
+}
+#right_icon_area {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.right_icon_area {
+	position: absolute;
+	overflow: visible;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 0px;
+}
+#right_icon {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(155,155,155,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.right_icon {
+	overflow: visible;
+	position: absolute;
+	width: 17.737px;
+	height: 33.474px;
+	left: 7.661px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#list_left_icon {
+	position: absolute;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 199.5px;
+	overflow: visible;
+}
+#left_icon_area {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.left_icon_area {
+	position: absolute;
+	overflow: visible;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 0px;
+}
+#left_icon {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(155,155,155,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.left_icon {
+	overflow: visible;
+	position: absolute;
+	width: 17.737px;
+	height: 33.474px;
+	left: 8.016px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#main_list_post_ev {
+	position: absolute;
+	width: 1272px;
+	height: 430.5px;
+	left: 0px;
+	top: 480.5px;
+	overflow: visible;
+}
+#list_post_ew {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 1150px;
+	height: 400px;
+	left: 61px;
+	top: 30.5px;
+	overflow: hidden;
+}
+#list_post_inner_ex {
+	position: absolute;
+	width: 1290px;
+	height: 400px;
+	left: -30px;
+	top: 0px;
+	overflow: visible;
+}
+#list_post_content_area_ey {
+	opacity: 0;
+	fill: rgba(229,229,229,1);
+}
+.list_post_content_area_ey {
+	overflow: visible;
+	position: absolute;
+	width: 1180px;
+	height: 400px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#list_post_restaurant_ez {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 30px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_e {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_e {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_e {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_e {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_e {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_e {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_e {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_e {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_e {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_e {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_e {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_e {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_fa {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_fb {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_fc {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_fc {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_fd {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_fd {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_fe {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_ff {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_fg {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_fg {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_fh {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_fh {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.783px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_post_restaurant_fi {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 350px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_fj {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_fk {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_fk {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_fl {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_fm {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_fm {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_fn {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_fo {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_fp {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_fq {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_fr {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_fs {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_ft {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_fu {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_fv {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_fv {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_fw {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_fw {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_fx {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_fy {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_fz {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_fz {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_f {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_f {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.783px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_post_restaurant_f {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 670px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_f {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_f {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_f {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_f {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_f {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_f {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_f {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_f {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_f {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_f {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_ga {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_gb {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_gc {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_gd {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_ge {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_ge {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_gf {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_gf {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_gg {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_gh {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_gi {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_gi {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_gj {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_gj {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.783px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_post_restaurant_gk {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 990px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_gl {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_gm {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_gm {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_gn {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_go {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_go {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_gp {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_gq {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_gr {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_gs {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_gt {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_gu {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_gv {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_gw {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_gx {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_gx {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_gy {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_gy {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_gz {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_g {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_ha {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_ha {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_g {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_g {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.783px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_header_g {
+	position: absolute;
+	width: 1180px;
+	height: 21px;
+	left: 31px;
+	top: 0px;
+	overflow: visible;
+}
+#list_description_g {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 256px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#list_detail_g {
+	position: absolute;
+	width: 70px;
+	height: 21px;
+	left: 1110px;
+	top: 0px;
+	overflow: visible;
+}
+#detail_text_g {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 48px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#detail_icon_area_g {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.detail_icon_area_g {
+	position: absolute;
+	overflow: visible;
+	width: 13.813px;
+	height: 13.812px;
+	left: 56.188px;
+	top: 3.83px;
+}
+#detail_icon_g {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(61,61,61,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.detail_icon_g {
+	overflow: visible;
+	position: absolute;
+	width: 9.498px;
+	height: 16.997px;
+	left: 59.73px;
+	top: 3.474px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#list_right_icon_g {
+	position: absolute;
+	width: 31px;
+	height: 31px;
+	left: 1241px;
+	top: 199.5px;
+	overflow: visible;
+}
+#right_icon_area_ha {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.right_icon_area_ha {
+	position: absolute;
+	overflow: visible;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 0px;
+}
+#right_icon_hb {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(155,155,155,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.right_icon_hb {
+	overflow: visible;
+	position: absolute;
+	width: 17.737px;
+	height: 33.474px;
+	left: 7.661px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#list_left_icon_hc {
+	position: absolute;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 199.5px;
+	overflow: visible;
+}
+#left_icon_area_hd {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.left_icon_area_hd {
+	position: absolute;
+	overflow: visible;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 0px;
+}
+#left_icon_he {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(155,155,155,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.left_icon_he {
+	overflow: visible;
+	position: absolute;
+	width: 17.737px;
+	height: 33.474px;
+	left: 8.016px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#main_list_post_hf {
+	position: absolute;
+	width: 1272px;
+	height: 430.5px;
+	left: 0px;
+	top: 961px;
+	overflow: visible;
+}
+#list_post_hg {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 1150px;
+	height: 400px;
+	left: 61px;
+	top: 30.5px;
+	overflow: hidden;
+}
+#list_post_inner_hh {
+	position: absolute;
+	width: 1290px;
+	height: 400px;
+	left: -30px;
+	top: 0px;
+	overflow: visible;
+}
+#list_post_content_area_hi {
+	opacity: 0;
+	fill: rgba(229,229,229,1);
+}
+.list_post_content_area_hi {
+	overflow: visible;
+	position: absolute;
+	width: 1180px;
+	height: 400px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#list_post_restaurant_hj {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 30px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_hk {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_hl {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_hl {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_hm {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_hn {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_hn {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_ho {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_hp {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_hq {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_hr {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_hs {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_ht {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_hu {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_hv {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_hw {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_hw {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_hx {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_hx {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_hy {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_hz {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_h {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_h {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_h {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_h {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.783px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_post_restaurant_h {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 350px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_h {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_h {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_h {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_h {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_h {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_h {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_h {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_h {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_h {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_ia {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_ib {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_ic {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_id {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_ie {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_if {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_if {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_ig {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_ig {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_ih {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_ii {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_ij {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_ij {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_ik {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_ik {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.783px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_post_restaurant_il {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 670px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_im {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_in {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_in {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_io {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_ip {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_ip {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_iq {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_ir {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_is {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_it {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_iu {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_iv {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_iw {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_ix {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_iy {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_iy {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_iz {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_iz {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_i {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_i {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_ja {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_ja {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_i {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_i {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.783px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_post_restaurant_i {
+	position: absolute;
+	width: 300px;
+	height: 350px;
+	left: 990px;
+	top: 25px;
+	overflow: visible;
+}
+#restuarant_image_i {
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	padding: 0px;
+}
+#restaurant_image_area_i {
+	fill: rgba(197,197,197,1);
+}
+.restaurant_image_area_i {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 240px;
+	left: 0px;
+	top: 0px;
+}
+#restaurant_content_i {
+	position: absolute;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 240px;
+	overflow: visible;
+}
+#list_post_restaurant_area_i {
+	opacity: 0;
+	fill: rgba(255,255,255,1);
+}
+.list_post_restaurant_area_i {
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+#restautant_name_i {
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	left: 0px;
+	top: 15px;
+	overflow: visible;
+}
+#Rname_ja {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(54,54,54,1);
+}
+#restaurant_rate_jb {
+	position: absolute;
+	width: 39px;
+	height: 30px;
+	left: 261px;
+	top: 15px;
+	overflow: visible;
+}
+#Rrate_jc {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 25px;
+	color: rgba(207,80,111,1);
+}
+#restaurant_type_jd {
+	position: absolute;
+	width: 31px;
+	height: 21px;
+	left: 0px;
+	top: 52px;
+	overflow: visible;
+}
+#Rtype_je {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#heart_num_jf {
+	left: 23px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 27px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#heart_icon_jg {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 92px;
+	overflow: visible;
+}
+#heart_area_jh {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.heart_area_jh {
+	position: absolute;
+	overflow: visible;
+	width: 18px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+}
+#heart_icon_ji {
+	fill: rgba(155,155,155,1);
+}
+.heart_icon_ji {
+	overflow: visible;
+	position: absolute;
+	width: 15.679px;
+	height: 13.675px;
+	left: 1.423px;
+	top: 2.698px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#comment_num_jj {
+	left: 84.225px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(155,155,155,1);
+}
+#review_icon_jk {
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 66px;
+	top: 93.888px;
+	overflow: visible;
+}
+#review_icon_jl {
+	fill: rgba(155,155,155,1);
+}
+.review_icon_jl {
+	overflow: visible;
+	position: absolute;
+	width: 13.225px;
+	height: 13.225px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#review_area_jm {
+	opacity: 0;
+	fill: rgba(155,155,155,1);
+}
+.review_area_jm {
+	position: absolute;
+	overflow: visible;
+	width: 12.784px;
+	height: 12.783px;
+	left: 0px;
+	top: 0.441px;
+}
+#list_header_jn {
+	position: absolute;
+	width: 1180px;
+	height: 21px;
+	left: 31px;
+	top: 0px;
+	overflow: visible;
+}
+#list_description_jo {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 256px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#list_detail_jp {
+	position: absolute;
+	width: 70px;
+	height: 21px;
+	left: 1110px;
+	top: 0px;
+	overflow: visible;
+}
+#detail_text_jq {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 48px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	color: rgba(54,54,54,1);
+}
+#detail_icon_area_jr {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.detail_icon_area_jr {
+	position: absolute;
+	overflow: visible;
+	width: 13.813px;
+	height: 13.813px;
+	left: 56.188px;
+	top: 3.83px;
+}
+#detail_icon_js {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(61,61,61,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.detail_icon_js {
+	overflow: visible;
+	position: absolute;
+	width: 9.498px;
+	height: 16.997px;
+	left: 59.73px;
+	top: 3.474px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#list_right_icon_jt {
+	position: absolute;
+	width: 31px;
+	height: 31px;
+	left: 1241px;
+	top: 199.5px;
+	overflow: visible;
+}
+#right_icon_area_ju {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.right_icon_area_ju {
+	position: absolute;
+	overflow: visible;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 0px;
+}
+#right_icon_jv {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(155,155,155,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.right_icon_jv {
+	overflow: visible;
+	position: absolute;
+	width: 17.737px;
+	height: 33.474px;
+	left: 7.661px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#list_left_icon_jw {
+	position: absolute;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 199.5px;
+	overflow: visible;
+}
+#left_icon_area_jx {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.left_icon_area_jx {
+	position: absolute;
+	overflow: visible;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 0px;
+}
+#left_icon_jy {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(155,155,155,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.left_icon_jy {
+	overflow: visible;
+	position: absolute;
+	width: 17.737px;
+	height: 33.474px;
+	left: 8.016px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#banner_left {
+	position: absolute;
+	width: 31px;
+	height: 31px;
+	left: 262px;
+	top: 327px;
+	overflow: visible;
+	--web-animation: fadein 0.30000001192092896s ease-out;
+	--web-action-type: page;
+	--web-action-target: _______________2_.html;
+	cursor: pointer;
+}
+#left_icon_block {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.left_icon_block {
+	position: absolute;
+	overflow: visible;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 0px;
+}
+#left_icon_j {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(155,155,155,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.left_icon_j {
+	overflow: visible;
+	position: absolute;
+	width: 17.737px;
+	height: 33.474px;
+	left: 8.016px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#banner_right {
+	position: absolute;
+	width: 31px;
+	height: 31px;
+	left: 1627px;
+	top: 327px;
+	overflow: visible;
+	--web-animation: fadein 0.30000001192092896s ease-out;
+	--web-action-type: page;
+	--web-action-target: _______________1_.html;
+	cursor: pointer;
+}
+#right_icon_block {
+	opacity: 0;
+	fill: rgba(252,252,252,1);
+}
+.right_icon_block {
+	position: absolute;
+	overflow: visible;
+	width: 31px;
+	height: 31px;
+	left: 0px;
+	top: 0px;
+}
+#right_icon_j {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(155,155,155,1);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.right_icon_j {
+	overflow: visible;
+	position: absolute;
+	width: 17.737px;
+	height: 33.474px;
+	left: 7.661px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#futter {
+	position: absolute;
+	width: 1920px;
+	height: 212px;
+	left: 0px;
+	top: 2041px;
+	overflow: visible;
+}
+#futter_block {
+	fill: rgba(243,243,243,1);
+}
+.futter_block {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 211px;
+	left: 0px;
+	top: 1px;
+}
+#futter_text {
+	position: absolute;
+	width: 415px;
+	height: 177px;
+	left: 20px;
+	top: 20px;
+	overflow: visible;
+}
+#futter_logo {
+	position: absolute;
+	width: 91.352px;
+	height: 23.849px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#futter_logo_text {
+	position: absolute;
+	width: 63px;
+	height: 19px;
+	left: 28.352px;
+	top: 2.006px;
+	overflow: visible;
+}
+#Text_ka {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 64px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Jalnan;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 19px;
+	color: rgba(155,155,155,1);
+}
+#futter_logo_main {
+	position: absolute;
+	width: 25.49px;
+	height: 23.849px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#n_4_kc {
+	fill: rgba(155,155,155,1);
+}
+.n_4_kc {
+	overflow: visible;
+	position: absolute;
+	width: 13.713px;
+	height: 8.793px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#n_5_kd {
+	fill: rgba(155,155,155,1);
+}
+.n_5_kd {
+	overflow: visible;
+	position: absolute;
+	width: 22.746px;
+	height: 16.69px;
+	left: 2.743px;
+	top: 7.159px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#futter_text1 {
+	left: 0px;
+	top: 35px;
+	position: absolute;
+	overflow: visible;
+	width: 115px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	color: rgba(155,155,155,1);
+}
+#futter_text1_kf {
+	left: 0px;
+	top: 163px;
+	position: absolute;
+	overflow: visible;
+	width: 115px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	color: rgba(155,155,155,1);
+}
+#futter_text1_kg {
+	left: 0px;
+	top: 71px;
+	position: absolute;
+	overflow: visible;
+	width: 416px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	color: rgba(155,155,155,1);
+}
+#futter_text1_kh {
+	left: 0px;
+	top: 99px;
+	position: absolute;
+	overflow: visible;
+	width: 416px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	color: rgba(155,155,155,1);
+}
+#futter_text1_ki {
+	left: 0px;
+	top: 127px;
+	position: absolute;
+	overflow: visible;
+	width: 416px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pretendard;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	color: rgba(155,155,155,1);
+}
+#futter_line_kj {
+	fill: rgba(229,229,229,1);
+}
+.futter_line_kj {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 1px;
+	left: 0px;
+	top: 0px;
+}
+
+

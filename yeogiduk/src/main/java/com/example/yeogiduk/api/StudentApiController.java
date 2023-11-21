@@ -48,14 +48,12 @@ public class StudentApiController {
 /*
     // 로그아웃
     @GetMapping("/student/logout")
-    public String logout(HttpServletRequest request, HttpServletResponse response) {
+    public void logout(HttpServletRequest request, HttpServletResponse response) {
         new SecurityContextLogoutHandler().logout(request, response,
                 SecurityContextHolder.getContext().getAuthentication());
-        return "logout";
     }*/
 
     // 비밀번호 변경
-
     @PatchMapping("/student/pwupdate/{email}")
     public ResponseEntity<Student> pwUpdate(@PathVariable String email, @RequestBody StudentDto dto) {
         Student updated = studentService.pwUpdate(email, dto);

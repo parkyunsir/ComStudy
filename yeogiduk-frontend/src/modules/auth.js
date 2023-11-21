@@ -2,18 +2,18 @@ import {createAction, handleActions} from 'redux-actions';
 import {produce} from 'immer';
 import {takeLatest} from 'redux-saga/effects';
 import createRequestSaga, { createRequestActionTypes } from '../lib/createRequestSaga';
-import * as studentAPI from '../lib/api/student';
+import * as authAPI from '../lib/api/auth';
 
 const CHANGE_FIELD = 'auth/CHANGE_FIELD';
-const INITIALIZE_FORM = 'student/INITIALIZE_FORM';
-
+const INITIALIZE_FORM = 'auth/INITIALIZE_FORM';
 const [JOIN, JOIN_SUCCESS, JOIN_FAILURE] = createRequestActionTypes(
-  'student/JOIN',
+  'auth/JOIN',
 );
-
 const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createRequestActionTypes(
-  'student/LOGIN',
+  'auth/LOGIN',
 );
+const LOGOUT = 'auth/LOGOUT';
+const TEMP_SET_STUDENT = 'student/TEMP_SET_STUDENT';
 
 export const changeField = createAction(
   CHANGE_FIELD,
@@ -32,13 +32,24 @@ export const login = createAction(LOGIN, ({email, password}) => ({
   email,
   password,
 }));
+export const logout = createAction(LOGOUT);
+export const tempSetStudent = createAction(TEMP_SET_STUDENT, student => student);
 
 // 사가 생성
-const joinSaga = createRequestSaga(JOIN, studentAPI.join);
-const loginSaga = createRequestSaga(LOGIN, studentAPI.login);
+const joinSaga = createRequestSaga(JOIN, authAPI.join);
+const loginSaga = createRequestSaga(LOGIN, authAPI.login);
+function logoutSaga() {
+  try {
+    localStorage.removeItem('student'); // localStorage에서 user 제거
+    console.log('제거');
+  } catch(e) {
+    console.log(e);
+  }
+}
 export function* authSaga() {
   yield takeLatest(JOIN, joinSaga);
   yield takeLatest(LOGIN, loginSaga);
+  yield takeLatest(LOGOUT, logoutSaga);
 }
 
 const initialState = {
@@ -51,45 +62,56 @@ const initialState = {
     email: '',
     password: '',
   },
-  student: null,
-  studentError: null,
+  auth: null,
+  authError: null,
+  student: null
 };
 
-const student = handleActions(
+const auth = handleActions(
   {
     [CHANGE_FIELD]: (state, {payload: {form, key, value}}) => 
       produce(state, draft => {
-        draft[form][key] = value; // 예: state.join.email을 바꾼다.
+        draft[form][key] = value; // 예: state.register.username을 바꾼다.
       }),
     [INITIALIZE_FORM]: (state, {payload: form}) => ({
       ...state,
       [form]: initialState[form],
-      studentError: null, // 폼 전환 시 회원 인증 에러 초기화
+      authError: null, // 폼 전환 시 회원 인증 에러 초기화
     }),
     // 회원가입 성공
     [JOIN_SUCCESS]: (state, {payload: student}) => ({
       ...state,
-      studentError: null,
-      student,
+      authError: null,
+      auth,
+      student
     }),
     // 회원가입 실패
     [JOIN_FAILURE]: (state, {payload: error}) => ({
       ...state,
-      studentError: error,
+      authError: error,
     }),
     // 로그인 성공
     [LOGIN_SUCCESS]: (state, {payload: student}) => ({
       ...state,
-      studentError: null,
-      student,
+      authError: null,
+      auth,
+      student
     }),
     // 로그인 실패
     [LOGIN_FAILURE]: (state, {payload: error}) => ({
       ...state,
-      studentError: error,
+      authError: error,
+    }),
+    [LOGOUT]: state => ({
+      ...state,
+      student: null
+    }),
+    [TEMP_SET_STUDENT]: (state, {payload: student}) => ({
+      ...state,
+      student,
     }),
   },
   initialState,
 );
 
-export default student;
+export default auth;
