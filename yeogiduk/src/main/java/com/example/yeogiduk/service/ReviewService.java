@@ -1,16 +1,19 @@
 package com.example.yeogiduk.service;
 
+import com.example.yeogiduk.dto.ImageDto;
 import com.example.yeogiduk.dto.ReviewDto;
 import com.example.yeogiduk.entity.Restaurant;
 import com.example.yeogiduk.entity.Review;
+import com.example.yeogiduk.repository.ImageRepository;
 import com.example.yeogiduk.repository.RestaurantRepository;
 import com.example.yeogiduk.repository.ReviewRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-
+@RequiredArgsConstructor
 @Service
 public class ReviewService {
     @Autowired
@@ -35,8 +38,8 @@ public class ReviewService {
     }
     @Transactional
     public ReviewDto create(Long rstId, ReviewDto dto) {
-        // 1. 게시글 조회 및 예외 발생
 
+        // 1. 게시글 조회 및 예외 발생
         Restaurant restaurant = restaurantRepository.findByRstId(rstId);
 
         if (restaurant == null) {
@@ -49,6 +52,11 @@ public class ReviewService {
         Review reviewed = reviewRepository.save(review);
         // 4. DTO로 변환해 반환
         return ReviewDto.createReviewDto(reviewed);
+    }
+
+    @Transactional
+    public Long save(ReviewDto reviewDto) {
+        return ReviewRepository.save(reviewDto.toEntity()).getId(); // 일단 저장 기능만 구현함
     }
 
 }
