@@ -77,7 +77,7 @@ const SearchButton = styled(Button)`
 const SubMenu = styled.div`
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
-  background: #d6d6d6;
+  background: #FBFBFB;
   display: flex;
   justify-content: center;
   .link {
