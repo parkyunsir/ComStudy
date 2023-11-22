@@ -14,7 +14,7 @@ const Word = styled.div`
 const WhiteBox = styled.div`
   background: white;
   .box {
-    margin: 1rem;
+    
   }
 `;
 
