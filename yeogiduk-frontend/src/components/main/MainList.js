@@ -45,7 +45,9 @@ const MainList = ({ rstId, email }) => {
         const reviewResponse = await axios.get(`http://localhost:8080/restaurant/${rstId}/reviews`);
         setReviews(reviewResponse.data);
 
-        const likeResponse = await axios.get(`http://localhost:8080/restaurant/likes/${rstId}`);
+        const likeResponse = await axios.get(`http://localhost:8080/restaurant/likes/list/${rstId}`);
+        //정렬하기
+        //상위 5개
         setLikes(likeResponse.data);
       } catch (error) {
         console.error('ERROR', error);
