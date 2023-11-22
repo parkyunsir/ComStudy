@@ -3,8 +3,12 @@ import {useSelector, useDispatch} from 'react-redux';
 import styled from 'styled-components';
 import { Link } from '../../../../node_modules/react-router-dom/dist/index';
 import {restRtype, restLikenum,restReview} from '../../modules/restaurant';
+import logoImage from '../../lib/image/logo_image.png';
 
-const RestaurantBlock = styled.div``;
+const RestaurantBlock = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+`;
 
 const Name = styled(Link)``;
 
@@ -23,15 +27,15 @@ const Restaurant = ({restaurant}) => {
   }));
   useEffect(() => {
     dispatch(restRtype(restaurant.typeId));
-    dispatch(restLikenum(restaurant.rstId));
-    dispatch(restReview(restaurant.rstId));
-  }, [dispatch, restaurant]);
+    dispatch(restLikenum(parseInt(restaurant.rstId)));
+    dispatch(restReview(parseInt(restaurant.rstId)));
+  }, [dispatch, restaurant, likenum]);
   return (
     <RestaurantBlock>
       <Name>{restaurant.name}</Name>
       <Type>{rtype? rtype.title : '-'}</Type>
       <Info>찜수:{likenum? likenum : '-'} 리뷰수:{review? review.length : '-'}</Info>
-      <Image></Image>
+      <Image src={logoImage} />
     </RestaurantBlock>
   )
 }
