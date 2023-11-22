@@ -46,9 +46,13 @@ const MainList = ({ rstId, email }) => {
         setReviews(reviewResponse.data);
 
         const likeResponse = await axios.get(`http://localhost:8080/restaurant/likes/list/${rstId}`);
+        
         //정렬하기
-        //상위 5개
-        setLikes(likeResponse.data);
+        const sortedLikes = likeResponse.data.sort((a, b) => b.rstId - a.rstId);
+      
+      // 상위 5개만 가져오기
+        const top5Likes = sortedLikes.slice(0, 5);
+        setLikes(top5Likes);
       } catch (error) {
         console.error('ERROR', error);
       }
@@ -74,14 +78,20 @@ const MainList = ({ rstId, email }) => {
       </Stars>
 
       <Likes>
-        <div>찜 많은 순:</div>
-        <ul>
-          {limitedLikes.map(like => (
+      <div>찜 많은 순:</div>
+      <ul>
+        {limitedLikes.length > 0 ? (
+          limitedLikes.map(like => (
             <li key={like.email}>
               {like.email} - {like.rstId}
             </li>
-          ))}
-        </ul>
+          ))
+        ) : (
+          <li>
+            
+          </li>
+        )}
+      </ul>
       </Likes>
 
       <Reviews>
