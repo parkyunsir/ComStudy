@@ -70,8 +70,8 @@ const MainList = ({ rstId, email }) => {
         <div>별점 높은 순:</div>
         <ul id="ul1">
           {limitedReviews.map(review => (
-            <li key={review.review_id}>
-              {review.review_id} : {review.content}
+            <li key={review}>
+              {review}
             </li>
           ))}
         </ul>
