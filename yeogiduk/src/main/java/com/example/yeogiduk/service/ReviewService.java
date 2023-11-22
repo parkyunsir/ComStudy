@@ -5,12 +5,14 @@ import com.example.yeogiduk.entity.Restaurant;
 import com.example.yeogiduk.entity.Review;
 import com.example.yeogiduk.repository.RestaurantRepository;
 import com.example.yeogiduk.repository.ReviewRepository;
+import jakarta.persistence.metamodel.SingularAttribute;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-
+@RequiredArgsConstructor
 @Service
 public class ReviewService {
     @Autowired
@@ -35,10 +37,12 @@ public class ReviewService {
     }
     @Transactional
     public ReviewDto create(Long rstId, ReviewDto dto) {
+
         // 1. 게시글 조회 및 예외 발생
         if(rstId != dto.getRstId()) {
             return null;
         }
+
         Restaurant restaurant = restaurantRepository.findByRstId(rstId);
         if (restaurant == null) {
             throw new IllegalArgumentException("댓글 생성 실패! 대상 게시글이 없습니다.");
@@ -50,5 +54,10 @@ public class ReviewService {
         // 4. DTO로 변환해 반환
         return ReviewDto.createReviewDto(reviewed);
     }
-
+/*
+    @Transactional
+    public SingularAttribute<? super Object, Object> save(ReviewDto reviewDto) {
+        return ReviewRepository.save(reviewDto.toEntity()).getId(); // 일단 저장 기능만 구현함
+    }
+*/
 }
