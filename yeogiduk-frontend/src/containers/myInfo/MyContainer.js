@@ -13,8 +13,6 @@ const MyContainer = () => {
   );
   useEffect(() => {
     dispatch(restaurants(student.email));
-  }, [dispatch, student]);
-  useEffect(() => {
     dispatch(reviews(student.email));
   }, [dispatch, student]);
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Responsive from './Responsive';
 import Button from './Button';
 import {Link} from 'react-router-dom';
-import LogoImage from '../../lib/image/logo.svg';
+import LogoImage from '../../lib/image/logo_image.png';
 
 const HeaderBlock = styled.div`
   position: fixed;

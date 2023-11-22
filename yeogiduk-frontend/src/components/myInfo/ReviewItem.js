@@ -39,7 +39,7 @@ const ReviewDate = styled.div`
   color: rgba(54,54,54,1);
 `;
 
-const ReviewItem = ({review, restaurant}) => {
+const ReviewItem = ({review, reviewRestaurant, loading}) => {
   const date = new Date(review.date).toLocaleDateString()
   const [stars, setStars] = useState(`★★★★★`);
   useEffect(() => {
@@ -60,12 +60,12 @@ const ReviewItem = ({review, restaurant}) => {
       <Image src={LogoImage} alt="review image" />
       <Context>
         <Title>
-          <Name to="/">{restaurant.name}</Name>
+          <Name to="/">{reviewRestaurant? reviewRestaurant.name : '-'}</Name>
           <Star>{stars}</Star>
           <StarNum> {review.star}</StarNum>
         </Title>
-        <ReviewContent>{review.content}</ReviewContent>
-        <ReviewDate>{date}</ReviewDate>
+      <ReviewContent>{review.content}</ReviewContent>
+      <ReviewDate>{date}</ReviewDate>
       </Context>
     </ReviewItemBlock>
   )
