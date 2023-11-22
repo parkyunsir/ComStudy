@@ -5,15 +5,24 @@ import LogoImage from '../../lib/image/logo.svg';
 
 const ReviewItemBlock = styled.div``;
 
+const Horizon = styled.div`
+  display: flex;
+  align-items: flex-start; 
+  margin-bottom:1rem;
+`;
+
+const Vertic = styled.div`
+flex-direction: column;
+`
+
 const Image = styled.img`
   width: 100px;
   height: 100px;
+  margin-right:1rem;
 `;
 
 const Context = styled.div`
   position: relative;
-  bottom: 100px;
-  left: 110px;
 `;
 
 const Title = styled.div``;
@@ -33,10 +42,13 @@ const StarNum = styled.div``;
 
 const ReviewContent = styled.div`
   height: 100%;
+  //글자제한
+  text-overflow: ellipsis;
 `;
 
 const ReviewDate = styled.div`
   color: rgba(54,54,54,1);
+  
 `;
 
 const ReviewItem = ({review, reviewRestaurant, loading}) => {
@@ -57,16 +69,20 @@ const ReviewItem = ({review, reviewRestaurant, loading}) => {
   }, [review.star]);
   return (
     <ReviewItemBlock>
+      <Vertic>
+      <Horizon>
       <Image src={LogoImage} alt="review image" />
       <Context>
         <Title>
-          <Name to="/">{reviewRestaurant? reviewRestaurant.name : '-'}</Name>
+          <Name to="/">{reviewRestaurant ? reviewRestaurant.name : '-'}</Name>
           <Star>{stars}</Star>
           <StarNum> {review.star}</StarNum>
         </Title>
       <ReviewContent>{review.content}</ReviewContent>
       <ReviewDate>{date}</ReviewDate>
       </Context>
+      </Horizon>
+      </Vertic>
     </ReviewItemBlock>
   )
 }
