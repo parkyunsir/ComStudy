@@ -7,9 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -25,6 +23,14 @@ public class RtypeApiController {
                 ResponseEntity.status(HttpStatus.OK).body(rtype) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
+    }
+
+    @GetMapping("/rtype/{typeId}")
+    public ResponseEntity<Rtype> getRtype(@PathVariable Long typeId) {
+        Rtype rtype = rtypeService.getRtype(typeId);
+        return (rtype != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(rtype) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
 }

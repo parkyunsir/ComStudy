@@ -78,6 +78,12 @@ public class RestaurantService {
                 .build();
     }
 
+    public List<RestaurantDto> getRestaurantListBySearch(String word) {
+        List<Restaurant> restaurantList = restaurantRepository.findByWord(word); // 식당 이름(name) 또는 메뉴 이름(menu)
+        return restaurantList.stream()
+                .map(this::convertEntityToDto)
+                .collect(Collectors.toList());
+  
     public int getLikesNumber(Long rstId) {
         List<Likes> likesList = likesRepository.findByRstId(rstId);
         return likesList.size();

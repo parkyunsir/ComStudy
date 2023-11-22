@@ -33,7 +33,7 @@ const Spacer = styled.div`
   height: 5rem;
 `;
 
-const UserInfo = styled.div`
+const UserInfo = styled(Link)`
   font-weight: 800;
   margin-right: 1rem;
 `;
@@ -43,7 +43,9 @@ const Logo = styled.img`
   white-space: nowrap;
 `;
 
-const Header = ({student, onLogout}) => {
+const StyledInput = styled.input``;
+
+const Header = ({student, onLogout, onSubmit, word}) => {
   return (
     <>
       <HeaderBlock>
@@ -51,9 +53,13 @@ const Header = ({student, onLogout}) => {
           <Link to="/" className="logo">
             <Logo src={LogoImage} alt="yeogiduk logo" />
           </Link>
+          <form>
+            <StyledInput name="word" value={word} />
+            <Button onClick={onSubmit}>검색</Button>
+          </form>
           {student ? (
             <div className="right">
-              <UserInfo>{student.email}</UserInfo>
+              <UserInfo to="/mypage">마이페이지</UserInfo>
               <Button onClick={onLogout}>로그아웃</Button>
             </div>
           ) : (
