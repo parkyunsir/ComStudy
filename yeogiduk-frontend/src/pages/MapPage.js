@@ -1,11 +1,12 @@
 import React from 'react';
 import HeaderContainer from '../containers/common/HeaderContainer';
+import MapContainer from '../containers/map/MapContainer';
 
 const MapPage = () => {
   return (
     <>
-      <HeaderContainer />
-      <div>지도페이지</div>
+        <HeaderContainer />
+        <MapContainer />
     </>
   );
 };
