@@ -18,6 +18,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/restaurant")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RestaurantApiController {
 
     @Autowired
@@ -58,6 +59,11 @@ public class RestaurantApiController {
         return (list != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(list) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
+    //전체 찜 목록
+    @GetMapping("/likes/list/{rstId}")
+    public int getLikesNumber(@PathVariable Long rstId) {
+        return restaurantService.getLikesNumber(rstId);
     }
 }
 

@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface LikesRepository extends CrudRepository<Likes, Long> {
     List<Likes> findByEmail(String email);
+
+    List<Likes> findByRstId(Long rstId);
 }
