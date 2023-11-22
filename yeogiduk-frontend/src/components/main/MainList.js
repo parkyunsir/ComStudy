@@ -37,10 +37,16 @@ const MainList = ({ rstId, email }) => {
         setReviews(reviewResponse.data);
 
         const likeResponse = await axios.get(`http://localhost:8080/restaurant/likes/list/${rstId}`);
+<<<<<<< HEAD
         
         const sortedLikes = likeResponse.data.sort((a,b) => b.rstId - a.rstId); //정렬
         const top5Likes = sortedLikes.slice(0,5);
         setLikes(top5Likes);
+=======
+        //정렬하기
+        //상위 5개
+        setLikes(likeResponse.data);
+>>>>>>> YunS
       } catch (error) {
         console.error('ERROR', error);
       }
