@@ -14,35 +14,86 @@ const MainListBox = styled.div`
   align-items: center;
 `;
 
-const MainList = () => {
-  const [restaurants, setRestaurants] = useState([]);
+const Stars = styled.div`
+  color: #e739a0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Likes = styled.div`
+  color: #a789e3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Reviews = styled.div`
+  color: #578933;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const MainList = ({ rstId, email }) => {
+  const [reviews, setReviews] = useState([]);
+  const [likes, setLikes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/restaurant/list')//링크
-    .then(response => {
-      setRestaurants(response.data);
-    })
-    .catch(error => {
-      console.error('data 찾지 못 함', error);
-    });
-  }, []);
+    const fetchData = async () => {
+      try {
+        const reviewResponse = await axios.get(`http://localhost:8080/restaurant/${rstId}/reviews`);
+        setReviews(reviewResponse.data);
+
+        const likeResponse = await axios.get('http://localhost:8080/restaurant/likes');
+        setLikes(likeResponse.data);
+      } catch (error) {
+        console.error('ERROR', error);
+      }
+    };
+
+    fetchData();
+  }, [rstId, email]);
+
+  const limitedReviews = reviews.slice(0, 5);
+  const limitedLikes = likes.slice(0, 5);
 
   return (
     <MainListBox>
-      <div>
-        <h1>Restaurant List:</h1>
-        <ul>
-          {restaurants.map(restaurant => (
-            <li key = {restaurant.rstId}>
-              <p>ID: {restaurant.rstId}</p>
-              <p>Name: {restaurant.name}</p>
+      <Stars>
+        <div>별점 높은 순:</div>
+        <ul id="ul1">
+          {limitedReviews.map(review => (
+            <li key={review.review_id}>
+              {review.review_id} : {review.content}
             </li>
           ))}
         </ul>
-      </div>
+      </Stars>
+
+      <Likes>
+        <div>찜 많은 순:</div>
+        <ul>
+          {limitedLikes.map(like => (
+            <li key={like.email}>
+              {like.email} - {like.rstId}
+            </li>
+          ))}
+        </ul>
+      </Likes>
+
+      <Reviews>
+        <div>리뷰 많은 순:</div>
+        <ul>
+          {limitedLikes.map(like => (
+            <li key={like.email}>
+              {like.email} - {like.rstId}
+            </li>
+          ))}
+        </ul>
+      </Reviews>
     </MainListBox>
   );
+};
 
-  };
-  
 export default MainList;
