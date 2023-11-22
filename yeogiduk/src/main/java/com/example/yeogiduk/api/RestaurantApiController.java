@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -51,6 +52,13 @@ public class RestaurantApiController {
                 ResponseEntity.status(HttpStatus.OK).body(restaurantDto) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
+
+    @GetMapping("/search/{word}")
+    public ResponseEntity<List<RestaurantDto>> getRestaurantListBySearch(@PathVariable String word) {
+        List<RestaurantDto> list = restaurantService.getRestaurantListBySearch(word);
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
     //전체 찜 목록
     @GetMapping("/likes/list/{rstId}")

@@ -20,4 +20,8 @@ public class RtypeService{
         rtypeRepository.save(rtype);
         return rtype;
     }
+
+    public Rtype getRtype(Long typeId) {
+        return rtypeRepository.findByTypeId(typeId);
+    }
 }
