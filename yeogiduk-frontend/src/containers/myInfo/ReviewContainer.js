@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {detail} from '../../modules/restaurant';
+import {restDetail} from '../../modules/restaurant';
 import ReviewItem from '../../components/myInfo/ReviewItem';
 
 const ReviewContainer = ({review}) => {
@@ -9,7 +9,7 @@ const ReviewContainer = ({review}) => {
     reviewRestaurant: restaurant.detail
   }));
   useEffect(() => {
-    dispatch(detail(parseInt(review.rstId)));
+    dispatch(restDetail(parseInt(review.rstId)));
   }, [dispatch, review]);
 
   return <ReviewItem review={review} reviewRestaurant={reviewRestaurant} />;

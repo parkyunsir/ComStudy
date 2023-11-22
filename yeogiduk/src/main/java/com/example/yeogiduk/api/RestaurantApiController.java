@@ -63,8 +63,33 @@ public class RestaurantApiController {
 
     //전체 찜 목록
     @GetMapping("/likes/list/{rstId}")
-    public int getLikesNumber(@PathVariable Long rstId) {
-        return restaurantService.getLikesNumber(rstId);
+    public ResponseEntity<Integer> getLikesNumber(@PathVariable Long rstId) {
+        int num = restaurantService.getLikesNumber(rstId);
+        return ResponseEntity.status(HttpStatus.OK).body(num);
+    }
+
+    @GetMapping("/list/rank/star")
+    public ResponseEntity<List<Restaurant>> getStarRank() {
+        List<Restaurant> list = restaurantService.getRankStar();
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    @GetMapping("/list/rank/like")
+    public ResponseEntity<List<Restaurant>> getLikeRank() {
+        List<Restaurant> list = restaurantService.getRankLike();
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    @GetMapping("/list/rank/review")
+    public ResponseEntity<List<Restaurant>> getLikeReview() {
+        List<Restaurant> list = restaurantService.getRankReview();
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 }
 

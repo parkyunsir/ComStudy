@@ -11,7 +11,7 @@ const GrayBackGround = styled.div`
 `;
 
 const MyViewerBlock = styled(Responsive)`
-  margin-top: 1rem;
+  margin-top: 3rem;
   background: #f1f3f5;
   
 `;
