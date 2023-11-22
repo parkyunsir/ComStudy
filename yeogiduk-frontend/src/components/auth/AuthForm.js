@@ -74,18 +74,6 @@ const LoginBoxText = styled.div`
 	color: rgba(54,54,54,1);
 `;
 
-const FindPassword = styled(Link)`
-  width: 189px;
-  white-space: nowrap;
-  cursor: pointer;
-  text-align: left;
-  font-family: Pretendard;
-  font-styled: normal;
-  font-weight: bold;
-  font-size: 20px;
-  color: rgba(207, 80, 111, 1);
-`;
-
 const textMap = {
   login: '로그인',
   join: '회원가입',
@@ -128,11 +116,7 @@ const StudentForm = ({type, form, onChange, onSubmit, error}) => {
           />
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}
-        {type === 'login' ? (
-          <FindPassword to="/">비밀번호를 잊으셨나요?</FindPassword>
-        ) : (
-          <></>
-        )}
+        
         <Button>
           {text}
         </Button>
