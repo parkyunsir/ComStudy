@@ -5,14 +5,14 @@ import ReviewItem from '../../components/myInfo/ReviewItem';
 
 const ReviewContainer = ({review}) => {
   const dispatch = useDispatch();
-  const {restaurant} = useSelector(({restaurant}) => ({
-    restaurant: restaurant.detail
+  const {reviewRestaurant} = useSelector(({restaurant}) => ({
+    reviewRestaurant: restaurant.detail
   }));
   useEffect(() => {
-    dispatch(detail(review.rstId));
-  }, [dispatch, review, restaurant]);
+    dispatch(detail(parseInt(review.rstId)));
+  }, [dispatch, review]);
 
-  return <ReviewItem review={review} restaurant={restaurant} />;
+  return <ReviewItem review={review} reviewRestaurant={reviewRestaurant} />;
 }
 
 export default ReviewContainer;
