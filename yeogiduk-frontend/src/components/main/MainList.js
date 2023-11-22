@@ -16,19 +16,28 @@ const MainListBox = styled.div`
 
 const Stars = styled.div`
   color: #e739a0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Likes = styled.div`
   color: #a789e3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Reviews = styled.div`
   color: #578933;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const MainList = ({ rstId, email }) => {
-  const [reviews, setReviews] = useState([]); //리뷰 많은 순 ,//별점 높은 순
-  const [likes, setLikes] = useState([]); //찜 많은 순
+  const [reviews, setReviews] = useState([]);
+  const [likes, setLikes] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,16 +46,9 @@ const MainList = ({ rstId, email }) => {
         setReviews(reviewResponse.data);
 
         const likeResponse = await axios.get(`http://localhost:8080/restaurant/likes/list/${rstId}`);
-<<<<<<< HEAD
-        
-        const sortedLikes = likeResponse.data.sort((a,b) => b.rstId - a.rstId); //정렬
-        const top5Likes = sortedLikes.slice(0,5);
-        setLikes(top5Likes);
-=======
         //정렬하기
         //상위 5개
         setLikes(likeResponse.data);
->>>>>>> YunS
       } catch (error) {
         console.error('ERROR', error);
       }
