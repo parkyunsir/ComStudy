@@ -58,7 +58,7 @@ const MainBanner = () => {
   const [imageHeight, setImageHeight] = useState(0);
   const [resetTimer, setResetTimer] = useState(false);
 
-  const images = ['main_banner.png', 'gray_banner1.png', 'color_banner1.png'];
+  const images = ['map_banner.png', 'test_banner.png', 'main_banner.png'];
   const bannerContainerRef = useRef(null);
 
   // 함수: 다음 이미지로 이동

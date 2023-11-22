@@ -59,6 +59,7 @@ public class RestaurantApiController {
         return (list != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(list) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
 
     //전체 찜 목록
     @GetMapping("/likes/list/{rstId}")
