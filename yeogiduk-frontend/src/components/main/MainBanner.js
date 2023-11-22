@@ -41,6 +41,8 @@ const PrevButton = styled.button`
   font-size: 2rem;
   width: 3rem;
   height: 3rem;
+  background-color: #ffffff;
+  opacity: 0;
 `;
 
 const NextButton = styled.button`
@@ -51,6 +53,7 @@ const NextButton = styled.button`
   font-size: 2rem;
   width: 3rem;
   height: 3rem;
+  opacity: 0;
 `;
 
 const MainBanner = () => {
@@ -98,7 +101,7 @@ const MainBanner = () => {
     const intervalId = setInterval(() => {
       showNextImage();
       setResetTimer(false);
-    }, 4000); //이미지가 바뀌면 reset 후 4000 다시 시작
+    }, 1550); //이미지가 바뀌면 reset 후 4000 다시 시작
 
     // 컴포넌트가 언마운트될 때 clearInterval로 인터벌 해제
     return () => clearInterval(intervalId);
