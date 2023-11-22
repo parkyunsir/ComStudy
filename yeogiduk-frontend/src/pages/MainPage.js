@@ -1,12 +1,15 @@
 import React from 'react';
 import HeaderContainer from '../containers/common/HeaderContainer';
-import MainTemplate from '../components/main/MainTemplate';
+import MainBanner from '../components/main/MainBanner';
+import MainList from '../components/main/MainList';
 
 const MainPage = () => {
   return (
     <>
       <HeaderContainer />
-      <MainTemplate />
+      <MainBanner />     
+      <MainList />
+      
     </>
   );
 };
