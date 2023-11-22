@@ -11,3 +11,6 @@ export const rtype = typeId =>
 
 export const search = word =>
   client.get(`/search/${word}`);
+
+export const likeNum = rstId =>
+  client.get(`/restaurant/likes/list/${rstId}`);
