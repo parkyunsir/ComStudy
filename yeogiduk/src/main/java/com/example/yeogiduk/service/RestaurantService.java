@@ -71,4 +71,11 @@ public class RestaurantService {
                 .intro(restaurant.getIntro())
                 .build();
     }
+
+    public List<RestaurantDto> getRestaurantListBySearch(String word) {
+        List<Restaurant> restaurantList = restaurantRepository.findByWord(word); // 식당 이름(name) 또는 메뉴 이름(menu)
+        return restaurantList.stream()
+                .map(this::convertEntityToDto)
+                .collect(Collectors.toList());
+    }
 }

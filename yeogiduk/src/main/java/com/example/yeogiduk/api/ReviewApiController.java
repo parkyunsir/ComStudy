@@ -1,7 +1,9 @@
 package com.example.yeogiduk.api;
 
 import com.example.yeogiduk.dto.ReviewDto;
+import com.example.yeogiduk.entity.Review;
 import com.example.yeogiduk.service.ReviewService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -36,4 +38,10 @@ public class ReviewApiController {
         return ResponseEntity.status(HttpStatus.OK).body(createdDto);
     }
 
+    // 내가 쓴 리뷰
+    @GetMapping("/reviews/{email}")
+    public ResponseEntity<List<Review>> myReviews(@PathVariable String email) {
+        List<Review> reviews = reviewService.myReviews(email);
+        return ResponseEntity.status(HttpStatus.OK).body(reviews);
+    }
 }

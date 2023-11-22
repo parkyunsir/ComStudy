@@ -51,4 +51,7 @@ public class ReviewService {
         return ReviewDto.createReviewDto(reviewed);
     }
 
+    public List<Review> myReviews(String email) {
+        return reviewRepository.findByEmail(email);
+    }
 }
