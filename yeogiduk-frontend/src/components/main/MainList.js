@@ -36,7 +36,7 @@ const MainList = ({starList, likeList, reviewList}) => {
     <MainListBox>
       <Stars>
         <div>별점 높은 순:</div>
-<<<<<<< HEAD
+
         {starList && (
           <div>
             {starList.map(restaurant => (
@@ -44,15 +44,6 @@ const MainList = ({starList, likeList, reviewList}) => {
             ), (parseInt(starList.length) < 3))}
           </div>
         )}
-=======
-        <ul id="ul1">
-          {limitedReviews.map(review => (
-            <li key={review}>
-              {review}
-            </li>
-          ))}
-        </ul>
->>>>>>> 622584139ac808e095c98f94db1efc96091ee43d
       </Stars>
       <Likes>
         <div>찜 많은 순:</div>

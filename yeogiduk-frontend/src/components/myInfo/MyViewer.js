@@ -11,7 +11,7 @@ const GrayBackGround = styled.div`
 `;
 
 const MyViewerBlock = styled(Responsive)`
-  margin-top: 1rem;
+  margin-top: 3rem;
   background: #f1f3f5;
   
 `;
@@ -115,11 +115,7 @@ const MyViewer = ({student, restaurants, reviews}) => {
             <div>
               {reviews.map(review => (
                 <ReviewContainer review={review} />
-<<<<<<< HEAD
-              ), num = num + 1)}
-=======
               ))}
->>>>>>> 622584139ac808e095c98f94db1efc96091ee43d
             </div>
           )}
         </div>
