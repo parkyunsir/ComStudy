@@ -45,7 +45,7 @@ const MainList = ({ rstId, email }) => {
         const reviewResponse = await axios.get(`http://localhost:8080/restaurant/${rstId}/reviews`);
         setReviews(reviewResponse.data);
 
-        const likeResponse = await axios.get('http://localhost:8080/restaurant/likes');
+        const likeResponse = await axios.get(`http://localhost:8080/restaurant/likes/${rstId}`);
         setLikes(likeResponse.data);
       } catch (error) {
         console.error('ERROR', error);

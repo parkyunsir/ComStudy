@@ -83,8 +83,8 @@ public class RestaurantService {
         return restaurantList.stream()
                 .map(this::convertEntityToDto)
                 .collect(Collectors.toList());
-  
-    public int getLikesNumber(Long rstId) {
+    }
+    public int getLikesNumber (Long rstId){
         List<Likes> likesList = likesRepository.findByRstId(rstId);
         return likesList.size();
     }
