@@ -22,7 +22,7 @@ const Image = styled.img`
 `;
 
 const Context = styled.div`
-  position: relative;
+  
 `;
 
 const Title = styled.div``;

@@ -36,30 +36,7 @@ const MainList = ({starList, likeList, reviewList}) => {
     <MainListBox>
       <Stars>
         <div>별점 높은 순:</div>
-<<<<<<< HEAD
-        <ul id="ul1">
-          {limitedReviews.map(review => (
-            <li key={review}>
-              {review}
-            </li>
-          ))}
-        </ul>
-      </Stars>
 
-      <Likes>
-      <div>찜 많은 순:</div>
-      <ul>
-        {limitedLikes.length > 0 ? (
-          limitedLikes.map(like => (
-            <li key={like.email}>
-              {like.email} - {like.rstId}
-            </li>
-          ))
-        ) : (
-          <li>
-            
-          </li>
-=======
         {starList && (
           <div>
             {starList.map(restaurant => (
@@ -76,7 +53,6 @@ const MainList = ({starList, likeList, reviewList}) => {
               <RestaurantItem restaurant={restaurant} />
             ))}
           </div>
->>>>>>> 676be7bbab3bf844a0e49a21aa37ade716ebce6d
         )}
       </Likes>
       <Reviews>
