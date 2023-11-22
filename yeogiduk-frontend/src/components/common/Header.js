@@ -37,6 +37,8 @@ const Spacer = styled.div`
 const UserInfo = styled(Link)`
   font-weight: 800;
   margin-right: 1rem;
+  text-decoration: none;
+  color: black;
 `;
 
 const Logo = styled.img`
@@ -47,7 +49,7 @@ const Logo = styled.img`
 const SearchContainer = styled.div`
   position: relative;
   display: flex;
-  width: 35vw; /* 또는 다른 적절한 값을 설정 */
+  width: 30vw; /* 또는 다른 적절한 값을 설정 */
 `;
 
 const StyledInput = styled.input`
@@ -72,7 +74,20 @@ const SearchButton = styled(Button)`
   margin-left: 1em;
 `;
 
-
+const SubMenu = styled.div`
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  background: #d6d6d6;
+  display: flex;
+  justify-content: center;
+  .link {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+`;
 
 const Header = ({student, onLogout, onSubmit, word}) => {
   return (
@@ -82,11 +97,11 @@ const Header = ({student, onLogout, onSubmit, word}) => {
           <Link to="/" className="logo">
             <Logo src={LogoImage} alt="yeogiduk logo" />
           </Link>
-          <form className="search">
+          <form className="search" onSubmit={onSubmit}>
             <SearchContainer>
-              <StyledInput name="word" value={word} placeholder="덕우야! 먹고 싶은 메뉴나 식당 이름을 검색해봐!"/>
+              <StyledInput name="word" value={word} placeholder="덕우야! 먹고 싶은 메뉴나 식당 이름을 검색해봐!" required/>
               <SearchIcon />
-              <SearchButton onClick={onSubmit}>검색</SearchButton>
+              <SearchButton>검색</SearchButton>
             </SearchContainer>
           </form>
           {student ? (
@@ -100,6 +115,11 @@ const Header = ({student, onLogout, onSubmit, word}) => {
             </div>
           )}
         </Wrapper>
+        <SubMenu>
+          <Link to="/list" className="link">식당 목록</Link>
+          <Link to="/map" className="link">맛집 지도</Link>
+          <Link to="/recommend" className="link">오늘의 추천</Link>
+        </SubMenu>
       </HeaderBlock>
       <Spacer />
     </>

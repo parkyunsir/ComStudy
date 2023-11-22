@@ -14,21 +14,18 @@ const MainListBox = styled.div`
 `;
 
 const Stars = styled.div`
-  color: #e739a0;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const Likes = styled.div`
-  color: #a789e3;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const Reviews = styled.div`
-  color: #578933;
   display: flex;
   flex-direction: column;
   align-items: center;

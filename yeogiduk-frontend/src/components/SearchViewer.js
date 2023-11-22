@@ -4,10 +4,11 @@ import Responsive from './common/Responsive';
 import Restaurant from './list/Restaurant';
 
 const SearchViewerBlock = styled(Responsive)`
+  margin-top: 5.5rem;
 `;
 
 const Word = styled.div`
-  font-size: 50px;
+  font-size: 25px;
 `;
 
 const WhiteBox = styled.div`

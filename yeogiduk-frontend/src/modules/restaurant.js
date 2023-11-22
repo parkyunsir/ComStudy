@@ -8,10 +8,10 @@ const [RTYPE, RTYPE_SUCCESS, RTYPE_FAILURE] = createRequestActionTypes('restaura
 const [REVIEW, REVIEW_SUCCESS, REVIEW_FAILURE] = createRequestActionTypes('restaurant/REVIEW');
 const [LIKENUM, LIKENUM_SUCCESS, LIKENUM_FAILURE] = createRequestActionTypes('restaurant/LIKENUM');
 
-export const detail = createAction(DETAIL, rstId => rstId);
-export const rtype = createAction(RTYPE, typeId => typeId);
-export const review = createAction(REVIEW, rstId => rstId);
-export const likenum = createAction(LIKENUM, rstId => rstId);
+export const restDetail = createAction(DETAIL, rstId => rstId);
+export const restRtype = createAction(RTYPE, typeId => typeId);
+export const restReview = createAction(REVIEW, rstId => rstId);
+export const restLikenum = createAction(LIKENUM, rstId => rstId);
 
 const detailSaga = createRequestSaga(DETAIL, restaurantAPI.restaurantDetail);
 const rtypeSaga = createRequestSaga(RTYPE, restaurantAPI.rtype);

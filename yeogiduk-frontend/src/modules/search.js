@@ -14,6 +14,7 @@ export function* searchSaga() {
 }
 
 const initialState = {
+  word: null,
   restaurants: null,
   error: null
 };

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import Header from '../../components/common/Header';
@@ -7,35 +7,26 @@ import {searchWord} from '../../modules/search';
 
 const HeaderContainer = () => {
   const navigate = useNavigate();
-  const [word, setWord] = useState(null);
-  const {student} = useSelector(({auth, search}) => ({
+  const {student, word} = useSelector(({auth, search}) => ({
     student: auth.student,
+    word: search.word
   }));
   const dispatch = useDispatch();
   const onLogout = () => {
     dispatch(logout());
     navigate('/');
-  }
+  };
 
   const onSubmit = () => {
-    setWord(word);
-    dispatch(searchWord(word));
-  }
+    dispatch(searchWord({word}));
+    navigate('/search');
+  };
 
   useEffect(() => {
     if(student) {
       console.log(student.email);
     }
   });
-
-  useEffect(() => {
-    if(word) {
-      const searchWord = word;
-      setWord(null);
-      navigate('/search');
-      localStorage.setItem('word', searchWord);
-    }
-  }, [navigate, word])
 
   return <Header student={student} onLogout={onLogout} onSubmit={onSubmit} word={word} />;
 };

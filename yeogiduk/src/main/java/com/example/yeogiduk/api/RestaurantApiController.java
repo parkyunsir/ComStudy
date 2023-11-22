@@ -63,8 +63,9 @@ public class RestaurantApiController {
 
     //전체 찜 목록
     @GetMapping("/likes/list/{rstId}")
-    public int getLikesNumber(@PathVariable Long rstId) {
-        return restaurantService.getLikesNumber(rstId);
+    public ResponseEntity<Integer> getLikesNumber(@PathVariable Long rstId) {
+        int num = restaurantService.getLikesNumber(rstId);
+        return ResponseEntity.status(HttpStatus.OK).body(num);
     }
 
     @GetMapping("/list/rank/star")
