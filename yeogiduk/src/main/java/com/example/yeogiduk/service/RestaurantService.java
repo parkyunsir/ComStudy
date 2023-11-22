@@ -88,4 +88,16 @@ public class RestaurantService {
         List<Likes> likesList = likesRepository.findByRstId(rstId);
         return likesList.size();
     }
+
+    public List<Restaurant> getRankStar() {
+        return restaurantRepository.findByStar();
+    }
+
+    public List<Restaurant> getRankLike() {
+        return restaurantRepository.findByLike();
+    }
+
+    public List<Restaurant> getRankReview() {
+        return restaurantRepository.findByReview();
+    }
 }

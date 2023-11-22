@@ -3,28 +3,29 @@ import {takeLatest} from 'redux-saga/effects';
 import createRequestSaga, { createRequestActionTypes } from '../lib/createRequestSaga';
 import * as restaurantAPI from '../lib/api/restaurant';
 
-const [SEARCH, SEARCH_SUCCESS, SEARCH_FAILURE] = createRequestActionTypes('list/SEARCH');
+const [SEARCHWORD, SEARCHWORD_SUCCESS, SEARCHWORD_FAILURE] = createRequestActionTypes('search/SEARCHWORD');
 
-export const search = createAction(SEARCH, word => word);
+export const searchWord = createAction(SEARCHWORD, word => word);
 
-const searchSaga = createRequestSaga(SEARCH, restaurantAPI.search);
+const searchWordSaga = createRequestSaga(SEARCHWORD, restaurantAPI.search);
 
-export function* listSaga() {
-  yield takeLatest(SEARCH, searchSaga);
+export function* searchSaga() {
+  yield takeLatest(SEARCHWORD, searchWordSaga);
 }
 
 const initialState = {
+  word: null,
   restaurants: null,
   error: null
 };
 
-const list = handleActions(
+const search = handleActions(
   {
-    [SEARCH_SUCCESS]: (state, {payload: restaurants}) => ({
+    [SEARCHWORD_SUCCESS]: (state, {payload: restaurants}) => ({
       ...state,
       restaurants
     }),
-    [SEARCH_FAILURE]: (state, {payload: error}) => ({
+    [SEARCHWORD_FAILURE]: (state, {payload: error}) => ({
       ...state,
       error
     })
@@ -32,4 +33,4 @@ const list = handleActions(
   initialState
 )
 
-export default list;
+export default search;
