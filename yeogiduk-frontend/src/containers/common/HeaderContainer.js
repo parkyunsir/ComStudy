@@ -14,6 +14,7 @@ const HeaderContainer = () => {
   const dispatch = useDispatch();
   const onLogout = () => {
     dispatch(logout());
+    navigate('/');
   }
 
   const onSubmit = () => {
