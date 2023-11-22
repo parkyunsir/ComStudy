@@ -8,14 +8,14 @@ const buttonStyle = css`
   font-size: 1rem;
   font-weight: bold;
   padding: 0.25rem 1rem;
-  color: white;
+  color: #363636;
   outline: none;
   cursor: pointer;
-
-  background: #495057;
-  &:hover {
-    background: #adb5bd;
-  }
+  background: none;
+  // background: #495057;
+  // &:hover {
+  //   background: #adb5bd;
+  // }
 
   ${props =>
     props.fullWidth &&

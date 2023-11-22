@@ -4,6 +4,7 @@ import Responsive from './Responsive';
 import Button from './Button';
 import {Link} from 'react-router-dom';
 import LogoImage from '../../lib/image/logo.svg';
+import {IoSearchOutline} from 'react-icons/io5';
 
 const HeaderBlock = styled.div`
   position: fixed;
@@ -16,7 +17,7 @@ const Wrapper = styled(Responsive)`
   height: 5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between; // 자식 엘리먼트 사이의 여백을 최대로 설정
+  justify-content: space-around; // 자식 엘리먼트 사이의 여백을 최대로 설정
   .logo {
     font-size: 1.125rem;
     font-weight: 800;
@@ -30,7 +31,7 @@ const Wrapper = styled(Responsive)`
 
 // 헤더가 fixed로 되어있기 때문에 페이지의 콘텐츠가 4rem 아래에 나타나도록 해주는 컴포넌트
 const Spacer = styled.div`
-  height: 5rem;
+  height: 4rem;
 `;
 
 const UserInfo = styled(Link)`
@@ -43,7 +44,35 @@ const Logo = styled.img`
   white-space: nowrap;
 `;
 
-const StyledInput = styled.input``;
+const SearchContainer = styled.div`
+  position: relative;
+  display: flex;
+  width: 35vw; /* 또는 다른 적절한 값을 설정 */
+`;
+
+const StyledInput = styled.input`
+  flex: 1;
+  border: 0.1em solid #bbb;
+  border-radius: 0.8em;
+  padding: 0.4em 1.5em;
+  font-size: 0.9em;
+  width: 100%;
+`;
+
+const SearchIcon = styled(IoSearchOutline)`
+  position: absolute;
+  top: 50%;
+  right: 4.5em; /* 또는 다른 적절한 값 */
+  transform: translateY(-50%);
+  font-size: 20px; 
+  color: #363636;
+`;
+
+const SearchButton = styled(Button)`
+  margin-left: 1em;
+`;
+
+
 
 const Header = ({student, onLogout, onSubmit, word}) => {
   return (
@@ -53,9 +82,12 @@ const Header = ({student, onLogout, onSubmit, word}) => {
           <Link to="/" className="logo">
             <Logo src={LogoImage} alt="yeogiduk logo" />
           </Link>
-          <form>
-            <StyledInput name="word" value={word} />
-            <Button onClick={onSubmit}>검색</Button>
+          <form className="search">
+            <SearchContainer>
+              <StyledInput name="word" value={word} placeholder="덕우야! 먹고 싶은 메뉴나 식당 이름을 검색해봐!"/>
+              <SearchIcon />
+              <SearchButton onClick={onSubmit}>검색</SearchButton>
+            </SearchContainer>
           </form>
           {student ? (
             <div className="right">
