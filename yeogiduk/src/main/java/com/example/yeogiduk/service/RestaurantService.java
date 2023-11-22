@@ -1,7 +1,10 @@
 package com.example.yeogiduk.service;
 
+import com.example.yeogiduk.dto.LikesDto;
 import com.example.yeogiduk.dto.RestaurantDto;
+import com.example.yeogiduk.entity.Likes;
 import com.example.yeogiduk.entity.Restaurant;
+import com.example.yeogiduk.repository.LikesRepository;
 import com.example.yeogiduk.repository.RestaurantRepository;
 import com.example.yeogiduk.repository.RtypeRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +23,9 @@ public class RestaurantService {
 
     @Autowired
     private RtypeRepository rtypeRepository;
+
+    @Autowired
+    private LikesRepository likesRepository;
 
     public void uploadRestaurant(RestaurantDto restaurantDto) {
         Restaurant restaurant = convertDtoToEntity(restaurantDto);
@@ -70,5 +76,10 @@ public class RestaurantService {
                 .endTime(restaurant.getEndTime())
                 .intro(restaurant.getIntro())
                 .build();
+    }
+
+    public int getLikesNumber(Long rstId) {
+        List<Likes> likesList = likesRepository.findByRstId(rstId);
+        return likesList.size();
     }
 }
