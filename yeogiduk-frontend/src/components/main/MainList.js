@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 import styled from 'styled-components';
+import RestaurantItem from '../myInfo/RestaurantItem';
+import {rankStar, rankLike, rankReview} from '../../modules/list';
 
 const MainListBox = styled.div`
-  position: absolute;
-  left: 0;
-  top: 30rem;
-  bottom: 0;
-  right: 0;
+  padding-top: 3rem;
   background: #f1f3f5;
   display: flex;
   flex-direction: column;
@@ -35,74 +34,38 @@ const Reviews = styled.div`
   align-items: center;
 `;
 
-const MainList = ({ rstId, email }) => {
-  const [reviews, setReviews] = useState([]);
-  const [likes, setLikes] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const reviewResponse = await axios.get(`http://localhost:8080/restaurant/${rstId}/reviews`);
-        setReviews(reviewResponse.data);
-
-        const likeResponse = await axios.get(`http://localhost:8080/restaurant/likes/list/${rstId}`);
-        
-        //정렬하기
-        const sortedLikes = likeResponse.data.sort((a, b) => b.rstId - a.rstId);
-      
-      // 상위 5개만 가져오기
-        const top5Likes = sortedLikes.slice(0, 5);
-        setLikes(top5Likes);
-      } catch (error) {
-        console.error('ERROR', error);
-      }
-    };
-
-    fetchData();
-  }, [rstId, email]);
-
-  const limitedReviews = reviews.slice(0, 5);
-  const limitedLikes = likes.slice(0, 5);
-
+const MainList = ({starList, likeList, reviewList}) => {
   return (
     <MainListBox>
       <Stars>
         <div>별점 높은 순:</div>
-        <ul id="ul1">
-          {limitedReviews.map(review => (
-            <li key={review.review_id}>
-              {review.review_id} : {review.content}
-            </li>
-          ))}
-        </ul>
-      </Stars>
-
-      <Likes>
-      <div>찜 많은 순:</div>
-      <ul>
-        {limitedLikes.length > 0 ? (
-          limitedLikes.map(like => (
-            <li key={like.email}>
-              {like.email} - {like.rstId}
-            </li>
-          ))
-        ) : (
-          <li>
-            
-          </li>
+        {starList && (
+          <div>
+            {starList.map(restaurant => (
+              <RestaurantItem restaurant={restaurant} />
+            ), (parseInt(starList.length) < 3))}
+          </div>
         )}
-      </ul>
+      </Stars>
+      <Likes>
+        <div>찜 많은 순:</div>
+        {likeList && (
+          <div>
+            {likeList.map(restaurant => (
+              <RestaurantItem restaurant={restaurant} />
+            ))}
+          </div>
+        )}
       </Likes>
-
       <Reviews>
         <div>리뷰 많은 순:</div>
-        <ul>
-          {limitedLikes.map(like => (
-            <li key={like.email}>
-              {like.email} - {like.rstId}
-            </li>
-          ))}
-        </ul>
+        {reviewList && (
+          <div>
+            {reviewList.map(restaurant => (
+              <RestaurantItem restaurant={restaurant} />
+            ))}
+          </div>
+        )}
       </Reviews>
     </MainListBox>
   );

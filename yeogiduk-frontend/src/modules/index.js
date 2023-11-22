@@ -4,18 +4,20 @@ import auth, {authSaga} from './auth';
 import loading from './loading';
 import myInfo, {myInfoSaga} from './myInfo';
 import restaurant, {restaurantSaga} from './restaurant';
-import list, {listSaga} from './search';
+import search, {searchSaga} from './search';
+import list, {listSaga} from './list';
 
 const rootReducer = combineReducers({
   auth,
   loading,
   myInfo,
   restaurant,
-  list
+  list,
+  search,
 });
 
 export function* rootSaga() {
-  yield all([authSaga(), myInfoSaga(), restaurantSaga(), listSaga()]);
+  yield all([authSaga(), myInfoSaga(), restaurantSaga(), listSaga(), searchSaga()]);
 }
 
 export default rootReducer;

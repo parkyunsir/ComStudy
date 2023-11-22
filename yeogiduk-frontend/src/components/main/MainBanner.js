@@ -2,11 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const MainTemplateBox = styled.div`
-  position: absolute;
-  left: 0;
   top: 5rem;
-  bottom: 0;
-  right: 0;
+  bottom: 5rem;
   background: #f1f3f5;
   /* flex로 내부 내용 중앙 정렬 */
   display: flex;
@@ -45,6 +42,7 @@ const PrevButton = styled.button`
   background: none;
   border: none;
   color: white;
+  opacity: 0;
 `;
 
 const NextButton = styled.button`
@@ -58,6 +56,7 @@ const NextButton = styled.button`
   background: none;
   border: none;
   color: white;
+  opacity: 0;
 `;
 
 const MainBanner = () => {

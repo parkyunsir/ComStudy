@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import Header from '../../components/common/Header';
 import {logout} from '../../modules/auth';
-import {search} from '../../modules/search';
+import {searchWord} from '../../modules/search';
 
 const HeaderContainer = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const HeaderContainer = () => {
 
   const onSubmit = () => {
     setWord(word);
-    dispatch(search(word));
+    dispatch(searchWord(word));
   }
 
   useEffect(() => {

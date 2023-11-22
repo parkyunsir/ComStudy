@@ -65,7 +65,7 @@ const MyViewer = ({student, restaurants, reviews}) => {
             <div>
               {reviews.map(review => (
                 <ReviewContainer review={review} />
-              ), num++)}
+              ), num = num + 1)}
             </div>
           )}
         </div>
