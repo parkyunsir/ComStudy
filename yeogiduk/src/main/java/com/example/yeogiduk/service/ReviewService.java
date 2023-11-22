@@ -1,12 +1,11 @@
 package com.example.yeogiduk.service;
 
-import com.example.yeogiduk.dto.ImageDto;
 import com.example.yeogiduk.dto.ReviewDto;
 import com.example.yeogiduk.entity.Restaurant;
 import com.example.yeogiduk.entity.Review;
-import com.example.yeogiduk.repository.ImageRepository;
 import com.example.yeogiduk.repository.RestaurantRepository;
 import com.example.yeogiduk.repository.ReviewRepository;
+import jakarta.persistence.metamodel.SingularAttribute;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,10 +54,10 @@ public class ReviewService {
         // 4. DTO로 변환해 반환
         return ReviewDto.createReviewDto(reviewed);
     }
-
+/*
     @Transactional
-    public Long save(ReviewDto reviewDto) {
+    public SingularAttribute<? super Object, Object> save(ReviewDto reviewDto) {
         return ReviewRepository.save(reviewDto.toEntity()).getId(); // 일단 저장 기능만 구현함
     }
-
+*/
 }

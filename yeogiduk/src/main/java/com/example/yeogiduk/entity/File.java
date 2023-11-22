@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Image {
+public class File {
 
     @Id @GeneratedValue
     private Long id;
@@ -21,12 +21,12 @@ public class Image {
     private String fullPath;
 
     @Builder
-    public Image(Long id, String originFileName, String fullPath) {
+    public File(Long id, String originFileName, String fullPath) {
         this.id = id;
         this.originFileName = originFileName;
         this.fullPath = fullPath;
     }
 
-    public Image(String fullPath) {
+    public File(String fullPath) {
     }
 }
