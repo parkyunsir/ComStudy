@@ -12,8 +12,8 @@ import MapPage from './pages/MapPage';
 function App() {
   return (
     <Routes>
-      <Route path="/main" element={<MainPage />} />
-      <Route path="/" element={<LoginPage />} />
+      <Route path="/" element={<MainPage />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/join" element={<JoinPage />} />
       <Route path="/mypage" element={<MyPage />} />
       <Route path="/search" element={<SearchPage />} />

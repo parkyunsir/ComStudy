@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Responsive from './common/Responsive';
-import Restaurant from './list/Restaurant';
+import RestaurantContainer from '../containers/RestaurantContainer';
 
 const SearchViewerBlock = styled(Responsive)`
   margin-top: 5.5rem;
@@ -27,7 +27,7 @@ const SearchViewer = ({word, restaurants}) => {
           {restaurants && (
             <div>
               {restaurants.map(restaurant => (
-                <Restaurant restaurant={restaurant} />
+                <RestaurantContainer restaurant={restaurant} />
               ))}
             </div>
           )}

@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import axios from 'axios';
+import React from 'react';
 import styled from 'styled-components';
 import RestaurantItem from '../myInfo/RestaurantItem';
-
-import {rankStar, rankLike, rankReview} from '../../modules/list';
 
 const MainListBox = styled.div`
   padding-top: 3rem;
