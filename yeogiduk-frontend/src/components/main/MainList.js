@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 import styled from 'styled-components';
 import RestaurantItem from '../myInfo/RestaurantItem';
+
 import {rankStar, rankLike, rankReview} from '../../modules/list';
 
 const MainListBox = styled.div`
@@ -11,6 +12,7 @@ const MainListBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height:35rem;
 `;
 
 const Stars = styled.div`
@@ -39,7 +41,7 @@ const Content = styled.div`
   padding-top: 1rem;
   font-weight: bold;
   font-size:1.2rem;
-  color: #333333;
+  color: #3e3e3e;
 `;
 
 const MainList = ({starList, likeList, reviewList}) => {
