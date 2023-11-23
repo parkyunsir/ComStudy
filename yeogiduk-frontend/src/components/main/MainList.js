@@ -38,14 +38,15 @@ const Content = styled.div`
   flex-direction: column;
   padding-top: 1rem;
   font-weight: bold;
-  font-size:2rem;
+  font-size:1.2rem;
+  color: #333333;
 `;
 
 const MainList = ({starList, likeList, reviewList}) => {
   return (
     <MainListBox>
       <Content>
-        <div>별점 높은 순:</div>
+        <div>덕우들의 평가가 완전 좋은 식당이야!</div>
         <Stars>
         {starList && (
           <div>
@@ -58,7 +59,7 @@ const MainList = ({starList, likeList, reviewList}) => {
       </Content>
 
       <Content>
-        <div>찜 많은 순:</div>
+        <div>덕우들이 가장 많이 찜한 식당이야!</div>
         <Likes>
         {likeList && (
           <div>
@@ -71,7 +72,7 @@ const MainList = ({starList, likeList, reviewList}) => {
       </Content>
 
       <Content>
-        <div>리뷰 많은 순:</div>
+        <div>덕우들의 리뷰가 제일 많은 식당이야!</div>
         <Reviews>
         {reviewList && (
           <div>
