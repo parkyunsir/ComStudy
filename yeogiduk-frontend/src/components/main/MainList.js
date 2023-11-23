@@ -11,12 +11,6 @@ const MainListBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-`;
-
-const Text = styled.div`
-  font-weight:bold;
-  font-size:2rem;
 `;
 
 const Stars = styled.div`
@@ -37,12 +31,23 @@ const Reviews = styled.div`
   align-items: center;
 `;
 
+const Content = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  font-weight: bold;
+  font-size:2rem;
+`;
+
 const MainList = ({starList, likeList, reviewList}) => {
   return (
     <MainListBox>
-      <Stars>
-        <Text>별점 높은 순:</Text>
-
+      <Content>
+      
+        <div>별점 높은 순:</div>
+        <Stars>
         {starList && (
           <div>
             {starList.map(restaurant => (
@@ -51,8 +56,11 @@ const MainList = ({starList, likeList, reviewList}) => {
           </div>
         )}
       </Stars>
-      <Likes>
+      </Content>
+
+      <Content>
         <div>찜 많은 순:</div>
+        <Likes>
         {likeList && (
           <div>
             {likeList.map(restaurant => (
@@ -61,8 +69,11 @@ const MainList = ({starList, likeList, reviewList}) => {
           </div>
         )}
       </Likes>
-      <Reviews>
+      </Content>
+
+      <Content>
         <div>리뷰 많은 순:</div>
+        <Reviews>
         {reviewList && (
           <div>
             {reviewList.map(restaurant => (
@@ -71,6 +82,7 @@ const MainList = ({starList, likeList, reviewList}) => {
           </div>
         )}
       </Reviews>
+      </Content>
     </MainListBox>
   );
 };
