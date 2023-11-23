@@ -4,6 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import RestaurantItem from '../myInfo/RestaurantItem';
+import { TbStar, TbHeart, TbPencilCheck } from "react-icons/tb";
 
 import {rankStar, rankLike, rankReview} from '../../modules/list';
 
@@ -20,8 +21,8 @@ const MainListBox = styled(Responsive)`
 `;
 
 const WhiteBox = styled.div`
-  // background: white;
-  background: #f1f3f5;
+  background: white;
+  // background: #f1f3f5;
   padding-left:1rem;
   padding-right:1rem;
   padding-bottom:0.5rem;
@@ -64,6 +65,11 @@ const Horizon = styled.div`
   overflow-x:auto;
 `;
 
+const Line = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 
 const MainList = ({starList, likeList, reviewList}) => {
   return (
@@ -71,7 +77,10 @@ const MainList = ({starList, likeList, reviewList}) => {
     <MainListBox>
       <WhiteBox>
       <Content>
-        <div>덕우들의 평가가 완전 좋은 식당이야!</div>
+        <Line>
+        <div><TbStar/> 덕우들의 평가가 완전 좋은 식당이야!</div>
+        <div>더보기 &#10095;</div>
+        </Line>
         <Stars>
         {starList && (
           <Horizon>
@@ -87,7 +96,10 @@ const MainList = ({starList, likeList, reviewList}) => {
 
       <WhiteBox>
       <Content>
-        <div>덕우들이 가장 많이 찜한 식당이야!</div>
+        <Line>
+        <div><TbHeart/> 덕우들이 가장 많이 찜한 식당이야!</div>
+        <div>더보기 &#10095;</div>
+        </Line>
         <Likes>
         {likeList && (
           <Horizon>
@@ -102,7 +114,10 @@ const MainList = ({starList, likeList, reviewList}) => {
 
       <WhiteBox>
       <Content>
-        <div>덕우들의 리뷰가 제일 많은 식당이야!</div>
+        <Line>
+        <div><TbPencilCheck/> 덕우들의 리뷰가 제일 많은 식당이야!</div>
+        <div>더보기 &#10095;</div>
+        </Line>
         <Reviews>
         {reviewList && (
           <Horizon>
