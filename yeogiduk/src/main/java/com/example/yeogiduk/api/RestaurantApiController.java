@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/restaurant")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RestaurantApiController {
 
     @Autowired
@@ -48,6 +50,45 @@ public class RestaurantApiController {
         RestaurantDto restaurantDto = restaurantService.getRestaurantDetail(rstId);
         return (restaurantDto != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(restaurantDto) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    @GetMapping("/search/{word}")
+    public ResponseEntity<List<RestaurantDto>> getRestaurantListBySearch(@PathVariable String word) {
+        List<RestaurantDto> list = restaurantService.getRestaurantListBySearch(word);
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    //전체 찜 목록
+    @GetMapping("/likes/list/{rstId}")
+    public ResponseEntity<Integer> getLikesNumber(@PathVariable Long rstId) {
+        int num = restaurantService.getLikesNumber(rstId);
+        return ResponseEntity.status(HttpStatus.OK).body(num);
+    }
+
+    @GetMapping("/list/rank/star")
+    public ResponseEntity<List<Restaurant>> getStarRank() {
+        List<Restaurant> list = restaurantService.getRankStar();
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    @GetMapping("/list/rank/like")
+    public ResponseEntity<List<Restaurant>> getLikeRank() {
+        List<Restaurant> list = restaurantService.getRankLike();
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    @GetMapping("/list/rank/review")
+    public ResponseEntity<List<Restaurant>> getLikeReview() {
+        List<Restaurant> list = restaurantService.getRankReview();
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 }

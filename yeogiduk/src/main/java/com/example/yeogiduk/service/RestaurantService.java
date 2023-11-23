@@ -1,7 +1,10 @@
 package com.example.yeogiduk.service;
 
+import com.example.yeogiduk.dto.LikesDto;
 import com.example.yeogiduk.dto.RestaurantDto;
+import com.example.yeogiduk.entity.Likes;
 import com.example.yeogiduk.entity.Restaurant;
+import com.example.yeogiduk.repository.LikesRepository;
 import com.example.yeogiduk.repository.RestaurantRepository;
 import com.example.yeogiduk.repository.RtypeRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +23,9 @@ public class RestaurantService {
 
     @Autowired
     private RtypeRepository rtypeRepository;
+
+    @Autowired
+    private LikesRepository likesRepository;
 
     public void uploadRestaurant(RestaurantDto restaurantDto) {
         Restaurant restaurant = convertDtoToEntity(restaurantDto);
@@ -71,5 +77,28 @@ public class RestaurantService {
                 .endTime(restaurant.getEndTime())
                 .intro(restaurant.getIntro())
                 .build();
+    }
+
+    public List<RestaurantDto> getRestaurantListBySearch(String word) {
+        List<Restaurant> restaurantList = restaurantRepository.findByWord(word); // 식당 이름(name) 또는 메뉴 이름(menu)
+        return restaurantList.stream()
+                .map(this::convertEntityToDto)
+                .collect(Collectors.toList());
+    }
+    public int getLikesNumber (Long rstId){
+        List<Likes> likesList = likesRepository.findByRstId(rstId);
+        return likesList.size();
+    }
+
+    public List<Restaurant> getRankStar() {
+        return restaurantRepository.findByStar();
+    }
+
+    public List<Restaurant> getRankLike() {
+        return restaurantRepository.findByLike();
+    }
+
+    public List<Restaurant> getRankReview() {
+        return restaurantRepository.findByReview();
     }
 }

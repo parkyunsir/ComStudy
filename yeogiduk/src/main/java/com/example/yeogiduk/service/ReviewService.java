@@ -54,6 +54,11 @@ public class ReviewService {
         // 4. DTO로 변환해 반환
         return ReviewDto.createReviewDto(reviewed);
     }
+
+    public List<Review> myReviews(String email) {
+        return reviewRepository.findByEmail(email);
+    }
+
 /*
     @Transactional
     public SingularAttribute<? super Object, Object> save(ReviewDto reviewDto) {

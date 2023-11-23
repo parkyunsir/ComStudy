@@ -2,16 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const MainTemplateBox = styled.div`
-  position: absolute;
-  left: 0;
   top: 5rem;
-  bottom: 0;
-  right: 0;
   background: #f1f3f5;
   /* flex로 내부 내용 중앙 정렬 */
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 `;
 
 const Banner = styled.div`
@@ -22,9 +19,9 @@ const Banner = styled.div`
 
 const BannerContainer = styled.div`
   display: flex;
-  height: auto;
-  max-height: 300px; /* 높이를 조절할 수 있는 값으로 설정 */
+  max-height: 300px;
   transition: transform 1s ease-in-out;
+  width: 100%;
 `;
 
 const BannerImage = styled.img`
@@ -41,6 +38,9 @@ const PrevButton = styled.button`
   font-size: 2rem;
   width: 3rem;
   height: 3rem;
+  background: none;
+  border: none;
+  color: white;
 `;
 
 const NextButton = styled.button`
@@ -51,6 +51,9 @@ const NextButton = styled.button`
   font-size: 2rem;
   width: 3rem;
   height: 3rem;
+  background: none;
+  border: none;
+  color: white;
 `;
 
 const MainBanner = () => {
@@ -58,7 +61,7 @@ const MainBanner = () => {
   const [imageHeight, setImageHeight] = useState(0);
   const [resetTimer, setResetTimer] = useState(false);
 
-  const images = ['main_banner.png', 'gray_banner1.png', 'color_banner1.png'];
+  const images = ['banner2_2.png', 'test_banner1.png', 'main_banner1.png'];
   const bannerContainerRef = useRef(null);
 
   // 함수: 다음 이미지로 이동
@@ -98,7 +101,7 @@ const MainBanner = () => {
     const intervalId = setInterval(() => {
       showNextImage();
       setResetTimer(false);
-    }, 4000);
+    }, 1800); //이미지가 바뀌면 reset 후 1800 다시 시작
 
     // 컴포넌트가 언마운트될 때 clearInterval로 인터벌 해제
     return () => clearInterval(intervalId);
