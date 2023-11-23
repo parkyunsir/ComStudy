@@ -11,6 +11,12 @@ const MainListBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+`;
+
+const Text = styled.div`
+  font-weight:bold;
+  font-size:2rem;
 `;
 
 const Stars = styled.div`
@@ -35,7 +41,7 @@ const MainList = ({starList, likeList, reviewList}) => {
   return (
     <MainListBox>
       <Stars>
-        <div>별점 높은 순:</div>
+        <Text>별점 높은 순:</Text>
 
         {starList && (
           <div>
