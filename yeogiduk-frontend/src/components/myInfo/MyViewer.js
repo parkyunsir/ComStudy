@@ -7,7 +7,8 @@ import ReviewContainer from '../../containers/myInfo/ReviewContainer';
 
 const GrayBackGround = styled.div`
   background: #f1f3f5;
-  
+  height:66rem;
+  padding-top:1rem;
 `;
 
 const MyViewerBlock = styled(Responsive)`
@@ -28,10 +29,23 @@ const WhiteBox = styled.div`
   }
   padding-left:1rem;
   padding-right:1rem;
-  padding-top:0rem;
   padding-bottom:0.5rem;
   margin-top:1rem;
+  height:auto;
+  
+`;
 
+const Profile = styled.div`
+  background: white;
+  .box {
+    margin: 1rem;
+  }
+  .myInfo {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  padding-top:2rem;
+  padding-bottom:0.5rem;
   
 `;
 
@@ -62,6 +76,12 @@ const Horizon = styled.div`
   overflow-x:auto;
 `;
 
+const Vertical = styled.div`
+  overflow:scroll;
+  height:35rem;
+  margin-top:1rem;
+`;
+
 const MyPageText = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -80,10 +100,10 @@ const MyViewer = ({student, restaurants, reviews}) => {
   return (
     <GrayBackGround>
     <MyViewerBlock>
-      <WhiteBox>
+      <Profile>
         <Picture src={LogoImage} alt="my picture"/>
         <MyEmail>{student.email}</MyEmail>
-      </WhiteBox>
+      </Profile>
       <WhiteBox>
         <div className="box">
 
@@ -109,15 +129,15 @@ const MyViewer = ({student, restaurants, reviews}) => {
           <div className="myInfo">
             내가 쓴 리뷰 총 {reviews? reviews.length : '-'}개
           </div>
-          </MyPageText>
 
           {reviews && (
-            <div>
+            <Vertical>
               {reviews.map(review => (
                 <ReviewContainer review={review} />
               ))}
-            </div>
+            </Vertical>
           )}
+          </MyPageText>
         </div>
       </WhiteBox>
     </MyViewerBlock>

@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 import styled from 'styled-components';
 import RestaurantItem from '../myInfo/RestaurantItem';
+
 import {rankStar, rankLike, rankReview} from '../../modules/list';
 
 const MainListBox = styled.div`
@@ -11,6 +12,7 @@ const MainListBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height:35rem;
 `;
 
 const Stars = styled.div`
@@ -31,11 +33,23 @@ const Reviews = styled.div`
   align-items: center;
 `;
 
+const Content = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  font-weight: bold;
+  font-size:1.2rem;
+  color: #3e3e3e;
+`;
+
 const MainList = ({starList, likeList, reviewList}) => {
   return (
     <MainListBox>
-      <Stars>
-        <div>별점 높은 순:</div>
+      <Content>
+        <div>덕우들의 평가가 완전 좋은 식당이야!</div>
+        <Stars>
         {starList && (
           <div>
             {starList.map(restaurant => (
@@ -44,8 +58,11 @@ const MainList = ({starList, likeList, reviewList}) => {
           </div>
         )}
       </Stars>
-      <Likes>
-        <div>찜 많은 순:</div>
+      </Content>
+
+      <Content>
+        <div>덕우들이 가장 많이 찜한 식당이야!</div>
+        <Likes>
         {likeList && (
           <div>
             {likeList.map(restaurant => (
@@ -54,8 +71,11 @@ const MainList = ({starList, likeList, reviewList}) => {
           </div>
         )}
       </Likes>
-      <Reviews>
-        <div>리뷰 많은 순:</div>
+      </Content>
+
+      <Content>
+        <div>덕우들의 리뷰가 제일 많은 식당이야!</div>
+        <Reviews>
         {reviewList && (
           <div>
             {reviewList.map(restaurant => (
@@ -64,6 +84,7 @@ const MainList = ({starList, likeList, reviewList}) => {
           </div>
         )}
       </Reviews>
+      </Content>
     </MainListBox>
   );
 };
