@@ -30,6 +30,7 @@ function loadStudent() {
       password: password
     }
     store.dispatch(tempSetStudent(student));
+    
   } catch(e) {
     console.log('localStorage is not working');
   }

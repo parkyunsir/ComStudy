@@ -12,8 +12,10 @@ const SearchContainer = () => {
     restaurants: search.restaurants,
   }));
   useEffect(() => {
-    dispatch(searchWord(word));
-  }, [dispatch]);
+    if(word) {
+      dispatch(searchWord(word));
+    }
+  }, [dispatch, word]);
 
   return <SearchViewer word={word} restaurants={restaurants} />;
 }
