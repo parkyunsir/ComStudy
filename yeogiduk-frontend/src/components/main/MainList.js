@@ -45,7 +45,6 @@ const MainList = ({starList, likeList, reviewList}) => {
   return (
     <MainListBox>
       <Content>
-      
         <div>별점 높은 순:</div>
         <Stars>
         {starList && (
