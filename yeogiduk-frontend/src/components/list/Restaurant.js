@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { Link } from '../../../../node_modules/react-router-dom/dist/index';
-import {restRtype, restLikenum,restReview} from '../../modules/restaurant';
 import logoImage from '../../lib/image/logo_image.png';
+import { rtype,likeNum,restaurantReviews } from '../../lib/api/restaurant';
 
 const RestaurantBlock = styled.div`
   margin-top: 1rem;
@@ -19,22 +18,60 @@ const Info = styled.div``;
 const Image = styled.img``;
 
 const Restaurant = ({restaurant}) => {
-  const dispatch = useDispatch();
-  const {rtype, likenum, review} = useSelector(({restaurant}) => ({
-      rtype: restaurant.rtype,
-      likenum: restaurant.likenum,
-      review: restaurant.review
-  }));
+  const [title, setTitle] = useState(null);
+  const [likes, setLikes] = useState(null);
+  const [review, setReview] = useState(null);
+
+  //rtype(한글명. title) 출력하기
   useEffect(() => {
-    dispatch(restRtype(restaurant.typeId));
-    dispatch(restLikenum(parseInt(restaurant.rstId)));
-    dispatch(restReview(parseInt(restaurant.rstId)));
-  }, [dispatch, restaurant, likenum]);
+    const fetchTitle = async () => {
+      try {
+        const response = await rtype(restaurant.typeId);
+        const fetchedTitle = response.data.title; // 데이터에 따라 조정
+        setTitle(fetchedTitle);
+      } catch (error) {
+        console.error('Error fetching title:', error);
+      }
+    };
+
+    fetchTitle();
+  }, [restaurant.typeId]);
+
+  //찜 개수 출력
+  useEffect(() => {
+    const fetchLikes = async () => {
+      try {
+        const response = await likeNum(restaurant.rstId);
+        const fetchedLikes = response.data;
+        setLikes(fetchedLikes);
+      } catch (error) {
+        console.error('Error fetching title:', error);
+      }
+    };
+
+    fetchLikes();
+  }, [restaurant.rstId]);
+
+  //리뷰 개수 출력
+  useEffect(() => {
+    const fetchReview = async () => {
+      try {
+        const response = await restaurantReviews(restaurant.rstId);
+        const fetchedReview = response.data.length; // 데이터에 따라 조정
+        setReview(fetchedReview);
+      } catch (error) {
+        console.error('Error fetching title:', error);
+      }
+    };
+
+    fetchReview();
+  }, [restaurant.rstId]);
+
   return (
     <RestaurantBlock>
       <Name>{restaurant.name}</Name>
-      <Type>{rtype? rtype.title : '-'}</Type>
-      <Info>찜수:{likenum? likenum : '-'} 리뷰수:{review? review.length : '-'}</Info>
+      <Type>{title? title : '-'}</Type>
+      <Info>찜수:{likes? likes : '0'} 리뷰수:{review? review : '0'}</Info>
       <Image src={logoImage} />
     </RestaurantBlock>
   )
