@@ -29,11 +29,15 @@ const Image = styled.img`
 
 const Name = styled(Link)`
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 `;
 
 
 const TypeId = styled.div`
+  margin-top:0.2rem;
   font-size:12px;
+  color:#555555;
 `;
 
 const Likes = styled.div``;
@@ -41,6 +45,8 @@ const Likes = styled.div``;
 const Horizon = styled.div`
   display:flex;
   font-size:10px;
+  margin-top:0.5rem;
+  color:#888888;
 `;
 
 const Review = styled.div``;
