@@ -3,8 +3,8 @@ import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
-import RestaurantItem from '../myInfo/RestaurantItem';
-import { TbStar, TbHeart, TbPencilCheck } from "react-icons/tb";
+import RestaurantItem from './RestaurantItem';
+import { TbStarFilled, TbHeartFilled, TbMessage2 } from "react-icons/tb";
 
 import {rankStar, rankLike, rankReview} from '../../modules/list';
 
@@ -78,7 +78,7 @@ const MainList = ({starList, likeList, reviewList}) => {
       <WhiteBox>
       <Content>
         <Line>
-        <div><TbStar/> 덕우들의 평가가 완전 좋은 식당이야!</div>
+        <div><TbStarFilled/> 덕우들의 평가가 완전 좋은 식당이야!</div>
         <div>더보기 &#10095;</div>
         </Line>
         <Stars>
@@ -97,7 +97,7 @@ const MainList = ({starList, likeList, reviewList}) => {
       <WhiteBox>
       <Content>
         <Line>
-        <div><TbHeart/> 덕우들이 가장 많이 찜한 식당이야!</div>
+        <div><TbHeartFilled/> 덕우들이 가장 많이 찜한 식당이야!</div>
         <div>더보기 &#10095;</div>
         </Line>
         <Likes>
@@ -115,7 +115,7 @@ const MainList = ({starList, likeList, reviewList}) => {
       <WhiteBox>
       <Content>
         <Line>
-        <div><TbPencilCheck/> 덕우들의 리뷰가 제일 많은 식당이야!</div>
+        <div><TbMessage2/> 덕우들의 리뷰가 제일 많은 식당이야!</div>
         <div>더보기 &#10095;</div>
         </Line>
         <Reviews>
