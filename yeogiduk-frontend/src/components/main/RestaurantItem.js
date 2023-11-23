@@ -139,7 +139,7 @@ const RestaurantItem = ({restaurant}) => {
 
       <HorizonName>
       <Name>{restaurant.name}</Name>
-      <Star>{avgstar ? Math.round(avgstar) : '-'}</Star>
+      <Star>{avgstar ? avgstar.toFixed(1) : '-'}</Star>
       </HorizonName>
 
       <TypeId>{title}</TypeId>
