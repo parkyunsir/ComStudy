@@ -2,90 +2,120 @@ import React, { useState, useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 import styled from 'styled-components';
+import Responsive from '../common/Responsive';
 import RestaurantItem from '../myInfo/RestaurantItem';
 
 import {rankStar, rankLike, rankReview} from '../../modules/list';
 
-const MainListBox = styled.div`
-  padding-top: 3rem;
+const GrayBackground = styled.div`
   background: #f1f3f5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height:35rem;
+  height:100%;
+  width:100%;
+  padding-top:1rem;
+`;
+
+const MainListBox = styled(Responsive)`
+  background: #f1f3f5;
+  height:40rem;
+`;
+
+const WhiteBox = styled.div`
+  // background: white;
+  background: #f1f3f5;
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-bottom:0.5rem;
+  margin-top:1rem;
+  height:auto;
 `;
 
 const Stars = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const Likes = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const Reviews = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const Content = styled.div`
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
   font-weight: bold;
-  font-size:1.2rem;
+  font-size:1.1rem;
   color: #3e3e3e;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  width:auto;
 `;
+
+const Horizon = styled.div`
+  display: flex; 
+  overflow-x:auto;
+`;
+
 
 const MainList = ({starList, likeList, reviewList}) => {
   return (
+    <GrayBackground>
     <MainListBox>
+      <WhiteBox>
       <Content>
         <div>덕우들의 평가가 완전 좋은 식당이야!</div>
         <Stars>
         {starList && (
-          <div>
+          <Horizon>
             {starList.map(restaurant => (
               <RestaurantItem restaurant={restaurant} />
             ), (parseInt(starList.length) < 3))}
-          </div>
+          </Horizon>
         )}
       </Stars>
       </Content>
+      </WhiteBox>
 
+
+      <WhiteBox>
       <Content>
         <div>덕우들이 가장 많이 찜한 식당이야!</div>
         <Likes>
         {likeList && (
-          <div>
+          <Horizon>
             {likeList.map(restaurant => (
               <RestaurantItem restaurant={restaurant} />
             ))}
-          </div>
+          </Horizon>
         )}
       </Likes>
       </Content>
+      </WhiteBox>
 
+      <WhiteBox>
       <Content>
         <div>덕우들의 리뷰가 제일 많은 식당이야!</div>
         <Reviews>
         {reviewList && (
-          <div>
+          <Horizon>
             {reviewList.map(restaurant => (
               <RestaurantItem restaurant={restaurant} />
             ))}
-          </div>
+          </Horizon>
         )}
       </Reviews>
       </Content>
+      </WhiteBox>
     </MainListBox>
+    </GrayBackground>
   );
 };
 
