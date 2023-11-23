@@ -36,7 +36,6 @@ const MainList = ({starList, likeList, reviewList}) => {
     <MainListBox>
       <Stars>
         <div>별점 높은 순:</div>
-
         {starList && (
           <div>
             {starList.map(restaurant => (
