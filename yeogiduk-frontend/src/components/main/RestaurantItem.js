@@ -1,23 +1,54 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from '../../../../node_modules/react-router-dom/dist/index';
-import logoImage from '../../lib/image/logo_image.png';
+import LogoImage from '../../lib/image/logo.svg';
 import { rtype,likeNum,restaurantReviews } from '../../lib/api/restaurant';
+import { TbStarFilled, TbHeartFilled, TbMessage2 } from "react-icons/tb";
 
-const RestaurantBlock = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+const RestaurantItemList = styled.div`
+  display: flex;
+  flex-direction: row;
+  float : left;
+  margin-right:2rem;
+  margin-top:-1rem;
+  
 `;
 
-const Name = styled(Link)``;
+const RestaurantItemBlock = styled.div`
+  display: flex;
+  flex-direction:column;
+  align-item: center;  
+  
+`;
 
-const Type = styled.div``;
+const Image = styled.img`
+  width: 100px;
+  height: 100px;  
+`;
 
-const Info = styled.div``;
+const Name = styled(Link)`
+  font-weight: bold;
+  font-size: 15px;
+  margin-top:-1rem;
+`;
 
-const Image = styled.img``;
+const TypeId = styled.div`
+  font-size:12px;
+`;
 
-const Restaurant = ({restaurant}) => {
+const Likes = styled.div``;
+
+const Horizon = styled.div`
+  display:flex;
+  font-size:10px;
+`;
+
+const Review = styled.div``;
+
+const Restaurant = styled.div``;
+
+
+const RestaurantItem = ({restaurant}) => {
   const [title, setTitle] = useState(null);
   const [likes, setLikes] = useState(null);
   const [review, setReview] = useState(null);
@@ -68,13 +99,21 @@ const Restaurant = ({restaurant}) => {
   }, [restaurant.rstId]);
 
   return (
-    <RestaurantBlock>
+      <RestaurantItemList>
+      <RestaurantItemBlock>
+
+      <Image src={LogoImage} alt="review image" />
+      <Restaurant>
       <Name>{restaurant.name}</Name>
-      <Type>{title? title : '-'}</Type>
-      <Info>찜수:{likes? likes : '0'} 리뷰수:{review? review : '0'}</Info>
-      <Image src={logoImage} />
-    </RestaurantBlock>
+      <TypeId>{title}</TypeId>
+      <Horizon>
+      <Likes><TbHeartFilled /> {likes}&nbsp;&nbsp;</Likes>
+      <Review>&nbsp;&nbsp;<TbMessage2/> {review}</Review>
+      </Horizon>
+      </Restaurant>
+    </RestaurantItemBlock>
+    </RestaurantItemList>
   )
 }
 
-export default Restaurant;
+export default RestaurantItem;
