@@ -12,7 +12,7 @@ const Horizon = styled.div`
 `;
 
 const Vertic = styled.div`
-flex-direction: column;
+  flex-direction: column;
 `
 
 const Image = styled.img`
@@ -22,7 +22,6 @@ const Image = styled.img`
 `;
 
 const Context = styled.div`
-  
 `;
 
 const Title = styled.div``;
