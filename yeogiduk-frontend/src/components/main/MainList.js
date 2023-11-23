@@ -17,7 +17,7 @@ const GrayBackground = styled.div`
 
 const MainListBox = styled(Responsive)`
   background: #f1f3f5;
-  height:40rem;
+  height:42rem;
 `;
 
 const WhiteBox = styled.div`
