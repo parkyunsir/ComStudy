@@ -46,6 +46,7 @@ public class RestaurantService {
         Restaurant restaurant = restaurantRepository.findById(rstId)
                 .orElse(null);
 
+
         return (restaurant != null) ? convertEntityToDto(restaurant) : null;
     }
 
