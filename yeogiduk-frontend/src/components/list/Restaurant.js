@@ -107,8 +107,8 @@ const Restaurant = ({restaurant}) => {
 
       <Image src={logoImage} />
 
-      <Info><TbHeartFilled/>찜수:{likes? likes : '0'} &nbsp;
-            <TbMessage2/>리뷰수:{review? review : '0'}</Info>
+      <Info><TbHeartFilled/>&nbsp;{likes? likes : '0'} &nbsp;&nbsp;
+            <TbMessage2/>&nbsp;{review? review : '0'}</Info>
     </RestaurantBlock>
   )
 }

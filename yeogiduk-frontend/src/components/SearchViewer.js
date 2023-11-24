@@ -23,7 +23,7 @@ const SearchViewer = ({word, restaurants}) => {
   return (
     <GrayBackGround>
     <SearchViewerBlock>
-      <Word>'{word}' 검색 결과</Word>
+      <Word>'{word}' 검색 결과 ({restaurants? restaurants.length : '-'})개</Word>
       
         <div className="box">
           {restaurants && (
