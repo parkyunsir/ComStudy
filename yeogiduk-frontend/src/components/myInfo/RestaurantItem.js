@@ -9,14 +9,12 @@ const RestaurantItemList = styled.div`
   float : left;
   margin-right:2rem;
   margin-top:-1rem;
-  
 `;
 
 const RestaurantItemBlock = styled.div`
   display: flex;
   flex-direction:column;
   align-item: center;  
-  
 `;
 
 const Image = styled.img`
@@ -29,8 +27,8 @@ const Name = styled(Link)`
   font-size: 16px;
   margin-top:-1rem;
   text-align:center;
-  text-decoration: none; // 필요한 경우 추가
-  color: black; // 필요한 경우 추가
+  text-decoration: none;
+  color: black;
 `;
 
 
