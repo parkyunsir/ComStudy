@@ -3,19 +3,50 @@ import styled from 'styled-components';
 import { Link } from '../../../../node_modules/react-router-dom/dist/index';
 import logoImage from '../../lib/image/logo_image.png';
 import { rtype,likeNum,restaurantReviews } from '../../lib/api/restaurant';
+import { TbHeartFilled, TbMessage2 } from "react-icons/tb";
 
 const RestaurantBlock = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  background: white;
+  .box {
+    margin: 1rem;
+  }
+
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-top:1rem;
+  padding-bottom:0.5rem;
+  
+  margin-left:1rem;
+  margin-right:1rem;
+  height:auto;
 `;
 
-const Name = styled(Link)``;
+const Name = styled(Link)`
+  font-weight: bold;
+  font-size: 25px;
+  text-align:center;
+  text-decoration: none;
+  color: black;
+`;
 
-const Type = styled.div``;
+const Type = styled.div`
+  margin-top:0.5rem;
+  color:#888888;
+`;
 
-const Info = styled.div``;
+const Info = styled.div`
+  margin-top:1rem;
+  margin-bottom:1rem;
+`;
 
 const Image = styled.img``;
+
+const Horizon = styled.div`
+  display: flex;
+  text-decoration: none;
+  color: black;
+  padding-bottom:1rem;
+`;
 
 const Restaurant = ({restaurant}) => {
   const [title, setTitle] = useState(null);
@@ -69,10 +100,15 @@ const Restaurant = ({restaurant}) => {
 
   return (
     <RestaurantBlock>
-      <Name>{restaurant.name}</Name>
-      <Type>{title? title : '-'}</Type>
-      <Info>찜수:{likes? likes : '0'} 리뷰수:{review? review : '0'}</Info>
+      <Horizon>
+      <Name to={`/restaurant/detail/${restaurant.rstId}`}>{restaurant.name}&nbsp;</Name>
+      <Type>&nbsp;{title? title : '-'}</Type>
+      </Horizon>
+
       <Image src={logoImage} />
+
+      <Info><TbHeartFilled/>찜수:{likes? likes : '0'} &nbsp;
+            <TbMessage2/>리뷰수:{review? review : '0'}</Info>
     </RestaurantBlock>
   )
 }

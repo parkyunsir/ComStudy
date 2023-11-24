@@ -32,7 +32,6 @@ const WhiteBox = styled.div`
   padding-bottom:0.5rem;
   margin-top:1rem;
   height:auto;
-  
 `;
 
 const Profile = styled.div`
