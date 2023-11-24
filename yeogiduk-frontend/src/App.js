@@ -8,7 +8,6 @@ import SearchPage from './pages/SearchPage';
 import ListPage from './pages/ListPage';
 import RecommendPage from './pages/RecommendPage';
 import MapPage from './pages/MapPage';
-import ReviewPage from './pages/ReviewPage';
 
 function App() {
   return (
@@ -24,5 +23,4 @@ function App() {
     </Routes>
   );
 }
-
 export default App;
