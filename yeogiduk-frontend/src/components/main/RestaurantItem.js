@@ -144,7 +144,7 @@ const RestaurantItem = ({restaurant}) => {
       <Restaurant>
 
       <HorizonName>
-      <Name>{restaurant.name}</Name>
+      <Name to={`/restaurant/detail/${restaurant.rstId}`}>{restaurant.name}</Name>
       <Star>{avgstar ? avgstar.toFixed(1) : '-'}</Star>
       </HorizonName>
 

@@ -29,6 +29,8 @@ const Name = styled(Link)`
   font-size: 20px;
   margin-top:-1rem;
   text-align:center;
+  text-decoration: none; // 필요한 경우 추가
+  color: black; // 필요한 경우 추가
 `;
 
 
@@ -39,7 +41,7 @@ const RestaurantItem = ({restaurant}) => {
       <RestaurantItemList>
       <RestaurantItemBlock>
       <Image src={LogoImage} alt="review image" />
-      <Name>{restaurant.name}</Name>
+      <Name to={`/restaurant/detail/${restaurant.rstId}`}>{restaurant.name}</Name>
     </RestaurantItemBlock>
     </RestaurantItemList>
   )
