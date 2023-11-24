@@ -26,7 +26,7 @@ const Image = styled.img`
 
 const Name = styled(Link)`
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   margin-top:-1rem;
   text-align:center;
   text-decoration: none; // 필요한 경우 추가
