@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import LogoImage from '../../lib/image/logo.svg';
+import LogoImage from '../../lib/image/logo_image.png';
 
 /* 화면 전체를 채움 */
 const AuthTemplateBlock = styled.div`

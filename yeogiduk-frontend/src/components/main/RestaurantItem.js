@@ -4,6 +4,7 @@ import { Link } from '../../../../node_modules/react-router-dom/dist/index';
 import LogoImage from '../../lib/image/logo.svg';
 import { rtype,likeNum,restaurantReviews } from '../../lib/api/restaurant';
 import { TbStarFilled, TbHeartFilled, TbMessage2 } from "react-icons/tb";
+import { listRankStar } from '../../lib/api/list';
 
 const RestaurantItemList = styled.div`
   display: flex;
@@ -28,12 +29,15 @@ const Image = styled.img`
 
 const Name = styled(Link)`
   font-weight: bold;
-  font-size: 15px;
-  margin-top:-1rem;
+  text-decoration: none;
+  color: black;
 `;
 
+
 const TypeId = styled.div`
+  margin-top:0.2rem;
   font-size:12px;
+  color:#555555;
 `;
 
 const Likes = styled.div``;
@@ -41,17 +45,31 @@ const Likes = styled.div``;
 const Horizon = styled.div`
   display:flex;
   font-size:10px;
+  margin-top:0.5rem;
+  color:#888888;
 `;
 
 const Review = styled.div``;
 
 const Restaurant = styled.div``;
 
+const Star = styled.div`
+  color:#f87f9c;
+`;
+
+const HorizonName = styled.div`
+  display:flex;
+  font-size: 13px;
+  justify-content: space-between;
+  margin-top:-1rem;
+`;
+
 
 const RestaurantItem = ({restaurant}) => {
   const [title, setTitle] = useState(null);
   const [likes, setLikes] = useState(null);
   const [review, setReview] = useState(null);
+  const [avgstar, setAvgStar] = useState(null);
 
   //rtype(한글명. title) 출력하기
   useEffect(() => {
@@ -98,13 +116,38 @@ const RestaurantItem = ({restaurant}) => {
     fetchReview();
   }, [restaurant.rstId]);
 
+  //별점 평균 출력
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try{
+        const response = await fetch(`/restaurant/${restaurant.rstId}/reviews`);
+        if(!response.ok){
+          throw new Error(`Failed to fetch reviews. Status: ${response.status}`);
+        }
+        const reviews = await response.json();
+        const stars = reviews.map(review=>review.star);
+        const avg = stars.reduce((sum, star) => sum+star,0) / stars.length;
+        setAvgStar(avg);
+      } catch (error) {
+        console.error('ERROR',error);
+      }
+    };
+
+    fetchReviews();
+  },[restaurant.rstId]);
+
   return (
       <RestaurantItemList>
       <RestaurantItemBlock>
 
       <Image src={LogoImage} alt="review image" />
       <Restaurant>
-      <Name>{restaurant.name}</Name>
+
+      <HorizonName>
+      <Name to={`/restaurant/detail/${restaurant.rstId}`}>{restaurant.name}</Name>
+      <Star>{avgstar ? avgstar.toFixed(1) : '-'}</Star>
+      </HorizonName>
+
       <TypeId>{title}</TypeId>
       <Horizon>
       <Likes><TbHeartFilled /> {likes}&nbsp;&nbsp;</Likes>

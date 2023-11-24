@@ -9,14 +9,12 @@ const RestaurantItemList = styled.div`
   float : left;
   margin-right:2rem;
   margin-top:-1rem;
-  
 `;
 
 const RestaurantItemBlock = styled.div`
   display: flex;
   flex-direction:column;
   align-item: center;  
-  
 `;
 
 const Image = styled.img`
@@ -26,9 +24,11 @@ const Image = styled.img`
 
 const Name = styled(Link)`
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   margin-top:-1rem;
   text-align:center;
+  text-decoration: none;
+  color: black;
 `;
 
 
@@ -39,7 +39,7 @@ const RestaurantItem = ({restaurant}) => {
       <RestaurantItemList>
       <RestaurantItemBlock>
       <Image src={LogoImage} alt="review image" />
-      <Name>{restaurant.name}</Name>
+      <Name to={`/restaurant/detail/${restaurant.rstId}`}>{restaurant.name}</Name>
     </RestaurantItemBlock>
     </RestaurantItemList>
   )

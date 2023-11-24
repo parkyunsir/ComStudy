@@ -50,7 +50,6 @@ public class ReviewDto {
                 review.getEmail(),
                 review.getContent(),
                 review.getDate(),
-                //review.getRestaurant().getRstId(), // 머지 후 에러 안날듯!
                 review.getStar()
                 //review.getEmail(),
                 //review.getId(),
@@ -59,6 +58,7 @@ public class ReviewDto {
 
         );
     }
+
     public Date setNow() {
         Date now = new Date();
         return now;

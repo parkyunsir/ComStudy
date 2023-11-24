@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import LogoImage from '../../lib/image/logo.svg';
 import RestaurantItem from './RestaurantItem';
-import ReviewContainer from '../../containers/myInfo/ReviewContainer';
+//import ReviewContainer from '../../containers/myInfo/ReviewContainer';
+import ReviewItem from './ReviewItem';
 
 const GrayBackGround = styled.div`
   background: #f1f3f5;
@@ -31,7 +32,6 @@ const WhiteBox = styled.div`
   padding-bottom:0.5rem;
   margin-top:1rem;
   height:auto;
-  
 `;
 
 const Profile = styled.div`
@@ -95,7 +95,6 @@ const MyPageText = styled.div`
 
 
 const MyViewer = ({student, restaurants, reviews}) => {
-  var num = 0;
   return (
     <GrayBackGround>
     <MyViewerBlock>
@@ -105,10 +104,8 @@ const MyViewer = ({student, restaurants, reviews}) => {
       </Profile>
       <WhiteBox>
         <div className="box">
-
           <MyPageText>
           <div className="myInfo">내가 찜한 맛집</div>
-          
           {restaurants && (
             <Horizon>
               {restaurants.map(restaurant => (
@@ -118,21 +115,17 @@ const MyViewer = ({student, restaurants, reviews}) => {
           )}
           </MyPageText>
         </div>
-        
       </WhiteBox>
-
       <WhiteBox>
         <div className="box">
-        
           <MyPageText>
           <div className="myInfo">
             내가 쓴 리뷰 총 {reviews? reviews.length : '-'}개
           </div>
-
           {reviews && (
             <Vertical>
-              {reviews.map(review => (
-                <ReviewContainer review={review} />
+              {(reviews).map((review) => (
+                <ReviewItem review={review} />
               ))}
             </Vertical>
           )}

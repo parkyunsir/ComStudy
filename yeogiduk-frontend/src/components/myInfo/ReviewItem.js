@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { Link } from '../../../../node_modules/react-router-dom/dist/index';
 import LogoImage from '../../lib/image/logo.svg';
+import { restaurantDetail } from '../../lib/api/restaurant';
 
 const ReviewItemBlock = styled.div``;
 
@@ -50,7 +51,8 @@ const ReviewDate = styled.div`
   
 `;
 
-const ReviewItem = ({review, reviewRestaurant, loading}) => {
+const ReviewItem = ({review}) => {
+  const [name, setName] = useState(null);
   const date = new Date(review.date).toLocaleDateString()
   const [stars, setStars] = useState(`★★★★★`);
   useEffect(() => {
@@ -65,7 +67,23 @@ const ReviewItem = ({review, reviewRestaurant, loading}) => {
     } else if (review.star === 1) {
       setStars(`★☆☆☆☆`);
     }
-  }, [review.star]);
+    console.log(review);
+  }, [review.star, review]);
+
+  useEffect(() => {
+    const fetchName = async () => {
+      try {
+        const response = await restaurantDetail(review.rstId);
+        const fetchedName = response.data.name;
+        setName(fetchedName);
+      } catch (error) {
+        console.error('Error fetching name:', error);
+      }
+    };
+
+    fetchName();
+  }, [review.rstId]);
+
   return (
     <ReviewItemBlock>
       <Vertic>
@@ -73,7 +91,7 @@ const ReviewItem = ({review, reviewRestaurant, loading}) => {
       <Image src={LogoImage} alt="review image" />
       <Context>
         <Title>
-          <Name to="/">{reviewRestaurant ? reviewRestaurant.name : '-'}</Name>
+          <Name to={`/restaurant/detail/${review.rstId}`}>{name ? name : '-'}</Name>
           <Star>{stars}</Star>
           <StarNum> {review.star}</StarNum>
         </Title>
@@ -87,3 +105,5 @@ const ReviewItem = ({review, reviewRestaurant, loading}) => {
 }
 
 export default ReviewItem;
+
+//<Name to="/">{restaurant ? restaurant.name : '-'}</Name>
