@@ -8,7 +8,8 @@ import ReviewItem from './ReviewItem';
 
 const GrayBackGround = styled.div`
   background: #f1f3f5;
-  height:66rem;
+  height: 100%;
+  padding-bottom:2rem;
   padding-top:1rem;
 `;
 

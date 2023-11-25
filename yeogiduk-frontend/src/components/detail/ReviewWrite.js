@@ -5,23 +5,65 @@ import styled from 'styled-components';
 //import {postReview, postImage} from '../../modules/review';
 import {postReview} from '../../modules/review';
 
-const ReviewBlock = styled.div``;
+const ReviewBlock = styled.div`
+margin-right:1rem;
+`;
 
-const Title = styled.div``;
+const Title = styled.div`
+  font-weight:bold;
+  font-size: 20px;
+  margin-bottom:1rem;
+`;
 
 const Form = styled.form``;
 
-const StarTitle = styled.div``;
+const StarTitle = styled.div`
+  font-weight:bold;
+  font-size: 20px;
+  margin-bottom:1rem;
+  text-align:center;
+`;
 
-const Star = styled.div``;
+const Star = styled.div`
+  color: #f87f9c;
+  display:flex;
+  font-size: 20px;
+`;
 
-const StarInput = styled.input``;
+const StarBlank = styled.div`
+  color: #000000;
+  display:flex;
+  font-size: 20px;
+`;
 
-const ContentInput = styled.input``;
+const StarInput = styled.input`
+
+`;
+
+const ContentInput = styled.input`
+  padding: 0.5rem;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 100%;
+
+  /* 추가된 부분 */
+  &::placeholder {
+    color: #aaa;
+  }
+  margin-top:1rem;
+  margin-bottom:1rem;
+
+`;
 
 const ImageInput = styled.input``;
 
-const Button = styled.button``;
+const Button = styled.button`
+  background-color:transparent;
+  color: #f87f9c;
+  border: 0;
+  float:right;
+`;
 
 const ErrorMessage = styled.div``;
 
@@ -103,17 +145,17 @@ const ReviewWrite = ({rstId}) => {
       <Form className="review" onSubmit={handleSubmit} encType="multipart/form-data">
         <StarTitle>이 식당은 덕우에게 얼마나 만족스러웠어?</StarTitle>
         <Star>
-          <StarInput type="radio" name="star" value="5" onChange={handleChange} />★★★★★
-          <StarInput type="radio" name="star" value="4" onChange={handleChange} />★★★★☆
-          <StarInput type="radio" name="star" value="3" onChange={handleChange} />★★★☆☆
-          <StarInput type="radio" name="star" value="2" onChange={handleChange} />★★☆☆☆
-          <StarInput type="radio" name="star" value="1" onChange={handleChange} />★☆☆☆☆
+          <StarInput type="radio" name="star" value="5" onChange={handleChange} />★★★★★&nbsp;&nbsp;&nbsp;&nbsp;
+          <StarInput type="radio" name="star" value="4" onChange={handleChange} />★★★★<StarBlank>☆&nbsp;&nbsp;&nbsp;&nbsp;</StarBlank>
+          <StarInput type="radio" name="star" value="3" onChange={handleChange} />★★★<StarBlank>☆☆&nbsp;&nbsp;&nbsp;&nbsp;</StarBlank>
+          <StarInput type="radio" name="star" value="2" onChange={handleChange} />★★<StarBlank>☆☆☆&nbsp;&nbsp;&nbsp;&nbsp;</StarBlank>
+          <StarInput type="radio" name="star" value="1" onChange={handleChange} />★<StarBlank>☆☆☆☆&nbsp;&nbsp;&nbsp;&nbsp;</StarBlank>
         </Star>
         {errors.star && <ErrorMessage>{errors.star}</ErrorMessage>}
-        <ContentInput type="text" name="content" value={values.content} onChange={handleChange} />
+        <ContentInput type="text" name="content" value={values.content} onChange={handleChange} placeholder="식당에 대한 리부를 남겨주세요!" />
+        <Button type="submit">리뷰 등록</Button>
         <ImageInput type="file" accept='image/*' multiple="multiple" name="imageFiles" onChange={handleChange} />
         {errors.content && <ErrorMessage>{errors.content}</ErrorMessage>}
-        <Button type="submit">리뷰 쓰기</Button>
       </Form>
     </ReviewBlock>
   );
