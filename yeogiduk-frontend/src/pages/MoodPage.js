@@ -1,16 +1,16 @@
 import React from 'react';
 import HeaderContainer from '../containers/common/HeaderContainer';
-import RecommendContainer from '../containers/RecommendContainer';
+import TestMoodContainer from '../containers/TestMoodContainer';
 import SubHeader from '../components/common/SubHeader';
 
-const RecommendPage = () => {
+const MoodPage = () => {
   return (
     <>
       <HeaderContainer />
       <SubHeader />
-      <RecommendContainer/>
+      <TestMoodContainer />
     </>
   );
 };
 
-export default RecommendPage;
+export default MoodPage;
