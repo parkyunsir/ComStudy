@@ -20,3 +20,9 @@ export const menu = rstId =>
 
 export const getImage = ({rstId}) =>
   client.get(`/image/show/one/${rstId}`);
+
+export const addLike = ({id, email, rstId}) =>
+  client.post(`/student/likes`, {id, email, rstId});
+
+export const checkLike = ({email, rstId}) =>
+  client.get(`/student/likes/restaurant/${email}?rst_id=${rstId}`);
