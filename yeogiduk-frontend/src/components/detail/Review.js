@@ -29,7 +29,6 @@ const BlankStar = styled.div`
 const Bold = styled.div`
   font-weight:bold;
   color: #000000;
-  
 `;
 
 const Content = styled.div`
@@ -39,6 +38,13 @@ const Content = styled.div`
 const ReviewDate = styled.div`
   float:right;
   font-size:12px;
+  color: #888888;
+`;
+
+const TextGray = styled.div`
+  hr {
+    solid #888888; /* 또는 다른 회색 색상으로 변경 가능 */
+  }
 `;
 
 const Review = ({review}) => {
@@ -75,7 +81,7 @@ const Review = ({review}) => {
 
   return (
     <ReviewBlock>
-      <hr/>
+      <TextGray><hr/></TextGray>
       <Horizon>
       <Name>덕우</Name>
       <Star>
