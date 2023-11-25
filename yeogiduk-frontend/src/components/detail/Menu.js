@@ -7,13 +7,15 @@ const Name = styled.div``;
 
 const Price = styled.div``;
 
-const Menu = ({menu}) => {
+const Menu = ({ menu }) => {
   return (
     <MenuBlock>
-      <Name>{menu.menu}</Name>
-      <Price>{menu.price}원</Price>
+        <>
+          <Name>{menu.menu}</Name>
+          <Price>{menu.price}원</Price>
+        </>
     </MenuBlock>
   );
-}
+};
 
 export default Menu;
