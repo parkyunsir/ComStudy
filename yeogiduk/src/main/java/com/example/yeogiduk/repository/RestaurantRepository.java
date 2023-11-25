@@ -13,7 +13,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
     List<Restaurant> findByTypeId(Long typeId);
 
-    @Query(value = "SELECT * FROM Restaurant WHERE name like concat('%',:word,'%')", nativeQuery = true) // , nativeQuery = true
+    @Query(value = "SELECT * FROM Restaurant WHERE name like concat('%',:word,'%')", nativeQuery = true)
     List<Restaurant> findByWord(@Param("word") String word);
 
     @Query(value = "SELECT * FROM Restaurant r ORDER BY (SELECT SUM(star)/COUNT(*) FROM Review WHERE rst_id=r.rst_id) desc limit 10", nativeQuery = true)

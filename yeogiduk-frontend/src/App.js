@@ -8,6 +8,7 @@ import SearchPage from './pages/SearchPage';
 import ListPage from './pages/ListPage';
 import RecommendPage from './pages/RecommendPage';
 import MapPage from './pages/MapPage';
+import DetailPage from './pages/DetailPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/list" element={<ListPage />} />
       <Route path="/recommend" element={<RecommendPage />} />
       <Route path="/map" element={<MapPage />} />
+      <Route path="/restaurant/:rstId" element={<DetailPage />} />
     </Routes>
   );
 }
