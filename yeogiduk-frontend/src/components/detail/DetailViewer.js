@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import Menu from './Menu';
 import Review from './Review';
 import ReviewWrite from './ReviewWrite';
+import { addLike, checkLike } from '../../modules/restaurant';
 import { likeNum,restaurantReviews } from '../../lib/api/restaurant';
 import { TbHeartFilled, TbMessage2, TbStarFilled } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
@@ -73,9 +75,12 @@ const Intro = styled.div`
 const Content = styled.div`
 `;
 
+const Like = styled.button``;
+
 
 const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
   useEffect(() => {}, [reviews]);
+  const dispatch = useDispatch();
   //별점, 리뷰, 찜 가져오기
   const [likes, setLikes] = useState(null);
   const [review, setReview] = useState(null);
@@ -95,13 +100,13 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
     };
 
     fetchLikes();
-  }, [restaurant?.rstId, reviews]);
+  }, [restaurant?.rstId, reviews, likes]);
 
   //리뷰 개수 출력
   useEffect(() => {
     const fetchReview = async () => {
       try {
-        const response = await restaurantReviews(restaurant.rstId);
+        const response = await restaurantReviews(restaurant?.rstId);
         const fetchedReview = response.data.length; // 데이터에 따라 조정
         setReview(fetchedReview);
       } catch (error) {
@@ -116,7 +121,7 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
     useEffect(() => {
       const fetchReviews = async () => {
         try{
-          const response = await fetch(`/restaurant/${restaurant.rstId}/reviews`);
+          const response = await fetch(`/restaurant/${restaurant?.rstId}/reviews`);
           if(!response.ok){
             throw new Error(`Failed to fetch reviews. Status: ${response.status}`);
           }
@@ -132,13 +137,33 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
       fetchReviews();
     },[restaurant?.rstId, reviews]);
 
+  const {like, student} = useSelector(({restaurant, auth}) => ({
+    like: restaurant.like,
+    student: auth.student
+  }));
+  const [color, setColor] = useState(null);
+  const id = null;
+  useEffect(() => {
+    const rstId = restaurant?.rstId;
+    const email = student.email;
+    dispatch(checkLike({email, rstId}));
+    setColor(like? 'pink' : 'white');
+  }, [setColor, like, restaurant, student, dispatch]);
+  const handleClick = () => {
+    const rstId = restaurant?.rstId;
+    const email = student.email;
+    dispatch(addLike({id, email, rstId}));
+    dispatch(checkLike({email, rstId}));
+    setColor(like? 'pink' : 'white');
+  }
+
   return (
     <GrayBackGround>
     <DetailBlock>
 
 {/* 가게 기본 정보 출력 */}
       <WhiteBox>
-        <Name>{restaurant?.name}</Name>
+        <Name>{restaurant?.name}</Name><Like style={{backgroundColor: color}} onClick={handleClick}>찜</Like>
         <Type>{rtype?.title}</Type>
         <Intro>
           <StarColor><TbStarFilled/></StarColor>&nbsp;<StarBold>{avgstar ? avgstar.toFixed(1) : '-'}</StarBold> &nbsp;&nbsp; &nbsp;&nbsp;

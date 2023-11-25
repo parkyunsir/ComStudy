@@ -74,4 +74,9 @@ public class StudentApiController {
     public List<Restaurant> getLikes(@PathVariable String email) {
         return studentService.getLikes(email);
     }
+
+    @GetMapping("/student/likes/restaurant/{email}")
+    public Boolean checkLike(@PathVariable String email, @RequestParam(value="rst_id", defaultValue="0") Long rstId) {
+        return studentService.checkLike(email, rstId);
+    }
 }
