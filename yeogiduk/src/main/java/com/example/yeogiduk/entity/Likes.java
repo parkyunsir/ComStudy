@@ -12,6 +12,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "Likes")
 public class Likes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,8 +1,11 @@
 package com.example.yeogiduk.service;
 
+import com.example.yeogiduk.dto.ImageDto;
 import com.example.yeogiduk.dto.ReviewDto;
+import com.example.yeogiduk.entity.Image;
 import com.example.yeogiduk.entity.Restaurant;
 import com.example.yeogiduk.entity.Review;
+import com.example.yeogiduk.repository.ImageRepository;
 import com.example.yeogiduk.repository.RestaurantRepository;
 import com.example.yeogiduk.repository.ReviewRepository;
 import jakarta.persistence.metamodel.SingularAttribute;
@@ -10,6 +13,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 @RequiredArgsConstructor
@@ -20,6 +27,9 @@ public class ReviewService {
 
     @Autowired
     private RestaurantRepository restaurantRepository;
+
+    @Autowired
+    private ImageRepository imageRepository;
 
     public List<ReviewDto> reviews(Long rstId) {
         // 1. 댓글 조회
@@ -35,11 +45,42 @@ public class ReviewService {
         return dtos;
 
     }
+
+    @Transactional
+    public ReviewDto create(Long rstId, ReviewDto dto, List<MultipartFile> files) throws IOException {
+        if(!rstId.equals(dto.getRstId())) {
+            return null;
+        }
+        Restaurant restaurant = restaurantRepository.findByRstId(rstId);
+        if (restaurant == null) {
+            throw new IllegalArgumentException("댓글 생성 실패! 대상 게시글이 없습니다.");
+        }
+        Review review = Review.createReview(dto, rstId);
+        Review reviewed = reviewRepository.save(review);
+        List<ImageDto> imageDtos = new ArrayList<>();
+        if(files != null) {
+            for(MultipartFile file : files) {
+                ImageDto imageDto = ImageDto.builder()
+                        .viewId(review.getViewId())
+                        .originFileName(file.getOriginalFilename())
+                        .build();
+                imageDtos.add(imageDto);
+                file.transferTo(new File(imageDto.getSavedFileName()));
+            }
+            for(ImageDto d : imageDtos) {
+                Image image = Image.createImage(d);
+                imageRepository.save(image);
+            }
+        }
+        return ReviewDto.createReviewDto(reviewed);
+    }
+
+    /*
     @Transactional
     public ReviewDto create(Long rstId, ReviewDto dto) {
 
         // 1. 게시글 조회 및 예외 발생
-        if(rstId != dto.getRstId()) {
+        if(!rstId.equals(dto.getRstId())) {
             return null;
         }
 
@@ -53,7 +94,7 @@ public class ReviewService {
         Review reviewed = reviewRepository.save(review);
         // 4. DTO로 변환해 반환
         return ReviewDto.createReviewDto(reviewed);
-    }
+    }*/
 
     public List<Review> myReviews(String email) {
         return reviewRepository.findByEmail(email);
