@@ -39,7 +39,6 @@ const Content = styled.div`
 const ReviewDate = styled.div`
   float:right;
   font-size:12px;
-  color:#777777;
 `;
 
 const Review = ({review}) => {
@@ -76,6 +75,7 @@ const Review = ({review}) => {
 
   return (
     <ReviewBlock>
+      <hr/>
       <Horizon>
       <Name>덕우</Name>
       <Star>
