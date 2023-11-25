@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 public class RtypeApiController {
@@ -33,4 +35,11 @@ public class RtypeApiController {
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
+    @GetMapping("/rtype/all")
+    public ResponseEntity<List<Rtype>> getAllRtype() {
+        List<Rtype> list = rtypeService.getAllRtype();
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
 }

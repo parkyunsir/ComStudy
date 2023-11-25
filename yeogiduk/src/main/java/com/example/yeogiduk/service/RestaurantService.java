@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -90,9 +91,7 @@ public class RestaurantService {
         return likesList.size();
     }
 
-    public List<Restaurant> getRankStar() {
-        return restaurantRepository.findByStar();
-    }
+    public List<Restaurant> getRankStar() { return restaurantRepository.findByStar(); }
 
     public List<Restaurant> getRankLike() {
         return restaurantRepository.findByLike();
@@ -100,5 +99,27 @@ public class RestaurantService {
 
     public List<Restaurant> getRankReview() {
         return restaurantRepository.findByReview();
+    }
+
+    public List<Restaurant> getSortList(String sort, Long typeId) {
+        if(typeId == 0) {
+            switch (sort) {
+                case "star" -> {
+                    return getRankStar();
+                }
+                case "like" -> {
+                    return getRankLike();
+                }
+                case "review" -> {
+                    return getRankReview();
+                }
+            }
+        }
+        return switch (sort) {
+            case "star" -> restaurantRepository.findByStarAndTypeId(typeId);
+            case "like" -> restaurantRepository.findByLikeAndTypeId(typeId);
+            case "review" -> restaurantRepository.findByReviewAndTypeId(typeId);
+            default -> restaurantRepository.findAll();
+        };
     }
 }

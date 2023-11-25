@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 
-public interface RtypeRepository extends CrudRepository<Rtype, Long>{
+public interface RtypeRepository extends JpaRepository<Rtype, Long>{
     Rtype findByTypeId(Long typeId);
 
     @Query(value = "SELECT * FROM RType WHERE type_id=(SELECT type_id FROM Restaurant WHERE rst_id=:rstId)", nativeQuery = true)

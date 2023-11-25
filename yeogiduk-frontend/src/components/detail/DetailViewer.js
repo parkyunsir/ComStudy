@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import Menu from './Menu';
 import Review from './Review';
-import {restRtype} from '../../modules/restaurant';
 import ReviewWrite from './ReviewWrite';
 
 const DetailBlock = styled(Responsive)`
@@ -26,6 +24,7 @@ const Time = styled.div``;
 const Intro = styled.div``;
 
 const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
+  useEffect(() => {}, [reviews]);
   return (
     <DetailBlock>
       <WhiteBox>
