@@ -7,22 +7,30 @@ const [DETAIL, DETAIL_SUCCESS, DETAIL_FAILURE] = createRequestActionTypes('resta
 const [RTYPE, RTYPE_SUCCESS, RTYPE_FAILURE] = createRequestActionTypes('restaurant/RTYPE');
 const [REVIEWS, REVIEWS_SUCCESS, REVIEWS_FAILURE] = createRequestActionTypes('restaurant/REVIEWS');
 const [LIKENUM, LIKENUM_SUCCESS, LIKENUM_FAILURE] = createRequestActionTypes('restaurant/LIKENUM');
+const [MENU, MENU_SUCCESS, MENU_FAILURE] = createRequestActionTypes('restaurant/MENU');
+const [GETONEIMAGE, GETONEIMAGE_SUCCESS, GETONEIMAGE_FAILURE] = createRequestActionTypes('restaurant/GETONEIMAGE');
 
 export const restDetail = createAction(DETAIL, rstId => rstId);
-export const restRtype = createAction(RTYPE, typeId => typeId);
+export const restRtype = createAction(RTYPE, rstId => rstId);
 export const restReviews = createAction(REVIEWS, rstId => rstId);
 export const restLikenum = createAction(LIKENUM, rstId => rstId);
+export const restMenu = createAction(MENU, rstId => rstId);
+export const getOneImage = createAction(GETONEIMAGE, viewId => viewId);
 
 const detailSaga = createRequestSaga(DETAIL, restaurantAPI.restaurantDetail);
 const rtypeSaga = createRequestSaga(RTYPE, restaurantAPI.rtype);
 const reviewsSaga = createRequestSaga(REVIEWS, restaurantAPI.restaurantReviews);
 const likenumSaga = createRequestSaga(LIKENUM, restaurantAPI.likeNum);
+const menuSaga = createRequestSaga(MENU, restaurantAPI.menu);
+const getOneImageSaga = createRequestSaga(GETONEIMAGE, restaurantAPI.getImage);
 
 export function* restaurantSaga() {
   yield takeLatest(DETAIL, detailSaga);
   yield takeLatest(RTYPE, rtypeSaga);
   yield takeLatest(REVIEWS, reviewsSaga);
   yield takeLatest(LIKENUM, likenumSaga);
+  yield takeLatest(MENU, menuSaga);
+  yield takeLatest(GETONEIMAGE, getOneImageSaga);
 }
 
 const initialState = {
@@ -30,6 +38,8 @@ const initialState = {
   rtype: null,
   reviews: null,
   likenum: null,
+  menus: null,
+  image: null,
   error: null
 };
 
@@ -66,7 +76,23 @@ const restaurant = handleActions(
     [LIKENUM_FAILURE]: (state, {payload: error}) => ({
       ...state,
       error
-    })
+    }),
+    [MENU_SUCCESS]: (state, {payload: menu}) => ({
+      ...state,
+      menu
+    }),
+    [MENU_FAILURE]: (state, {payload: error}) => ({
+      ...state,
+      error
+    }),
+    [GETONEIMAGE_SUCCESS]: (state, {payload: image}) => ({
+      ...state,
+      image
+    }),
+    [GETONEIMAGE_FAILURE]: (state, {payload: error}) => ({
+      ...state,
+      error
+    }),
   },
   initialState
 )

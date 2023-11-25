@@ -6,6 +6,7 @@ import myInfo, {myInfoSaga} from './myInfo';
 import restaurant, {restaurantSaga} from './restaurant';
 import search, {searchSaga} from './search';
 import list, {listSaga} from './list';
+import review, {reviewSaga} from './review';
 
 const rootReducer = combineReducers({
   auth,
@@ -14,10 +15,11 @@ const rootReducer = combineReducers({
   restaurant,
   list,
   search,
+  review,
 });
 
 export function* rootSaga() {
-  yield all([authSaga(), myInfoSaga(), restaurantSaga(), listSaga(), searchSaga()]);
+  yield all([authSaga(), myInfoSaga(), restaurantSaga(), listSaga(), searchSaga(), reviewSaga()]);
 }
 
 export default rootReducer;

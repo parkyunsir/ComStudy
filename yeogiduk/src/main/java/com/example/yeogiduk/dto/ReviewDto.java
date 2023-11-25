@@ -17,32 +17,13 @@ import static java.time.LocalTime.now;
 @Getter
 @ToString
 public class ReviewDto {
-    private int viewId;
+    private Long viewId;
     private Long rstId;
     private String email;
     private String content;
     private Date date;
     private int star;
-    //private String Email;
-    //private Long id;
-    //private String originFileName;
-    //private String fullPath;
-/*
-    public File toEntity() {
-        return File.builder()
-                .id(this.id)
-                .originFileName(this.originFileName)
-                .fullPath(this.fullPath)
-                .build();
-    }
-    @Builder
-    public void ImageDto(Long id, String originFileName, String fullPath) {
-        this.id = id;
-        this.originFileName = originFileName;
-        this.fullPath = fullPath;
-    }
 
- */
     public static ReviewDto createReviewDto(Review review) {
         return new ReviewDto(
                 review.getViewId(),
@@ -51,16 +32,10 @@ public class ReviewDto {
                 review.getContent(),
                 review.getDate(),
                 review.getStar()
-                //review.getEmail(),
-                //review.getId(),
-                //review.getOriginFileName(),
-                //review.getFullPath()
-
         );
     }
 
     public Date setNow() {
-        Date now = new Date();
-        return now;
+        return new Date();
     }
 }

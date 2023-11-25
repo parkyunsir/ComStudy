@@ -10,6 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Entity
+@Table(name = "Rtype")
 public class Rtype {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

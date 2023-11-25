@@ -21,7 +21,7 @@ public class RtypeService{
         return rtype;
     }
 
-    public Rtype getRtype(Long typeId) {
-        return rtypeRepository.findByTypeId(typeId);
+    public Rtype getRtype(Long rstId) {
+        return rtypeRepository.findByRstId(rstId);
     }
 }
