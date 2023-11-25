@@ -18,7 +18,7 @@ public class ImageApiController {
     private ImageService imageService;
 
     @PostMapping("/image/save/{viewId}")
-    public ResponseEntity<List<Image>> saveImage(@PathVariable Long viewId, List<MultipartFile> files) throws IOException {
+    public ResponseEntity<List<Image>> saveImage(@PathVariable Long viewId, @RequestParam List<MultipartFile> files) throws IOException {
         List<Image> savedFile = imageService.saveImage(viewId, files);
         return (savedFile != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(savedFile) :

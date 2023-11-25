@@ -11,3 +11,9 @@ export const listRankLike = () =>
 
 export const listRankReview = () =>
   client.get(`/restaurant/list/rank/review`);
+
+export const sortRankType = ({sort, typeId}) =>
+  client.get(`/restaurant/list/sort/${sort}?type_id=${typeId}`);
+
+export const listType = () =>
+  client.get('/rtype/all');

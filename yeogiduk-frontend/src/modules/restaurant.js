@@ -77,9 +77,9 @@ const restaurant = handleActions(
       ...state,
       error
     }),
-    [MENU_SUCCESS]: (state, {payload: menu}) => ({
+    [MENU_SUCCESS]: (state, {payload: menus}) => ({
       ...state,
-      menu
+      menus
     }),
     [MENU_FAILURE]: (state, {payload: error}) => ({
       ...state,

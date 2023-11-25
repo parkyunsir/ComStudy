@@ -1,17 +1,14 @@
-import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import Menu from './Menu';
 import Review from './Review';
-import {restRtype} from '../../modules/restaurant';
 import ReviewWrite from './ReviewWrite';
-import { rtype,likeNum,restaurantReviews } from '../../lib/api/restaurant';
+import { likeNum,restaurantReviews } from '../../lib/api/restaurant';
 import { TbHeartFilled, TbMessage2, TbStarFilled } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdTime } from "react-icons/io";
 import { LuPencil } from "react-icons/lu";
-import { menu as getMenu } from '../../lib/api/restaurant';
 
 const GrayBackGround = styled.div`
   background: #f1f3f5;
@@ -78,16 +75,11 @@ const Content = styled.div`
 
 
 const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
-  
-  restaurant = restaurant || {};
-  menus = menus || {};
-
+  useEffect(() => {}, [reviews]);
   //별점, 리뷰, 찜 가져오기
   const [likes, setLikes] = useState(null);
   const [review, setReview] = useState(null);
   const [avgstar, setAvgStar] = useState(null);
-  //메뉴 가져오기
-  const [menu, setMenu] = useState(null);
 
 
   //찜 개수 출력
@@ -103,7 +95,7 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
     };
 
     fetchLikes();
-  }, [restaurant.rstId]);
+  }, [restaurant?.rstId, reviews]);
 
   //리뷰 개수 출력
   useEffect(() => {
@@ -118,7 +110,7 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
     };
 
     fetchReview();
-  }, [restaurant.rstId]);
+  }, [restaurant?.rstId, reviews]);
 
     // //별점 평균 출력
     useEffect(() => {
@@ -138,22 +130,7 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
       };
   
       fetchReviews();
-    },[restaurant.rstId]);
-
-    //메뉴 출력
-    useEffect(() => {
-      const fetchMenu = async () => {
-        try {
-            const response = await getMenu(restaurant.rstId);
-            const fetchedMenu = response.data.menu;
-            setMenu(fetchedMenu);
-        } catch (error) {
-          console.error('Error fetching menu data:', error);
-        }
-      };
-    
-      fetchMenu();
-    }, [restaurant.rstId]);
+    },[restaurant?.rstId, reviews]);
 
   return (
     <GrayBackGround>
@@ -175,8 +152,16 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
 
     {/* 메뉴 정보 출력 */}
       <WhiteBox>
-          <Name>{menus?.menu}</Name>
-          {menu}
+        <Name>메뉴</Name>
+        <div className="box">
+          {menus && (
+            <div>
+              {menus.map(menu => (
+                <Menu menu={menu} />
+              ))}
+            </div>
+          )}
+        </div>
       </WhiteBox>
 
 {/* 리뷰 작성  */}

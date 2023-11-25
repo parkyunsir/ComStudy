@@ -8,7 +8,6 @@ const Name = styled.div``;
 const Price = styled.div``;
 
 const Menu = ({ menu }) => {
-
   return (
     <MenuBlock>
         <>

@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class ReviewApiController {
     @Autowired
     private ReviewService reviewService;
@@ -39,7 +39,7 @@ public class ReviewApiController {
         // 결과 응답
         return ResponseEntity.status(HttpStatus.OK).body(created);
     }
-
+//@RequestParam
 /*
     // 2. 댓글 생성
     @PostMapping("/restaurant/{rstId}/reviews")

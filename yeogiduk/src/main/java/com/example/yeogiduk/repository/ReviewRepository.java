@@ -3,6 +3,7 @@ package com.example.yeogiduk.repository;
 import com.example.yeogiduk.entity.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -13,8 +14,10 @@ public interface ReviewRepository extends JpaRepository<Review, Long>{
 
 
     // 특정 게시글의 모든 댓글 조회
-    List<Review> findByRstId(Long rstId);
+    @Query(value = "SELECT * FROM Review WHERE rst_id=:rstId ORDER BY view_id DESC", nativeQuery = true)
+    List<Review> findByRstId(@Param("rstId") Long rstId);
 
     // 특정 닉네임의 모든 댓글 조회
-    List<Review> findByEmail(String email); // 네이티브 쿼리로 작성
+    @Query(value = "SELECT * FROM Review WHERE email=:email ORDER BY view_id DESC", nativeQuery = true)
+    List<Review> findByEmail(@Param("email") String email); // 네이티브 쿼리로 작성
 }

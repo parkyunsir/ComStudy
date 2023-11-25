@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/restaurant")
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class RestaurantApiController {
 
     @Autowired
@@ -85,8 +85,16 @@ public class RestaurantApiController {
     }
 
     @GetMapping("/list/rank/review")
-    public ResponseEntity<List<Restaurant>> getLikeReview() {
+    public ResponseEntity<List<Restaurant>> getReviewRank() {
         List<Restaurant> list = restaurantService.getRankReview();
+        return (list != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(list) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    @GetMapping("/list/sort/{sort}")
+    public ResponseEntity<List<Restaurant>> getSortList(@PathVariable String sort, @RequestParam(value="type_id", defaultValue="0") Long typeId){
+        List<Restaurant> list = restaurantService.getSortList(sort, typeId);
         return (list != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(list) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

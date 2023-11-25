@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Slf4j
 @Service
 public class RtypeService{
@@ -23,5 +26,9 @@ public class RtypeService{
 
     public Rtype getRtype(Long rstId) {
         return rtypeRepository.findByRstId(rstId);
+    }
+
+    public List<Rtype> getAllRtype() {
+        return rtypeRepository.findAll();
     }
 }
