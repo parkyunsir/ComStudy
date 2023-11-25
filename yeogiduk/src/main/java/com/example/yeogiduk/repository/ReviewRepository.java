@@ -1,9 +1,8 @@
 package com.example.yeogiduk.repository;
 
-import com.example.yeogiduk.entity.File;
 import com.example.yeogiduk.entity.Review;
-import jakarta.persistence.metamodel.IdentifiableType;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -18,5 +17,4 @@ public interface ReviewRepository extends JpaRepository<Review, Long>{
 
     // 특정 닉네임의 모든 댓글 조회
     List<Review> findByEmail(String email); // 네이티브 쿼리로 작성
-
 }

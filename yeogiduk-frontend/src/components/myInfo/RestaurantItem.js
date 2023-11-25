@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useNavigate} from 'react-router-dom';
 import { Link } from '../../../../node_modules/react-router-dom/dist/index';
 import LogoImage from '../../lib/image/logo.svg';
 
@@ -22,7 +23,7 @@ const Image = styled.img`
   height: 100px;  
 `;
 
-const Name = styled(Link)`
+const Name = styled.div`
   font-weight: bold;
   font-size: 16px;
   margin-top:-1rem;
@@ -35,11 +36,15 @@ const Name = styled(Link)`
 //이미지와 이름을 세로로 배치하기
 
 const RestaurantItem = ({restaurant}) => {
+  const navigate = useNavigate();
+  const onDetail = () => {
+    navigate(`/restaurant/${restaurant.rstId}`);
+  };
   return (
       <RestaurantItemList>
       <RestaurantItemBlock>
       <Image src={LogoImage} alt="review image" />
-      <Name to={`/restaurant/detail/${restaurant.rstId}`}>{restaurant.name}</Name>
+      <Name onClick={onDetail}>{restaurant.name}</Name>
     </RestaurantItemBlock>
     </RestaurantItemList>
   )

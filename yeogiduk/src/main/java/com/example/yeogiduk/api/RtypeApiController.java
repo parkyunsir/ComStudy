@@ -25,9 +25,9 @@ public class RtypeApiController {
 
     }
 
-    @GetMapping("/rtype/{typeId}")
-    public ResponseEntity<Rtype> getRtype(@PathVariable Long typeId) {
-        Rtype rtype = rtypeService.getRtype(typeId);
+    @GetMapping("/rtype/{rstId}")
+    public ResponseEntity<Rtype> getRtype(@PathVariable Long rstId) {
+        Rtype rtype = rtypeService.getRtype(rstId);
         return (rtype != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(rtype) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
