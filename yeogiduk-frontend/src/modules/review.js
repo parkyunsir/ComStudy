@@ -4,17 +4,14 @@ import createRequestSaga, { createRequestActionTypes } from '../lib/createReques
 import * as reviewAPI from '../lib/api/review';
 
 const [POSTREVIEW, POSTREVIEW_SUCCESS, POSTREVIEW_FAILURE] = createRequestActionTypes('review/POSTREVIEW');
-//const [POSTIMAGE, POSTIMAGE_SUCCESS, POSTIMAGE_FAILURE] = createRequestActionTypes('review/POSTIMAGE');
 const [GETIMAGE, GETIMAGE_SUCCESS, GETIMAGE_FAILURE] = createRequestActionTypes('review/GETIMAGE');
 
-export const postReview = createAction(POSTREVIEW, ({viewId, rstId, email, content, date, star, files}) => ({
-  viewId, 
-  rstId, 
-  email, 
-  content, 
-  date, 
+export const postReview = createAction(POSTREVIEW, ({rstId, email, content, star, images}) => ({
+  rstId,
+  email,
+  content,
   star,
-  files
+  images
 }));
 export const getImage = createAction(GETIMAGE, viewId => viewId);
 
@@ -28,6 +25,7 @@ export function* reviewSaga() {
 
 const initialState = {
   review: null,
+  images: null,
   error: null
 };
 

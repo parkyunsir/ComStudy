@@ -21,36 +21,35 @@ public class ImageService {
     @Autowired
     private ImageRepository imageRepository;
 
-    public List<Image> saveImage(Long viewId, List<MultipartFile> files) throws IOException {
-        List<ImageDto> dtos = new ArrayList<>();
-        for(MultipartFile file : files) {
-            ImageDto dto = ImageDto.builder()
-                    .viewId(viewId)
-                    .originFileName(file.getOriginalFilename())
-                    .build();
-            dtos.add(dto);
-            file.transferTo(new File(dto.getSavedFileName()));
-        }
-        List<Image> images = new ArrayList<>();
-        for(ImageDto d : dtos) {
-            Image image = Image.createImage(d);
-            images.add(image);
-            imageRepository.save(image);
-        }
-        return images;
+    public List<Image> showImage(Long viewId) {
+        return imageRepository.findByViewId(viewId);
     }
 
+    public Image showOneImage(Long viewId) { return imageRepository.findBy1ViewId(viewId); }
+
+    public Image showRstOneImage(Long rstId) {
+        return imageRepository.findByRstId(rstId);
+    }
+
+    public List<Image> showRstImage(Long rstId) { return imageRepository.find4ByRstId(rstId); }
+/*
     public List<Resource> showImage(Long viewId) throws MalformedURLException {
         List<Image> images = imageRepository.findByViewId(viewId);
+        if(images == null) {
+            return null;
+        }
         List<Resource> result = new ArrayList<>();
         for(Image image : images) {
-            result.add(new UrlResource("file:"+image.getSavedFileName()));
+            result.add(new UrlResource("file://"+image.getSavedFileName()));
         }
         return result;
     }
 
     public Resource showOneImage(Long rstId) throws MalformedURLException {
         Image image = imageRepository.findByRstId(rstId);
-        return new UrlResource("file:"+image.getSavedFileName());
-    }
+        if(image == null) {
+            return null;
+        }
+        return new UrlResource("file://"+image.getSavedFileName());
+    }*/
 }

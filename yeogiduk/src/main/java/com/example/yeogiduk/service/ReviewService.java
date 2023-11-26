@@ -47,7 +47,7 @@ public class ReviewService {
     }
 
     @Transactional
-    public ReviewDto create(Long rstId, ReviewDto dto, List<MultipartFile> files) throws IOException {
+    public ReviewDto create(Long rstId, ReviewDto dto, List<MultipartFile> images) throws IOException {
         if(!rstId.equals(dto.getRstId())) {
             return null;
         }
@@ -57,19 +57,15 @@ public class ReviewService {
         }
         Review review = Review.createReview(dto, rstId);
         Review reviewed = reviewRepository.save(review);
-        List<ImageDto> imageDtos = new ArrayList<>();
-        if(files != null) {
-            for(MultipartFile file : files) {
+        if(images != null) {
+            for(MultipartFile file : images) {
                 ImageDto imageDto = ImageDto.builder()
-                        .viewId(review.getViewId())
+                        .viewId(reviewed.getViewId())
                         .originFileName(file.getOriginalFilename())
                         .build();
-                imageDtos.add(imageDto);
-                file.transferTo(new File(imageDto.getSavedFileName()));
-            }
-            for(ImageDto d : imageDtos) {
-                Image image = Image.createImage(d);
-                imageRepository.save(image);
+                Image image = Image.createImage(imageDto);
+                Image saved = imageRepository.save(image);
+                file.transferTo(new File(imageDto.getPath() + "/yeogiduk/src/main/resources/static/images_review/" + saved.getSavedFileName()));
             }
         }
         return ReviewDto.createReviewDto(reviewed);

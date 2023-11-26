@@ -84,11 +84,31 @@ const ReviewItem = ({review}) => {
     fetchName();
   }, [review.rstId]);
 
+  const [image, setImage] = useState(null);
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await fetch(`/image/show/one/${review.viewId}`);
+        const text = await response.json();
+        const fetchedImage = text.savedFileName;
+        console.log(fetchedImage);
+        setImage(fetchedImage);
+      } catch (error) {
+        //console.error('Error fetching image:', error);
+      }
+    };
+    fetchImage();
+  }, [review.viewId]);
+
   return (
     <ReviewItemBlock>
       <Vertic>
       <Horizon>
-      <Image src={LogoImage} alt="review image" />
+        {image? (
+          <Image src={`/images_review/${image}`} alt="review image" />
+        ) : (
+        <Image src={LogoImage} alt="basic image" />
+        )}
       <Context>
         <Title>
           <Name to={`/restaurant/${review.rstId}`}>{name ? name : '-'}</Name>

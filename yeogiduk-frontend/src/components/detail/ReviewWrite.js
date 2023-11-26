@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useNavigate, useSearchParams} from 'react-router-dom';
 import styled from 'styled-components';
 //import {postReview, postImage} from '../../modules/review';
 import {postReview} from '../../modules/review';
@@ -68,14 +67,12 @@ const Button = styled.button`
 const ErrorMessage = styled.div``;
 
 const ReviewWrite = ({rstId}) => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   const [errors, setErrors] = useState({
     star: "",
     content: "",
   });
-  const {review, student} = useSelector(({review, auth}) => ({
-    review: review.review,
+  const {student} = useSelector(({review, auth}) => ({
     student: auth.student,
   }));
   const viewId = null;
@@ -86,21 +83,22 @@ const ReviewWrite = ({rstId}) => {
     star: 0,
     content: "",
   });
-  const [files, setFiles] = useState([]);
+  const [selectedImages, setSelectedImages] = useState([]);
 
   const handleChange = e => {
     setValues({
       ...values,
       [e.target.name]: e.target.value
     });
-    var f = [];
-    for(var i = 0; i<e.target.files?.length; i++) {
-      f[i] = e.target.files[i];
+    const files = e.target.files;
+    const updatedSelectedImages = [...selectedImages];
+    for(let i = 0; i < files?.length; i++) {
+      updatedSelectedImages.push(files[i]);
     }
-    setFiles(f);
+    setSelectedImages(updatedSelectedImages);
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     const errors = validate();
     setErrors(errors);
@@ -109,16 +107,30 @@ const ReviewWrite = ({rstId}) => {
     }
     const {star, content} = values;
     const formData = new FormData();
-    for(var i = 0; i < files?.length; i++) {
-      formData.append('originfile', files[i]);
-    }/*
-    const config = {
-      Headers: {
-        'content-type': 'multipart/form-data',
+    formData.append('rstId', rstId);
+    formData.append('email', email);
+    formData.append('content', content);
+    formData.append('star', star);
+    for(let i = 0; i < selectedImages?.length; i++) {
+      formData.append('images', selectedImages[i], selectedImages[i].name);
+    } 
+    console.log(formData);
+    try {
+      //const boundary = formData._boundary;
+      const response = await fetch(`/restaurant/${rstId}/reviews`, {
+        method: 'POST',
+        /*headers: {
+          'Content-Type': `multipart/form-data; boundary=${boundary}`,
+        },*/
+        body: formData,
+      });
+      if(!response.ok) {
+        throw new Error(`Failed to fetch reviews. Status: ${response.status}`);
       }
-    }*/
-    console.log(files);
-    dispatch(postReview({viewId, rstId, email, content, date, star, files}));
+    } catch (error) {
+      console.error('ERROR', error);
+    }
+    //dispatch(postReview({viewId, rstId, email, content, date, star, formData}));
     setValues({
       star: 0,
       content: "",
@@ -142,7 +154,7 @@ const ReviewWrite = ({rstId}) => {
   return (
     <ReviewBlock>
       <Title>리뷰 쓰기</Title>
-      <Form className="review" onSubmit={handleSubmit} encType="multipart/form-data">
+      <Form className="review" onSubmit={handleSubmit} method="post" enctype="multipart/form-data">
         <StarTitle>이 식당은 덕우에게 얼마나 만족스러웠어?</StarTitle>
         <Star>
           <StarInput type="radio" name="star" value="5" onChange={handleChange} />★★★★★&nbsp;&nbsp;&nbsp;&nbsp;
@@ -154,7 +166,7 @@ const ReviewWrite = ({rstId}) => {
         {errors.star && <ErrorMessage>{errors.star}</ErrorMessage>}
         <ContentInput type="text" name="content" value={values.content} onChange={handleChange} placeholder="식당에 대한 리부를 남겨주세요!" />
         <Button type="submit">리뷰 등록</Button>
-        <ImageInput type="file" accept='image/*' multiple="multiple" name="imageFiles" onChange={handleChange} />
+        <ImageInput type="file" name="images" multiple onChange={handleChange} />
         {errors.content && <ErrorMessage>{errors.content}</ErrorMessage>}
       </Form>
     </ReviewBlock>

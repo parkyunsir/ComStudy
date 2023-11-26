@@ -91,7 +91,7 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
   useEffect(() => {
     const fetchLikes = async () => {
       try {
-        const response = await likeNum(restaurant.rstId);
+        const response = await likeNum(restaurant?.rstId);
         const fetchedLikes = response.data;
         setLikes(fetchedLikes);
       } catch (error) {
@@ -182,7 +182,7 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
           {menus && (
             <div>
               {menus.map(menu => (
-                <Menu menu={menu} />
+                <Menu key={menu.menuId} menu={menu} />
               ))}
             </div>
           )}
