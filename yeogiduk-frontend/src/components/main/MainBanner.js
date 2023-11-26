@@ -61,7 +61,11 @@ const MainBanner = () => {
   const [imageHeight, setImageHeight] = useState(0);
   const [resetTimer, setResetTimer] = useState(false);
 
-  const images = ['banner2_2.png', 'test_banner1.png', 'main_banner1.png'];
+  const images = [
+    {src:'test_banner1.png',link:`/recommend`},
+    {src:'banner2_2.png',link:`/map`},
+    {src:'main_banner1.png', link:`/`}
+  ];
   const bannerContainerRef = useRef(null);
 
   // 함수: 다음 이미지로 이동
@@ -87,13 +91,15 @@ const MainBanner = () => {
 
   // 초기 렌더링 시에도 isVisible 초기값 설정
   const bannerImages = images.map((image, index) => (
+    <a href={image.link} key={index}>
     <BannerImage
       isVisible={index === currentImageIndex}
-      key={index}
-      src={image}
+      // key={index}
+      src={image.src}
       alt={`Banner Image ${index + 1}`}
       onLoad={handleImageLoad}
     />
+    </a>
   ));
 
   // 일정 시간 간격으로 다음 이미지로 자동 전환
