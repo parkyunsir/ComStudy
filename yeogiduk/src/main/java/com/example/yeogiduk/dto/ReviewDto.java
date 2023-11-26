@@ -16,6 +16,7 @@ import static java.time.LocalTime.now;
 @NoArgsConstructor
 @Getter
 @ToString
+@Builder
 public class ReviewDto {
     private Long viewId;
     private Long rstId;

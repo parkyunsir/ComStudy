@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import styled from 'styled-components';
 import {useNavigate} from 'react-router-dom';
 import { Link } from '../../../../node_modules/react-router-dom/dist/index';
@@ -20,10 +21,11 @@ const RestaurantItemBlock = styled.div`
   display: flex;
   flex-direction:column;
   align-item: center;  
-  
+  margin-top: 0.5rem;
 `;
 
 const Image = styled.img`
+  margin-top: 1rem;
   width: 100px;
   height: 100px;  
 `;
@@ -52,7 +54,9 @@ const Horizon = styled.div`
 
 const Review = styled.div``;
 
-const Restaurant = styled.div``;
+const Restaurant = styled.div`
+  margin-top: 2rem;
+`;
 
 const Star = styled.div`
   color:#f87f9c;
@@ -72,6 +76,23 @@ const RestaurantItem = ({restaurant}) => {
   const [likes, setLikes] = useState(null);
   const [review, setReview] = useState(null);
   const [avgstar, setAvgStar] = useState(null);
+
+  const [image, setImage] = useState(null);
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await fetch(`/image/show/restaurant/one/${restaurant.rstId}`);
+        const text = await response.json();
+        const fetchedImage = text.savedFileName;
+        console.log(fetchedImage);
+        setImage(fetchedImage);
+      } catch (error) {
+        //console.error('Error fetching image:', error);
+      }
+    };
+
+    fetchImage();
+  }, [restaurant.rstId]);
 
   //rtype(한글명. title) 출력하기
   useEffect(() => {
@@ -143,24 +164,25 @@ const RestaurantItem = ({restaurant}) => {
   };
 
   return (
-      <RestaurantItemList>
+    <RestaurantItemList>
       <RestaurantItemBlock>
-
-      <Image src={LogoImage} alt="review image" />
-      <Restaurant>
-
-      <HorizonName>
-      <Name onClick={onDetail}>{restaurant.name}</Name>
-      <Star>{avgstar ? avgstar.toFixed(1) : '-'}</Star>
-      </HorizonName>
-
-      <TypeId>{title}</TypeId>
-      <Horizon>
-      <Likes><TbHeartFilled /> {likes}&nbsp;&nbsp;</Likes>
-      <Review>&nbsp;&nbsp;<TbMessage2/> {review}</Review>
-      </Horizon>
-      </Restaurant>
-    </RestaurantItemBlock>
+        {image? (
+          <Image src={`/images_review/${image}`} alt="review image" />
+        ) : (
+          <Image src={LogoImage} alt="basic image" />
+        )}
+        <Restaurant>
+          <HorizonName>
+            <Name onClick={onDetail}>{restaurant.name}</Name>
+            <Star>{avgstar ? avgstar.toFixed(1) : '-'}</Star>
+          </HorizonName>
+          <TypeId>{title}</TypeId>
+          <Horizon>
+          <Likes><TbHeartFilled /> {likes}&nbsp;&nbsp;</Likes>
+          <Review>&nbsp;&nbsp;<TbMessage2/> {review}</Review>
+          </Horizon>
+        </Restaurant>
+      </RestaurantItemBlock>
     </RestaurantItemList>
   )
 }

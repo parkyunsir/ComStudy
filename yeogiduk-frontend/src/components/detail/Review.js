@@ -47,6 +47,12 @@ const TextGray = styled.div`
   }
 `;
 
+const Image = styled.img`
+  width: 150px;
+  height: 150px;
+  margin-top: 2rem;
+`;
+
 const Review = ({review}) => {
   const date = new Date(review.date).toLocaleDateString();
   const [stars, setStars] = useState(`★★★★★`);
@@ -79,9 +85,33 @@ const Review = ({review}) => {
     }
   }, [review.star, review]);
 
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await fetch(`/image/show/${review.viewId}`);
+        const text = await response.json();
+        const fetchedImages = [];
+        for(let i = 0; i < text.length; i++) {
+          fetchedImages.push(text[i].savedFileName);
+        }
+        console.log(fetchedImages);
+        setImages(fetchedImages);
+      } catch (error) {
+        //console.error('Error fetching image:', error);
+      }
+    };
+    fetchImage();
+  }, [review.viewId]);
+
   return (
     <ReviewBlock>
       <TextGray><hr/></TextGray>
+      {images ? (
+        images.map(image => (
+          <Image src={`/images_review/${image}`} alt="review image" />
+        ))
+      ) : ( <></>)}
       <Horizon>
       <Name>덕우</Name>
       <Star>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -33,13 +34,34 @@ public class ReviewApiController {
 
     @PostMapping("/restaurant/{rstId}/reviews")
     public ResponseEntity<ReviewDto> create(@PathVariable Long rstId,
-                                            @RequestBody ReviewDto dto, List<MultipartFile> files) throws IOException {
+                                            @RequestParam("email") String email,
+                                            @RequestParam("content") String content,
+                                            @RequestParam("star") int star,
+                                            @RequestParam("images") List<MultipartFile> images) throws IOException {
+        ReviewDto dto = ReviewDto.builder()
+                .viewId(null)
+                .rstId(rstId)
+                .email(email)
+                .content(content)
+                .date(null)
+                .star(star)
+                .build();
         // 서비스에 위임
-        ReviewDto created = reviewService.create(rstId, dto, files);
+        ReviewDto created = reviewService.create(rstId, dto, images);
         // 결과 응답
         return ResponseEntity.status(HttpStatus.OK).body(created);
     }
-//@RequestParam
+
+/*
+    @PostMapping("/restaurant/{rstId}/reviews")
+    public ResponseEntity<ReviewDto> create(@PathVariable Long rstId,
+                                            @RequestParam ReviewDto dto,
+                                            @RequestParam("images") List<MultipartFile> images) throws IOException {
+        // 서비스에 위임
+        ReviewDto created = reviewService.create(rstId, dto, images);
+        // 결과 응답
+        return ResponseEntity.status(HttpStatus.OK).body(created);
+    }*/
 /*
     // 2. 댓글 생성
     @PostMapping("/restaurant/{rstId}/reviews")

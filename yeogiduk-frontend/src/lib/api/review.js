@@ -1,7 +1,7 @@
 import client from './client';
 
-export const postReview = ({viewId, rstId, email, content, date, star, files}) =>
-  client.post(`/restaurant/${rstId}/reviews`, {viewId, rstId, email, content, date, star, files});
+export const postReview = ({rstId, email, content, star, images}) =>
+  client.post(`/restaurant/${rstId}/reviews`, {email, content, star, images});
 
 export const getReviewImages = ({viewId}) =>
   client.get(`/image/show/${viewId}`);
