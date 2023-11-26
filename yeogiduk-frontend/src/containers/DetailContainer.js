@@ -26,7 +26,7 @@ const DetailContainer = () => {
 
   useEffect(() => {
     dispatch(restReviews(rstId));
-  }, [reviews]);
+  }, [dispatch, reviews, rstId]);
 
   return <DetailViewer restaurant={restaurant} rtype={rtype} reviews={reviews} menus={menus} />;
 }

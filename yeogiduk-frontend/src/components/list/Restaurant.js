@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 //import { Link } from '../../../../node_modules/react-router-dom/dist/index';
 import logoImage from '../../lib/image/logo_image.png';
 import { rtype,likeNum,restaurantReviews } from '../../lib/api/restaurant';
-import { TbHeartFilled, TbMessage2 } from "react-icons/tb";
+import { TbStarFilled, TbHeartFilled, TbMessage2 } from "react-icons/tb";
 
 const RestaurantBlock = styled.div`
   background: white;
@@ -25,13 +25,13 @@ const RestaurantBlock = styled.div`
 const Name = styled.div`
   font-weight: bold;
   font-size: 25px;
-  text-align:center;
   color: black;
+  margin-bottom:1rem;
 `;
 
 const Type = styled.div`
-  margin-top:0.5rem;
   color:#888888;
+  margin-bottom:1rem;
 `;
 
 const Info = styled.div`
@@ -41,18 +41,30 @@ const Info = styled.div`
 
 const Image = styled.img``;
 
-const Horizon = styled.div`
-  display: flex;
-  text-decoration: none;
-  color: black;
-  padding-bottom:1rem;
+const TextGray = styled.div`
+  hr {
+    border: 0;
+    border-top: 1px solid #cccccc; /* 색상 조정 */
+    margin: 10px 0 20px; /* Adjust margin as needed */
+  }
 `;
+
+const Star = styled.div`
+  color:#f87f9c;
+  float:left;
+`;
+
+const Bold = styled.div`
+  font-weight:bold;
+  float:left;
+`
 
 const Restaurant = ({restaurant}) => {
   const navigate = useNavigate();
   const [title, setTitle] = useState(null);
   const [likes, setLikes] = useState(null);
   const [review, setReview] = useState(null);
+  const [avgstar, setAvgStar] = useState(null);
 
   //rtype(한글명. title) 출력하기
   useEffect(() => {
@@ -103,16 +115,36 @@ const Restaurant = ({restaurant}) => {
     navigate(`/restaurant/${restaurant.rstId}`);
   };
 
+    //별점 평균 출력
+    useEffect(() => {
+      const fetchReviews = async () => {
+        try{
+          const response = await fetch(`/restaurant/${restaurant.rstId}/reviews`);
+          if(!response.ok){
+            throw new Error(`Failed to fetch reviews. Status: ${response.status}`);
+          }
+          const reviews = await response.json();
+          const stars = reviews.map(review=>review.star);
+          const avg = stars.reduce((sum, star) => sum+star,0) / stars.length;
+          setAvgStar(avg);
+        } catch (error) {
+          console.error('ERROR',error);
+        }
+      };
+  
+      fetchReviews();
+    },[restaurant.rstId]);
+
   return (
     <RestaurantBlock>
-      <Horizon>
+      <TextGray><hr /></TextGray>
       <Name onClick={onDetail}>{restaurant.name}&nbsp;</Name>
       <Type>&nbsp;{title? title : '-'}</Type>
-      </Horizon>
+      <Info>
+      <Star><TbStarFilled/></Star>&nbsp;&nbsp;<Bold>{avgstar ? avgstar.toFixed(1) : '-'}</Bold>&nbsp;&nbsp;
+        <TbHeartFilled/>&nbsp;{likes? likes : '0'} &nbsp;&nbsp;
+        <TbMessage2/>&nbsp;{review? review : '0'}</Info>
       <Image src={logoImage} />
-
-      <Info><TbHeartFilled/>&nbsp;{likes? likes : '0'} &nbsp;&nbsp;
-            <TbMessage2/>&nbsp;{review? review : '0'}</Info>
     </RestaurantBlock>
   )
 }

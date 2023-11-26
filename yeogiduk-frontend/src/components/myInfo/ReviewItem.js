@@ -91,7 +91,7 @@ const ReviewItem = ({review}) => {
       <Image src={LogoImage} alt="review image" />
       <Context>
         <Title>
-          <Name to={`/restaurant/detail/${review.rstId}`}>{name ? name : '-'}</Name>
+          <Name to={`/restaurant/${review.rstId}`}>{name ? name : '-'}</Name>
           <Star>{stars}</Star>
           <StarNum> {review.star}</StarNum>
         </Title>

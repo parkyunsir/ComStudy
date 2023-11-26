@@ -9,6 +9,7 @@ import ListPage from './pages/ListPage';
 import RecommendPage from './pages/RecommendPage';
 import MapPage from './pages/MapPage';
 import DetailPage from './pages/DetailPage';
+import MoodPage from './pages/MoodPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/search" element={<SearchPage />} />
       <Route path="/list" element={<ListPage />} />
       <Route path="/recommend" element={<RecommendPage />} />
+      <Route path="/testmood" element={<MoodPage />} />
       <Route path="/map" element={<MapPage />} />
       <Route path="/restaurant/:rstId" element={<DetailPage />} />
     </Routes>

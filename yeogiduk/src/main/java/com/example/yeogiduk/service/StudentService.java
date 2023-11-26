@@ -116,6 +116,11 @@ public class StudentService /*implements UserDetailsService*/{
         }
         return restaurants;
     }
+
+    public Boolean checkLike(String email, Long rstId) {
+        Likes like = likesRepository.findByEmailAndRstId(email, rstId);
+        return like != null;
+    }
 /*
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

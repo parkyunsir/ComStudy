@@ -24,4 +24,13 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
     @Query(value = "SELECT * FROM Restaurant r ORDER BY (SELECT COUNT(*) FROM Review WHERE rst_id=r.rst_id) desc limit 10", nativeQuery = true)
     List<Restaurant> findByReview();
+
+    @Query(value = "SELECT * FROM Restaurant r WHERE type_id=:typeId ORDER BY (SELECT SUM(star)/COUNT(*) FROM Review WHERE rst_id=r.rst_id) desc", nativeQuery = true)
+    List<Restaurant> findByStarAndTypeId(@Param("typeId") Long typeId);
+
+    @Query(value = "SELECT * FROM Restaurant r WHERE type_id=:typeId ORDER BY (SELECT COUNT(*) FROM Likes WHERE rst_id=r.rst_id) desc", nativeQuery = true)
+    List<Restaurant> findByLikeAndTypeId(@Param("typeId") Long typeId);
+
+    @Query(value = "SELECT * FROM Restaurant r WHERE type_id=:typeId ORDER BY (SELECT COUNT(*) FROM Review WHERE rst_id=r.rst_id) desc", nativeQuery = true)
+    List<Restaurant> findByReviewAndTypeId(@Param("typeId") Long typeId);
 }

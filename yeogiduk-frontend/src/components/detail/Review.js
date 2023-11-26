@@ -2,16 +2,50 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const ReviewBlock = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-left:-1rem;
 `;
 
-const Name = styled.div``;
+const Horizon = styled.div`
+  display:flex;
+  float:left;
+  margin-bottom:0.5rem;
+`;
 
-const Star = styled.div``;
+const Name = styled.div`
+  font-weight:bold;
+  font-size:22px;
+`;
 
-const Content = styled.div``;
+const Star = styled.div`
+  color: #f87f9c;
 
-const ReviewDate = styled.div``;
+`;
+
+const BlankStar = styled.div`
+  color: #000000;
+`;
+
+const Bold = styled.div`
+  font-weight:bold;
+  color: #000000;
+`;
+
+const Content = styled.div`
+  clear: both;
+`;
+
+const ReviewDate = styled.div`
+  float:right;
+  font-size:12px;
+  color: #888888;
+`;
+
+const TextGray = styled.div`
+  hr {
+    solid #888888; /* 또는 다른 회색 색상으로 변경 가능 */
+  }
+`;
 
 const Review = ({review}) => {
   const date = new Date(review.date).toLocaleDateString();
@@ -20,19 +54,43 @@ const Review = ({review}) => {
     if(review.star === 5) {
       setStars(`★★★★★`);
     } else if (review.star === 4) {
-      setStars(`★★★★☆`);
+      setStars(`★★★★`);
     } else if (review.star === 3) {
-      setStars(`★★★☆☆`);
+      setStars(`★★★`);
     } else if (review.star === 2) {
-      setStars(`★★☆☆☆`);
+      setStars(`★★`);
     } else if (review.star === 1) {
-      setStars(`★☆☆☆☆`);
+      setStars(`★`);
     }
   }, [review.star, review]);
+
+  const [blankstars, setblankStars] = useState(`★★★★★`);
+  useEffect(() => {
+    if(review.star === 5) {
+      setblankStars(``);
+    } else if (review.star === 4) {
+      setblankStars(`☆`);
+    } else if (review.star === 3) {
+      setblankStars(`☆☆`);
+    } else if (review.star === 2) {
+      setblankStars(`☆☆☆`);
+    } else if (review.star === 1) {
+      setblankStars(`☆☆☆☆`);
+    }
+  }, [review.star, review]);
+
   return (
     <ReviewBlock>
+      <TextGray><hr/></TextGray>
+      <Horizon>
       <Name>덕우</Name>
-      <Star>{stars} {review.star}</Star>
+      <Star>
+        <Horizon>&nbsp;&nbsp;{stars}
+      <BlankStar>{blankstars}</BlankStar>
+      <Bold>&nbsp;{review.star}</Bold>
+        </Horizon>
+      </Star>
+      </Horizon>
       <Content>{review.content}</Content>
       <ReviewDate>{date}</ReviewDate>
     </ReviewBlock>
