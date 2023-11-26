@@ -75,7 +75,18 @@ const Intro = styled.div`
 const Content = styled.div`
 `;
 
-const Like = styled.button``;
+const Horizon = styled.div`
+  display:flex;
+  justify-content: space-between;
+`;
+
+const Like = styled.button`
+border: 1px solid #aaaaaa;
+background: none;
+outline: none;
+border-radius: 10px;
+margin-left:1rem;
+`;
 
 
 const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
@@ -163,7 +174,7 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
 
 {/* 가게 기본 정보 출력 */}
       <WhiteBox>
-        <Name>{restaurant?.name}</Name><Like style={{backgroundColor: color}} onClick={handleClick}>찜</Like>
+        <Horizon><Name>{restaurant?.name}</Name><Like style={{backgroundColor: color}} onClick={handleClick}>찜</Like></Horizon>
         <Type>{rtype?.title}</Type>
         <Intro>
           <StarColor><TbStarFilled/></StarColor>&nbsp;<StarBold>{avgstar ? avgstar.toFixed(1) : '-'}</StarBold> &nbsp;&nbsp; &nbsp;&nbsp;

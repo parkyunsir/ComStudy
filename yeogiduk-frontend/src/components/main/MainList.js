@@ -4,6 +4,7 @@ import Responsive from '../common/Responsive';
 import RestaurantItem from './RestaurantItem';
 import { TbStarFilled, TbHeartFilled, TbMessage2 } from "react-icons/tb";
 import {rankStar, rankLike, rankReview} from '../../modules/list';
+import { Link } from '../../../../node_modules/react-router-dom/dist/index';
 
 const GrayBackground = styled.div`
   background: #f1f3f5;
@@ -42,6 +43,11 @@ const Reviews = styled.div`
   flex-direction: column;
 `;
 
+const Links = styled(Link)`
+  text-decoration:none;
+  color:black;
+`;
+
 const Content = styled.div`
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -76,7 +82,7 @@ const MainList = ({starList, likeList, reviewList}) => {
       <Content>
         <Line>
         <div><TbStarFilled/> 덕우들의 평가가 완전 좋은 식당이야!</div>
-        <div>더보기 &#10095;</div>
+        <div><Links to={`/list`}>더보기 &#10095;</Links></div>
         </Line>
         <Stars>
         {starList && (
@@ -95,7 +101,7 @@ const MainList = ({starList, likeList, reviewList}) => {
       <Content>
         <Line>
         <div><TbHeartFilled/> 덕우들이 가장 많이 찜한 식당이야!</div>
-        <div>더보기 &#10095;</div>
+        <div><Links to={`/list`}>더보기 &#10095;</Links></div>
         </Line>
         <Likes>
         {likeList && (
@@ -113,7 +119,7 @@ const MainList = ({starList, likeList, reviewList}) => {
       <Content>
         <Line>
         <div><TbMessage2/> 덕우들의 리뷰가 제일 많은 식당이야!</div>
-        <div>더보기 &#10095;</div>
+        <div><Links to={`/list`}>더보기 &#10095;</Links></div>
         </Line>
         <Reviews>
         {reviewList && (
