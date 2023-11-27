@@ -37,7 +37,10 @@ const LoginForm = () => {
   // 컴포넌트가 처음 렌더링될 때 form을 초기화함
   useEffect(() => {
     dispatch(initializeForm('login'));
-  }, [dispatch]);
+    if(student) {
+      navigate('/main');
+    }
+  }, [dispatch, student, navigate]);
 
   useEffect(() => {
     if(authError) {
@@ -49,7 +52,7 @@ const LoginForm = () => {
     if(auth) {
       console.log('로그인 성공');
       if(student) {
-        navigate('/');
+        navigate('/main');
         try {
           localStorage.setItem('student', JSON.stringify(student));
           dispatch(initializeForm('login'));

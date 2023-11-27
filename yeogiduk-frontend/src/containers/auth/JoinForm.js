@@ -70,7 +70,7 @@ const JoinForm = () => {
     if(auth) {
       console.log('회원가입 성공');
       if(student) {
-        navigate('/');
+        navigate('/main');
         try {
           localStorage.setItem('student', JSON.stringify(student));
           dispatch(initializeForm('login'));

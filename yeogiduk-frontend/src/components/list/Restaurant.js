@@ -148,7 +148,6 @@ const Restaurant = ({restaurant}) => {
         for(let i = 0; i < text.length; i++) {
           fetchedImages.push(text[i].savedFileName);
         }
-        console.log(fetchedImages);
         setImages(fetchedImages);
       } catch (error) {
         //console.error('Error fetching image:', error);
@@ -166,12 +165,12 @@ const Restaurant = ({restaurant}) => {
       <Star><TbStarFilled/></Star>&nbsp;&nbsp;<Bold>{avgstar ? avgstar.toFixed(1) : '-'}</Bold>&nbsp;&nbsp;
         <TbHeartFilled/>&nbsp;{likes? likes : '0'} &nbsp;&nbsp;
         <TbMessage2/>&nbsp;{review? review : '0'}</Info>
-      {images ? (
+      {images? (
         images.map(image => (
           <Image src={`/images_review/${image}`} alt="review image" />
         ))
       ) : (
-        <Image src={logoImage} />
+        <Image src={logoImage} alt="basic image" />
       )}
     </RestaurantBlock>
   )
