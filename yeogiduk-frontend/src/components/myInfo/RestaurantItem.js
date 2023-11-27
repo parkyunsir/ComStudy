@@ -45,7 +45,7 @@ const RestaurantItem = ({restaurant}) => {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await fetch(`/image/show/one/${restaurant.rstId}`);
+        const response = await fetch(`/image/show/restaurant/one/${restaurant.rstId}`);
         const text = await response.json();
         const fetchedImage = text.savedFileName;
         console.log(fetchedImage);

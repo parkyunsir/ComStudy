@@ -55,7 +55,7 @@ const Button = styled.button`
 
 const Context = styled.div`
   overflow-y:scroll;
-  height: 41.3rem; // 30rem
+  height: 41.3rem;
 `;
 
 const ListViewer = () => {
