@@ -6,7 +6,6 @@ import HeaderContainer from '../containers/common/HeaderContainer';
 const LoginPage = () => {
   return (
     <>
-      <HeaderContainer />
       <AuthTemplate type="login">
         <LoginForm type="login"/>
       </AuthTemplate>
@@ -15,3 +14,5 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+//<HeaderContainer />
