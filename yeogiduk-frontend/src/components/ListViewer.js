@@ -55,8 +55,7 @@ const Button = styled.button`
 
 const Context = styled.div`
   overflow-y:scroll;
-  height:30rem;
-  
+  height: 41.3rem; // 30rem
 `;
 
 const ListViewer = () => {
@@ -89,8 +88,8 @@ const ListViewer = () => {
 
   useEffect(() => {
     dispatch(sortList(values));
-    setSortButton(values.sort);
     setTypeButton(parseInt(values.typeId));
+    setSortButton(values.sort);
   }, [dispatch, values]);
 
   useEffect(() => {}, [restaurants]);
