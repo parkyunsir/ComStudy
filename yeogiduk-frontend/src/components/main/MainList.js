@@ -15,7 +15,7 @@ const GrayBackground = styled.div`
 
 const MainListBox = styled(Responsive)`
   background: #f1f3f5;
-  height:50rem;
+  height:100%;
 `;
 
 const WhiteBox = styled.div`
@@ -77,62 +77,59 @@ const Line = styled.div`
 const MainList = ({starList, likeList, reviewList}) => {
   return (
     <GrayBackground>
-    <MainListBox>
-      <WhiteBox>
-      <Content>
-        <Line>
-        <div><TbStarFilled/> 덕우들의 평가가 완전 좋은 식당이야!</div>
-        <div><Links to={`/list`}>더보기 &#10095;</Links></div>
-        </Line>
-        <Stars>
-        {starList && (
-          <Horizon>
-            {starList.map(restaurant => (
-              <RestaurantItem restaurant={restaurant} />
-            ), (parseInt(starList.length) < 3))}
-          </Horizon>
-        )}
-      </Stars>
-      </Content>
-      </WhiteBox>
-
-
-      <WhiteBox>
-      <Content>
-        <Line>
-        <div><TbHeartFilled/> 덕우들이 가장 많이 찜한 식당이야!</div>
-        <div><Links to={`/list`}>더보기 &#10095;</Links></div>
-        </Line>
-        <Likes>
-        {likeList && (
-          <Horizon>
-            {likeList.map(restaurant => (
-              <RestaurantItem restaurant={restaurant} />
-            ))}
-          </Horizon>
-        )}
-      </Likes>
-      </Content>
-      </WhiteBox>
-
-      <WhiteBox>
-      <Content>
-        <Line>
-        <div><TbMessage2/> 덕우들의 리뷰가 제일 많은 식당이야!</div>
-        <div><Links to={`/list`}>더보기 &#10095;</Links></div>
-        </Line>
-        <Reviews>
-        {reviewList && (
-          <Horizon>
-            {reviewList.map(restaurant => (
-              <RestaurantItem restaurant={restaurant} />
-            ))}
-          </Horizon>
-        )}
-      </Reviews>
-      </Content>
-      </WhiteBox>
-    </MainListBox>
+      <MainListBox>
+        <WhiteBox>
+          <Content>
+            <Line>
+              <div><TbStarFilled/> 덕우들의 평가가 완전 좋은 식당이야!</div>
+              <div><Links to={`/list`}>더보기 &#10095;</Links></div>
+            </Line>
+            <Stars>
+            {starList && (
+              <Horizon>
+                {starList.map(restaurant => (
+                  <RestaurantItem restaurant={restaurant} />
+                ), (parseInt(starList.length) < 3))}
+              </Horizon>
+            )}
+            </Stars>
+          </Content>
+        </WhiteBox>
+        <WhiteBox>
+          <Content>
+            <Line>
+              <div><TbHeartFilled/> 덕우들이 가장 많이 찜한 식당이야!</div>
+              <div><Links to={`/list`}>더보기 &#10095;</Links></div>
+            </Line>
+            <Likes>
+            {likeList && (
+              <Horizon>
+                {likeList.map(restaurant => (
+                  <RestaurantItem restaurant={restaurant} />
+                ))}
+              </Horizon>
+            )}
+            </Likes>
+          </Content>
+        </WhiteBox>
+        <WhiteBox>
+          <Content>
+            <Line>
+              <div><TbMessage2/> 덕우들의 리뷰가 제일 많은 식당이야!</div>
+              <div><Links to={`/list`}>더보기 &#10095;</Links></div>
+            </Line>
+            <Reviews>
+              {reviewList && (
+                <Horizon>
+                  {reviewList.map(restaurant => (
+                    <RestaurantItem restaurant={restaurant} />
+                ))}
+                </Horizon>
+              )}
+            </Reviews>
+          </Content>
+        </WhiteBox>
+      </MainListBox>
     </GrayBackground>
   );
 };

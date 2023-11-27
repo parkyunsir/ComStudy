@@ -66,7 +66,7 @@ public class ReviewService {
                 Image image = Image.createImage(imageDto);
                 Image saved = imageRepository.save(image);
                 file.transferTo(new File(imageDto.getPath() + "/yeogiduk/src/main/resources/static/images_review/" + saved.getSavedFileName()));
-            }
+            } // "/yeogiduk-frontend/public/images_review/"
         }
         return ReviewDto.createReviewDto(reviewed);
     }
