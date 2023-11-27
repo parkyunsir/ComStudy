@@ -2,6 +2,7 @@ package com.example.yeogiduk.dto;
 
 import com.example.yeogiduk.entity.Image;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Value;
 
 @Getter
 @Builder
@@ -19,6 +20,12 @@ public class ImageDto {
     }
 
     public String setSavedFileName() {
-        return "C:/SG_2023/images" + viewId.toString() + "_" + imageId.toString() + ".jpg";
+        return viewId.toString() + "_" + originFileName;
+    }
+
+    public String getPath() {
+        return "C:/SG_2023/yeogiduk/ComStudy";
     }
 }
+
+// SuA : "C:/SG_2023/yeogiduk/ComStudy"

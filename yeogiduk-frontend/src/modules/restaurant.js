@@ -17,7 +17,7 @@ export const restRtype = createAction(RTYPE, rstId => rstId);
 export const restReviews = createAction(REVIEWS, rstId => rstId);
 export const restLikenum = createAction(LIKENUM, rstId => rstId);
 export const restMenu = createAction(MENU, rstId => rstId);
-export const getOneImage = createAction(GETONEIMAGE, viewId => viewId);
+export const getOneImage = createAction(GETONEIMAGE, rstId => rstId);
 export const checkLike = createAction(CHECKLIKE, ({email, rstId}) => ({email, rstId}));
 export const addLike = createAction(ADDLIKE, ({id, email, rstId}) => ({id, email, rstId}));
 

@@ -1,8 +1,10 @@
 package com.example.yeogiduk.api;
 import com.example.yeogiduk.entity.Image;
 import com.example.yeogiduk.service.ImageService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.file.ConfigurationSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,32 +19,35 @@ public class ImageApiController {
     @Autowired
     private ImageService imageService;
 
-    @PostMapping("/image/save/{viewId}")
-    public ResponseEntity<List<Image>> saveImage(@PathVariable Long viewId, @RequestParam List<MultipartFile> files) throws IOException {
-        List<Image> savedFile = imageService.saveImage(viewId, files);
-        return (savedFile != null) ?
-                ResponseEntity.status(HttpStatus.OK).body(savedFile) :
-                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-    }
-//@RequestParam
     // 한 리뷰에 사진들 보기
     @GetMapping("/image/show/{viewId}")
-    public ResponseEntity<List<Resource>> showImage(@PathVariable Long viewId) throws MalformedURLException {
-        List<Resource> images = imageService.showImage(viewId);
-        return (images != null) ?
-                ResponseEntity.status(HttpStatus.OK).body(images) :
-                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    public List<Image> showImage(@PathVariable Long viewId) {
+        return imageService.showImage(viewId);
+    }
+
+    // 한 리뷰에 한 사진 보기
+    @GetMapping("/image/show/one/{viewId}")
+    public Image showOneImage(@PathVariable Long viewId) {return imageService.showOneImage(viewId); }
+
+    // 한 식당에 가장 최근 사진 하나 보기
+    @GetMapping("/image/show/restaurant/one/{rstId}")
+    public Image showRstOneImage(@PathVariable Long rstId) {
+        return imageService.showRstOneImage(rstId);
+    }
+
+    // 한 식당에 가장 최근 사진 4개 보기
+    @GetMapping("/image/show/restaurant/{rstId}")
+    public List<Image> showRstImage(@PathVariable Long rstId) {return imageService.showRstImage(rstId);}
+/*
+    // 한 리뷰에 사진들 보기
+    @GetMapping("/image/show/{viewId}")
+    public List<Resource> showImage(@PathVariable Long viewId) throws MalformedURLException {
+        return imageService.showImage(viewId);
     }
 
     // 한 식당에 가장 최근 사진 하나 보기
     @GetMapping("/image/show/one/{rstId}")
-    public ResponseEntity<Resource> showOneImage(@PathVariable Long rstId) throws MalformedURLException {
-        Resource image = imageService.showOneImage(rstId);
-        return (image != null) ?
-                ResponseEntity.status(HttpStatus.OK).body(image) :
-                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-    }
+    public Resource showOneImage(@PathVariable Long rstId) throws MalformedURLException {
+        return imageService.showOneImage(rstId);
+    }*/
 }
-
-//@Value("${uploadPath}")
-//    String uploadPath;

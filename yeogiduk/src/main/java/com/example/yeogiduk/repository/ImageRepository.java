@@ -10,6 +10,12 @@ import java.util.List;
 public interface ImageRepository extends JpaRepository<Image, Long> {
     List<Image> findByViewId(Long viewId);
 
-    @Query(value = "SELECT * FROM IMAGE WHERE viewId=(SELECT viewId FROM Review WHERE rstId=:rstId ORDER BY viewId desc LIMIT 1) LIMIT 1", nativeQuery = true)
+    @Query(value = "SELECT * FROM Image WHERE view_id=(SELECT view_id FROM Review WHERE rst_id=:rstId ORDER BY view_id DESC LIMIT 1) LIMIT 1", nativeQuery = true)
     Image findByRstId(@Param("rstId") Long rstId);
+
+    @Query(value = "SELECT * FROM Image WHERE view_id in (SELECT view_id FROM Review WHERE rst_id=:rstId ORDER BY view_id DESC) LIMIT 4", nativeQuery = true)
+    List<Image> find4ByRstId(@Param("rstId") Long rstId);
+
+    @Query(value = "SELECT * FROM Image WHERE view_id=:viewId LIMIT 1", nativeQuery = true)
+    Image findBy1ViewId(@Param("viewId") Long viewId);
 }
