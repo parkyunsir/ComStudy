@@ -79,9 +79,10 @@ const TestMoodContainer = () => {
 
     // 여기에서 result를 업데이트하고 액션 디스패치
     setResult(rstId);
+    setSuccess(true);
   };
 
-  return <TestMood handleChange={handleChange} handleSubmit={handleSubmit} error={error} restaurant={result} />;
+  return <TestMood handleChange={handleChange} handleSubmit={handleSubmit} error={error} restaurant={restaurant} />;
 };
 
 export default TestMoodContainer;
