@@ -24,11 +24,10 @@ const TestMoodContainer = () => {
   }, [success]);
 
   useEffect(() => {
-    // success가 변경되고, result가 유효한 경우에만 디스패치
-    if (success && result !== null) {
-      dispatch(restDetail(result));
+    if (success) {
+      setResult(restaurant);
     }
-  }, [success, result, dispatch]);
+  }, [success, restaurant]);
 
   const handleChange = (e) => {
     setValues({
@@ -44,10 +43,6 @@ const TestMoodContainer = () => {
       setError('질문에 모두 답해주세요');
       return;
     }
-
-    // 여기서 success를 true로 업데이트하고, result도 업데이트
-    setSuccess(true);
-
     var num = [];
     if (values.food === 'bab') {
       if (values.mood === 'good' || (values.mood === 'angry' && values.today === 'full')) {
@@ -76,13 +71,11 @@ const TestMoodContainer = () => {
     }
     var rstId = num[Math.floor(Math.random() * num.length)];
     console.log(rstId);
-
-    // 여기에서 result를 업데이트하고 액션 디스패치
-    setResult(rstId);
+    dispatch(restDetail(rstId));
     setSuccess(true);
   };
 
-  return <TestMood handleChange={handleChange} handleSubmit={handleSubmit} error={error} restaurant={restaurant} />;
+  return <TestMood handleChange={handleChange} handleSubmit={handleSubmit} error={error} restaurant={result} />;
 };
 
 export default TestMoodContainer;
