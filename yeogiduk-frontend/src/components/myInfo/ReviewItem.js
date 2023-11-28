@@ -9,11 +9,11 @@ const ReviewItemBlock = styled.div``;
 const Horizon = styled.div`
   display: flex;
   align-items: flex-start; 
-  margin-bottom:1rem;
 `;
 
 const Vertic = styled.div`
   flex-direction: column;
+  margin-top:1rem;
 `
 
 const Image = styled.img`
@@ -25,7 +25,8 @@ const Image = styled.img`
 const Context = styled.div`
 `;
 
-const Title = styled.div``;
+const Title = styled.div`
+`;
 
 const Name = styled(Link)`
   font-weight: bold;
@@ -38,18 +39,23 @@ const Star = styled.div`
   color: rgba(207, 80, 111, 1);
 `;
 
-const StarNum = styled.div``;
+const StarNum = styled.div`
+  margin-top:0.3rem;
+`;
 
 const ReviewContent = styled.div`
   height: 100%;
   //글자제한
   text-overflow: ellipsis;
+  margin-bottom:0.5rem;
+  font-size:18px;
 `;
 
 const ReviewDate = styled.div`
   color: rgba(54,54,54,1);
   
 `;
+
 
 const ReviewItem = ({review}) => {
   const [name, setName] = useState(null);
@@ -112,13 +118,16 @@ const ReviewItem = ({review}) => {
       <Context>
         <Title>
           <Name to={`/restaurant/${review.rstId}`}>{name ? name : '-'}</Name>
+          <Horizon>
           <Star>{stars}</Star>
-          <StarNum> {review.star}</StarNum>
+          <StarNum>&nbsp;&nbsp;{review.star}</StarNum>
+          </Horizon>
         </Title>
       <ReviewContent>{review.content}</ReviewContent>
       <ReviewDate>{date}</ReviewDate>
       </Context>
       </Horizon>
+      <hr/>
       </Vertic>
     </ReviewItemBlock>
   )
