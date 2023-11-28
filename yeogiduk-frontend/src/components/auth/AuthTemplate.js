@@ -66,13 +66,18 @@ const StudentTemplate = ({children, type}) => {
         {children}
       </WhiteBox>
       <Footer>
-        여기덕이 처음이신가요? 
-        {type === 'login' ? (
-          <Link to="/join"> 회원가입</Link>
-        ) : (
-          <Link to="/login"> 로그인</Link>
-        )}
-      </Footer>
+  {type === 'login' ? (
+    <>
+      여기덕이 처음이신가요?
+      <Link to="/join"> 회원가입</Link>
+    </>
+  ) : (
+    <>
+      이미 계정이 있으신가요?
+      <Link to="/"> 로그인</Link>
+    </>
+  )}
+</Footer>
     </AuthTemplateBlock>
   );
 };
