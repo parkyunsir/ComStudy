@@ -9,7 +9,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface LikesRepository extends CrudRepository<Likes, Long> {
-    List<Likes> findByEmail(String email);
+    @Query(value = "SELECT * FROM Likes WHERE email=:email ORDER BY id DESC", nativeQuery = true)
+    List<Likes> findByEmail(@Param("email") String email);
 
     List<Likes> findByRstId(Long rstId);
 

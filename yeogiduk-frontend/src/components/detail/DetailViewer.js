@@ -151,12 +151,13 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
       fetchReviews();
     },[restaurant?.rstId, reviews]);
 
-  const {like, student} = useSelector(({restaurant, auth}) => ({
+  const {like, student, add} = useSelector(({restaurant, auth}) => ({
     like: restaurant.like,
-    student: auth.student
+    student: auth.student,
+    add: restaurant.add
   }));
   const [color, setColor] = useState(null);
-  const id = null;
+  const id = parseInt(null);
   useEffect(() => {
     const rstId = restaurant?.rstId;
     const email = student.email;
@@ -164,17 +165,20 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
     setColor(like? 'red' : 'black');
   }, [setColor, like, restaurant, student, dispatch]);
   
-  const handleClick = async () => {
-    const rstId = restaurant?.rstId;
+  const handleClick = () => {
+    const rstId = restaurant.rstId;
     const email = student.email;
-    await dispatch(addLike({id, email, rstId}));
-    await dispatch(checkLike({email, rstId}));
-    setColor(like ? 'red' : 'black');
+    dispatch(addLike({id, email, rstId}));
+    dispatch(checkLike({email, rstId}));
   }
 
   useEffect(() => {
-    setColor(like ? 'red' : 'black');
-  }, [like]);
+    if(add === "찜 추가") {
+      setColor('red');
+    } else if (add === "찜 삭제") {
+      setColor('black');
+    }
+  }, [add]);
 
   return (
     <GrayBackGround>
