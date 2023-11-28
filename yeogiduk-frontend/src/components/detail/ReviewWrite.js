@@ -164,7 +164,7 @@ const ReviewWrite = ({rstId}) => {
           <StarInput type="radio" name="star" value="1" onChange={handleChange} />★<StarBlank>☆☆☆☆&nbsp;&nbsp;&nbsp;&nbsp;</StarBlank>
         </Star>
         {errors.star && <ErrorMessage>{errors.star}</ErrorMessage>}
-        <ContentInput type="text" name="content" value={values.content} onChange={handleChange} placeholder="식당에 대한 리부를 남겨주세요!" />
+        <ContentInput type="text" name="content" value={values.content} onChange={handleChange} placeholder="식당에 대한 리뷰를 남겨주세요!" />
         <Button type="submit">리뷰 등록</Button>
         <ImageInput type="file" name="images" multiple onChange={handleChange} />
         {errors.content && <ErrorMessage>{errors.content}</ErrorMessage>}

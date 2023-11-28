@@ -10,6 +10,7 @@ const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
   background: white;
+  z-index: 2;
 `;
 
 // Responsive 컴포넌트 속성에 스타일을 추가해서 새로운 컴포넌트 생성

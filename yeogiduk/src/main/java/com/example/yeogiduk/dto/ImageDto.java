@@ -25,7 +25,9 @@ public class ImageDto {
 
     public String getPath() {
         return "C:/SG_2023/yeogiduk/ComStudy";
+        // return "C:/SoftWare4/YeoGiDuk";
     }
 }
 
 // SuA : "C:/SG_2023/yeogiduk/ComStudy"
+//YunS: return "C:/SoftWare4/YeoGiDuk";
