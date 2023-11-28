@@ -51,7 +51,8 @@ const TextGray = styled.div`
 const Image = styled.img`
   width: 150px;
   height: 150px;
-  margin-top: 2rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.1rem;
   margin-right: 5px;
 `;
 
@@ -119,11 +120,13 @@ const Review = ({review}) => {
         </Horizon>
       </Star>
       </Horizon>
+      <Content>
       {images ? (
         images.map(image => (
           <Image src={`/images_review/${image}`} alt="review image" />
         ))
       ) : ( <></>)}
+      </Content>
       <Content>{review.content}</Content>
       <ReviewDate>{date}</ReviewDate>
     </ReviewBlock>
