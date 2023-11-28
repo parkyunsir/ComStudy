@@ -81,11 +81,14 @@ const Horizon = styled.div`
 `;
 
 const Like = styled.button`
-border: 1px solid #aaaaaa;
-background: none;
-outline: none;
-border-radius: 10px;
-margin-left:1rem;
+  position: relative;
+  background-color: transparent;
+  color:#000000;
+
+  border: 0px solid #ffffff;
+  outline: none;
+  
+  font-size:30px;
 `;
 
 
@@ -158,15 +161,20 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
     const rstId = restaurant?.rstId;
     const email = student.email;
     dispatch(checkLike({email, rstId}));
-    setColor(like? 'pink' : 'white');
+    setColor(like? 'red' : 'black');
   }, [setColor, like, restaurant, student, dispatch]);
-  const handleClick = () => {
+  
+  const handleClick = async () => {
     const rstId = restaurant?.rstId;
     const email = student.email;
-    dispatch(addLike({id, email, rstId}));
-    dispatch(checkLike({email, rstId}));
-    setColor(like? 'pink' : 'white');
+    await dispatch(addLike({id, email, rstId}));
+    await dispatch(checkLike({email, rstId}));
+    setColor(like ? 'red' : 'black');
   }
+
+  useEffect(() => {
+    setColor(like ? 'red' : 'black');
+  }, [like]);
 
   return (
     <GrayBackGround>
@@ -174,7 +182,8 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
 
 {/* 가게 기본 정보 출력 */}
       <WhiteBox>
-        <Horizon><Name>{restaurant?.name}</Name><Like style={{backgroundColor: color}} onClick={handleClick}>찜</Like></Horizon>
+        <Horizon><Name>{restaurant?.name}</Name><Like style={{color: color}} onClick={handleClick}>
+❤</Like></Horizon>
         <Type>{rtype?.title}</Type>
         <Intro>
           <StarColor><TbStarFilled/></StarColor>&nbsp;<StarBold>{avgstar ? avgstar.toFixed(1) : '-'}</StarBold> &nbsp;&nbsp; &nbsp;&nbsp;
