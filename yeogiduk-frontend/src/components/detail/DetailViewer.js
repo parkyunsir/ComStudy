@@ -165,7 +165,6 @@ const DetailViewer = ({restaurant, rtype, reviews, menus}) => {
     const email = student.email;
     dispatch(addLike({id, email, rstId}));
     dispatch(checkLike({email, rstId}));
-    setColor(like? 'pink' : 'white');
   }
 
   return (
