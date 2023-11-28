@@ -6,7 +6,6 @@ import HeaderContainer from '../containers/common/HeaderContainer';
 const JoinPage = () => {
   return (
     <>
-      <HeaderContainer />
       <AuthTemplate>
         <JoinForm type="join" />
       </AuthTemplate>
@@ -15,3 +14,5 @@ const JoinPage = () => {
 };
 
 export default JoinPage;
+
+//<HeaderContainer />

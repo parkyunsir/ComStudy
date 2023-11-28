@@ -43,7 +43,7 @@ public class StudentService /*implements UserDetailsService*/{
         Student student = studentRepository.findByEmail(dto.getEmail())
                 .orElse(null);
         if(student != null && bCryptPasswordEncoder.matches(dto.getPassword(), student.getPassword())) {
-            final String token = tokenProvider.generateToken(student, Duration.ofDays(2));
+            final String token = tokenProvider.generateToken(student, Duration.ofDays(1));
             StudentDto studentDto = StudentDto.builder()
                     .email(student.getEmail())
                     .password(student.getPassword())

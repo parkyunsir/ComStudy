@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import { getReviewImages } from '../../lib/api/review';
 
 const ReviewBlock = styled.div`
   margin-bottom: 2rem;
@@ -51,6 +52,7 @@ const Image = styled.img`
   width: 150px;
   height: 150px;
   margin-top: 2rem;
+  margin-right: 5px;
 `;
 
 const Review = ({review}) => {
@@ -90,6 +92,7 @@ const Review = ({review}) => {
     const fetchImage = async () => {
       try {
         const response = await fetch(`/image/show/${review.viewId}`);
+        //const response = await getReviewImages(review.viewId);
         const text = await response.json();
         const fetchedImages = [];
         for(let i = 0; i < text.length; i++) {
@@ -107,11 +110,6 @@ const Review = ({review}) => {
   return (
     <ReviewBlock>
       <TextGray><hr/></TextGray>
-      {images ? (
-        images.map(image => (
-          <Image src={`/images_review/${image}`} alt="review image" />
-        ))
-      ) : ( <></>)}
       <Horizon>
       <Name>덕우</Name>
       <Star>
@@ -121,6 +119,11 @@ const Review = ({review}) => {
         </Horizon>
       </Star>
       </Horizon>
+      {images ? (
+        images.map(image => (
+          <Image src={`/images_review/${image}`} alt="review image" />
+        ))
+      ) : ( <></>)}
       <Content>{review.content}</Content>
       <ReviewDate>{date}</ReviewDate>
     </ReviewBlock>

@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom';
 import logoImage from '../../lib/image/logo_image.png';
 import { rtype,likeNum,restaurantReviews } from '../../lib/api/restaurant';
 import { TbStarFilled, TbHeartFilled, TbMessage2 } from "react-icons/tb";
+import { getImage } from '../../lib/api/restaurant';
 
 const RestaurantBlock = styled.div`
   background: white;
@@ -42,6 +43,7 @@ const Info = styled.div`
 const Image = styled.img`
   width: 200px;
   height: 200px;
+  margin-right: 10px;
 `;
 
 const TextGray = styled.div`
@@ -143,12 +145,12 @@ const Restaurant = ({restaurant}) => {
     const fetchImage = async () => {
       try {
         const response = await fetch(`/image/show/restaurant/${restaurant.rstId}`);
+        //const response = await getImage(restaurant.rstId);
         const text = await response.json();
         const fetchedImages = [];
         for(let i = 0; i < text.length; i++) {
           fetchedImages.push(text[i].savedFileName);
         }
-        console.log(fetchedImages);
         setImages(fetchedImages);
       } catch (error) {
         //console.error('Error fetching image:', error);
@@ -166,12 +168,12 @@ const Restaurant = ({restaurant}) => {
       <Star><TbStarFilled/></Star>&nbsp;&nbsp;<Bold>{avgstar ? avgstar.toFixed(1) : '-'}</Bold>&nbsp;&nbsp;
         <TbHeartFilled/>&nbsp;{likes? likes : '0'} &nbsp;&nbsp;
         <TbMessage2/>&nbsp;{review? review : '0'}</Info>
-      {images ? (
+      {images? (
         images.map(image => (
           <Image src={`/images_review/${image}`} alt="review image" />
         ))
       ) : (
-        <Image src={logoImage} />
+        <Image src={logoImage} alt="basic image" />
       )}
     </RestaurantBlock>
   )
