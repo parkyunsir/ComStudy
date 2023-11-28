@@ -113,13 +113,16 @@ public class RestaurantService {
                 case "review" -> {
                     return getRankReview();
                 }
+                default -> {
+                    return restaurantRepository.findAll();
+                }
             }
         }
         return switch (sort) {
             case "star" -> restaurantRepository.findByStarAndTypeId(typeId);
             case "like" -> restaurantRepository.findByLikeAndTypeId(typeId);
             case "review" -> restaurantRepository.findByReviewAndTypeId(typeId);
-            default -> restaurantRepository.findAll();
+            default -> restaurantRepository.findByTypeId(typeId);
         };
     }
 }

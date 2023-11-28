@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom';
 import logoImage from '../../lib/image/logo_image.png';
 import { rtype,likeNum,restaurantReviews } from '../../lib/api/restaurant';
 import { TbStarFilled, TbHeartFilled, TbMessage2 } from "react-icons/tb";
+import { getImage } from '../../lib/api/restaurant';
 
 const RestaurantBlock = styled.div`
   background: white;
@@ -42,6 +43,7 @@ const Info = styled.div`
 const Image = styled.img`
   width: 200px;
   height: 200px;
+  margin-right: 10px;
 `;
 
 const TextGray = styled.div`
@@ -143,6 +145,7 @@ const Restaurant = ({restaurant}) => {
     const fetchImage = async () => {
       try {
         const response = await fetch(`/image/show/restaurant/${restaurant.rstId}`);
+        //const response = await getImage(restaurant.rstId);
         const text = await response.json();
         const fetchedImages = [];
         for(let i = 0; i < text.length; i++) {
