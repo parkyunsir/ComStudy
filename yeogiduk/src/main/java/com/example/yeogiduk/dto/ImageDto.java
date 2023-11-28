@@ -30,4 +30,4 @@ public class ImageDto {
 }
 
 // SuA : "C:/SG_2023/yeogiduk/ComStudy"
-//YunS: return "C:/SoftWare4";
+//YunS: return "C:/SoftWare4/YeoGiDuk";
