@@ -4,11 +4,16 @@ import {Link} from 'react-router-dom';
 import LogoImage from '../../lib/image/logo_image.png';
 
 /* 화면 전체를 채움 */
+
+const GrayBackGround = styled.div`
+  background: #f1f3f5;
+  height:100%;
+`;
 const AuthTemplateBlock = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  bottom: 0;
+  
   right: 0;
   background: #f1f3f5;
   /* flex로 내부 내용 중앙 정렬 */
@@ -56,10 +61,17 @@ const Logo = styled.img`
   margin-bottom: 2rem;
   text-align: left;
   white-space: nowrap;
+  margin-top: 2rem;
 `;
+
+const Context = styled.div`
+  margin-bottom:5rem;
+`;
+
 
 const StudentTemplate = ({children, type}) => {
   return (
+    <GrayBackGround>
     <AuthTemplateBlock>
       <Logo src={LogoImage} alt="yeogiduk logo" />
       <WhiteBox>
@@ -68,17 +80,18 @@ const StudentTemplate = ({children, type}) => {
       <Footer>
   {type === 'login' ? (
     <>
-      여기덕이 처음이신가요?
-      <Link to="/join"> 회원가입</Link>
+      <Context>여기덕이 처음이신가요?
+      <Link to="/join"> 회원가입</Link></Context>
     </>
   ) : (
     <>
-      이미 계정이 있으신가요?
-      <Link to="/"> 로그인</Link>
+      <Context>이미 계정이 있으신가요?
+      <Link to="/"> 로그인</Link></Context>
     </>
   )}
 </Footer>
     </AuthTemplateBlock>
+    </GrayBackGround>
   );
 };
 
