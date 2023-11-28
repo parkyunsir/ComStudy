@@ -49,6 +49,7 @@ const initialState = {
   menus: null,
   image: null,
   like: null,
+  add: null,
   error: null
 };
 
@@ -109,15 +110,15 @@ const restaurant = handleActions(
     [CHECKLIKE_FAILURE]: (state, {payload: error}) => ({
       ...state,
       error
-    }),/*
-    [ADDLIKE_SUCCESS]: (state, {payload: like}) => ({
+    }),
+    [ADDLIKE_SUCCESS]: (state, {payload: add}) => ({
       ...state,
-      like
+      add
     }),
     [ADDLIKE_FAILURE]: (state, {payload: error}) => ({
       ...state,
       error
-    }),*/
+    }),
   },
   initialState
 )
