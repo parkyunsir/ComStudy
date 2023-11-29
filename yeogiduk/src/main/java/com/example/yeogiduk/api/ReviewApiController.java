@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +38,7 @@ public class ReviewApiController {
                                             @RequestParam("email") String email,
                                             @RequestParam("content") String content,
                                             @RequestParam("star") int star,
-                                            @RequestParam("images") List<MultipartFile> images) throws IOException {
+                                            @RequestParam(value = "images", required = false) List<MultipartFile> images) throws IOException {
         ReviewDto dto = ReviewDto.builder()
                 .viewId(null)
                 .rstId(rstId)
@@ -47,7 +48,12 @@ public class ReviewApiController {
                 .star(star)
                 .build();
         // 서비스에 위임
-        ReviewDto created = reviewService.create(rstId, dto, images);
+        ReviewDto created;
+        if(images == null) {
+            created = reviewService.create(rstId, dto);
+        } else {
+            created = reviewService.create(rstId, dto, images);
+        }
         // 결과 응답
         return ResponseEntity.status(HttpStatus.OK).body(created);
     }
