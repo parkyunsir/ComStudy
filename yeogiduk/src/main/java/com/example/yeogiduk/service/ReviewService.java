@@ -71,6 +71,20 @@ public class ReviewService {
         return ReviewDto.createReviewDto(reviewed);
     }
 
+    @Transactional
+    public ReviewDto create(Long rstId, ReviewDto dto) {
+        if(!rstId.equals(dto.getRstId())) {
+            return null;
+        }
+        Restaurant restaurant = restaurantRepository.findByRstId(rstId);
+        if (restaurant == null) {
+            throw new IllegalArgumentException("댓글 생성 실패! 대상 게시글이 없습니다.");
+        }
+        Review review = Review.createReview(dto, rstId);
+        Review reviewed = reviewRepository.save(review);
+        return ReviewDto.createReviewDto(reviewed);
+    }
+
     /*
     @Transactional
     public ReviewDto create(Long rstId, ReviewDto dto) {
